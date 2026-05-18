@@ -1,0 +1,154 @@
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix edintceekos-es: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintceekos-es:EnergySources a skos:ConceptScheme ;
+    dcterms:issued "2026-05-14"^^xsd:date ;
+    dcterms:modified "2026-05-14"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of SKOS thesauri used by the Energy Performance Certificate ontology."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de Certificados de Eficiencia Energética."@es ;
+    rdfs:label "Energy sources"@en ;
+    rdfs:label "Fuentes de energía"@es ;
+    dcterms:title "Esquema de conceptos agrupando fuentes de energía para sistemas de calefacción, refrigeración y ACS en edificios"@es ;
+    dcterms:title "Concept scheme grouping energy sources for heating, cooling and DHW systems in buildings"@en ;
+    skos:note "Vocabulario jerárquico de fuentes de energía clasificadas en fósiles, electricidad y renovables."@es ;
+    skos:note "Hierarchical vocabulary of energy sources classified into fossil, electricity and renewable."@en ;
+    skos:hasTopConcept edintceekos-es:Fossil ;
+    skos:hasTopConcept edintceekos-es:Electricity ;
+    skos:hasTopConcept edintceekos-es:Renewable ;
+    skos:hasTopConcept edintceekos-es:DistrictHeating ;
+    skos:hasTopConcept edintceekos-es:Other .
+
+# ---------------------------------------------------------------------------
+# FOSSIL FUELS
+# ---------------------------------------------------------------------------
+
+edintceekos-es:Fossil a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:prefLabel "Combustibles fósiles"@es ;
+    skos:prefLabel "Fossil fuels"@en ;
+    skos:definition "Fuentes de energía derivadas de combustibles fósiles."@es ;
+    skos:definition "Energy sources derived from fossil fuels."@en ;
+    skos:narrower edintceekos-es:NaturalGas ;
+    skos:narrower edintceekos-es:Diesel ;
+    skos:narrower edintceekos-es:LPG ;
+    skos:narrower edintceekos-es:Coal .
+
+edintceekos-es:NaturalGas a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Fossil ;
+    skos:prefLabel "Gas natural"@es ;
+    skos:prefLabel "Natural gas"@en .
+
+edintceekos-es:Diesel a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Fossil ;
+    skos:prefLabel "Gasóleo"@es ;
+    skos:prefLabel "Diesel"@en ;
+    skos:altLabel "Gasóleo C"@es .
+
+edintceekos-es:LPG a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Fossil ;
+    skos:prefLabel "GLP (gas licuado del petróleo)"@es ;
+    skos:prefLabel "LPG (liquefied petroleum gas)"@en .
+
+edintceekos-es:Coal a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Fossil ;
+    skos:prefLabel "Carbón"@es ;
+    skos:prefLabel "Coal"@en .
+
+# ---------------------------------------------------------------------------
+# ELECTRICITY
+# ---------------------------------------------------------------------------
+
+edintceekos-es:Electricity a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:prefLabel "Electricidad"@es ;
+    skos:prefLabel "Electricity"@en ;
+    skos:definition "Electricidad de red. El carácter renovable depende del mix eléctrico."@es ;
+    skos:definition "Grid electricity. Renewable share depends on the electricity mix."@en .
+
+# ---------------------------------------------------------------------------
+# RENEWABLES
+# ---------------------------------------------------------------------------
+
+edintceekos-es:Renewable a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:prefLabel "Renovables"@es ;
+    skos:prefLabel "Renewable"@en ;
+    skos:definition "Fuentes de energía renovable."@es ;
+    skos:definition "Renewable energy sources."@en ;
+    skos:narrower edintceekos-es:Biomass ;
+    skos:narrower edintceekos-es:SolarThermal ;
+    skos:narrower edintceekos-es:SolarPV ;
+    skos:narrower edintceekos-es:Geothermal ;
+    skos:narrower edintceekos-es:Aerothermal ;
+    skos:narrower edintceekos-es:Hydrothermal .
+
+edintceekos-es:Biomass a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Renewable ;
+    skos:prefLabel "Biomasa"@es ;
+    skos:prefLabel "Biomass"@en ;
+    skos:altLabel "Pellets"@es , "Leña"@es .
+
+edintceekos-es:SolarThermal a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Renewable ;
+    skos:prefLabel "Solar térmica"@es ;
+    skos:prefLabel "Solar thermal"@en .
+
+edintceekos-es:SolarPV a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Renewable ;
+    skos:prefLabel "Solar fotovoltaica"@es ;
+    skos:prefLabel "Solar photovoltaic"@en .
+
+edintceekos-es:Geothermal a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Renewable ;
+    skos:prefLabel "Geotermia"@es ;
+    skos:prefLabel "Geothermal"@en .
+
+edintceekos-es:Aerothermal a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Renewable ;
+    skos:prefLabel "Aerotermia"@es ;
+    skos:prefLabel "Aerothermal"@en ;
+    skos:altLabel "Bomba de calor aire-agua"@es ;
+    skos:altLabel "Air-source heat pump"@en .
+
+edintceekos-es:Hydrothermal a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:broader edintceekos-es:Renewable ;
+    skos:prefLabel "Hidrotermia"@es ;
+    skos:prefLabel "Hydrothermal"@en ;
+    skos:altLabel "Bomba de calor agua-agua"@es ;
+    skos:altLabel "Water-source heat pump"@en .
+
+# ---------------------------------------------------------------------------
+# DISTRICT HEATING/COOLING
+# ---------------------------------------------------------------------------
+
+edintceekos-es:DistrictHeating a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:prefLabel "Red de distrito"@es ;
+    skos:prefLabel "District heating / cooling"@en .
+
+# ---------------------------------------------------------------------------
+# OTHER
+# ---------------------------------------------------------------------------
+
+edintceekos-es:Other a skos:Concept ;
+    skos:inScheme edintceekos-es:EnergySources ;
+    skos:prefLabel "Otra"@es ;
+    skos:prefLabel "Other"@en .

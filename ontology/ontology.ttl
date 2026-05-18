@@ -1,0 +1,1253 @@
+@prefix edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix edintceekos-bu: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/building-use/> .
+@prefix edintceekos-es: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/> .
+@prefix edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/> .
+@prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-scale-version/> .
+
+# =============================================================================
+# ONTOLOGY METADATA
+# =============================================================================
+
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/> a owl:Ontology ;
+    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/0.1.0> ;
+    owl:versionInfo "0.1.0" ;
+    dcterms:title "Ontología de Certificados de Eficiencia Energética de Edificios"@es ;
+    dcterms:title "Energy Performance Certificate Ontology for Buildings"@en ;
+    dcterms:description "Ontología que modela los certificados de eficiencia energética de edificios según el Real Decreto 390/2021. La clase raíz es EnergyCertificate; el edificio es una entidad externa que apunta al certificado mediante una propiedad definida en su propia ontología."@es ;
+    dcterms:description "An ontology modelling energy performance certificates for buildings according to Spanish Royal Decree 390/2021. The root class is EnergyCertificate; the building is an external entity that points to the certificate via a property defined in its own ontology."@en ;
+    dcterms:abstract "Ontología centrada en el certificado de eficiencia energética como unidad documental, incluyendo calificación energética, etiqueta, técnico competente, recomendaciones de mejora, procedimiento de cálculo y recomendaciones de uso para el usuario."@es ;
+    dcterms:abstract "Ontology focused on the energy performance certificate as a documentary unit, including energy rating, label, competent technician, improvement recommendations, calculation procedure and user recommendations."@en ;
+    dcterms:issued "2026-05-14"^^xsd:date ;
+    dcterms:created "2026-05-14"^^xsd:date ;
+    dcterms:modified "2026-05-14"^^xsd:date ;
+    dcterms:creator "FEMP" ,
+                    "Oscar Corcho" ,
+                    "Edna Ruckhaus" ,
+                    "Daniel Doña" ,
+                    "Lucía Sánchez" ,
+                    "Maria del Socorro Bernardos" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:hasFormat <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ontology.ttl> ;
+    vann:preferredNamespacePrefix "edintcee" ;
+    vann:preferredNamespaceUri "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/" ;
+    rdfs:comment "Versión inicial (core) centrada en las clases principales: EnergyCertificate, EnergyRating, EnergyLabel, CompetentTechnician, ImprovementRecommendation, CalculationProcedure y UserRecommendations, con sus relaciones y propiedades."@es ;
+    rdfs:comment "Initial (core) version focusing on the main classes: EnergyCertificate, EnergyRating, EnergyLabel, CompetentTechnician, ImprovementRecommendation, CalculationProcedure and UserRecommendations, with their relationships and properties."@en ;
+    rdfs:seeAlso <https://www.boe.es/eli/es/rd/2021/06/01/390> .
+
+# =============================================================================
+# CLASSES
+# =============================================================================
+
+# --- Root Class ---
+
+edintcee:EnergyCertificate a owl:Class ;
+    rdfs:label "Certificado de eficiencia energética"@es ;
+    rdfs:label "Energy performance certificate"@en ;
+    rdfs:comment "Documentación suscrita por un técnico competente que contiene la calificación de eficiencia energética de un edificio o parte del mismo, sus características energéticas y recomendaciones de mejora (Art. 2.e-g, RD 390/2021)."@es ;
+    rdfs:comment "Documentation signed by a competent technician containing the energy performance rating of a building or part thereof, its energy characteristics and improvement recommendations (Art. 2.e-g, RD 390/2021)."@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty edintcee:hasRating ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass edintcee:EnergyRating
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:issuedBy ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass edintcee:CompetentTechnician
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:usesProcedure ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass edintcee:CalculationProcedure
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:hasUserRecommendations ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass edintcee:UserRecommendations
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:issueDate ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:validUntil ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+# --- Certificate Subclasses ---
+
+edintcee:ProjectCertificate a owl:Class ;
+    rdfs:label "Certificado de proyecto"@es ;
+    rdfs:label "Project certificate"@en ;
+    rdfs:comment "Certificado de eficiencia energética obtenido a partir de las características especificadas en el proyecto de ejecución (Art. 2.b, Art. 9)."@es ;
+    rdfs:comment "Energy performance certificate obtained from the characteristics specified in the execution project (Art. 2.b, Art. 9)."@en ;
+    rdfs:subClassOf edintcee:EnergyCertificate .
+
+edintcee:CompletedWorkCertificate a owl:Class ;
+    rdfs:label "Certificado de obra terminada"@es ;
+    rdfs:label "Completed work certificate"@en ;
+    rdfs:comment "Certificado de eficiencia energética obtenido a partir de las características efectivas del edificio terminado (Art. 2.c, Art. 9)."@es ;
+    rdfs:comment "Energy performance certificate obtained from the effective characteristics of the completed building (Art. 2.c, Art. 9)."@en ;
+    rdfs:subClassOf edintcee:EnergyCertificate .
+
+edintcee:ExistingBuildingCertificate a owl:Class ;
+    rdfs:label "Certificado de edificio existente"@es ;
+    rdfs:label "Existing building certificate"@en ;
+    rdfs:comment "Certificado de eficiencia energética de un edificio existente, con una única fase (Art. 2.d, Art. 10)."@es ;
+    rdfs:comment "Energy performance certificate for an existing building, with a single phase (Art. 2.d, Art. 10)."@en ;
+    rdfs:subClassOf edintcee:EnergyCertificate .
+
+# --- Supporting Classes ---
+
+edintcee:EnergyRating a owl:Class ;
+    rdfs:label "Calificación energética"@es ;
+    rdfs:label "Energy rating"@en ;
+    rdfs:comment "Expresión de la eficiencia energética de un edificio mediante indicadores numéricos de consumo y emisiones, resumida en una letra de la escala A-G (Art. 2.a)."@es ;
+    rdfs:comment "Expression of the energy efficiency of a building through numerical consumption and emission indicators, summarised as a letter on the A-G scale (Art. 2.a)."@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty edintcee:ratingLetter ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:ratingScaleVersion ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass skos:Concept
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:primaryEnergyNonRenewable ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:co2Emissions ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] .
+
+edintcee:EnergyLabel a owl:Class ;
+    rdfs:label "Etiqueta de eficiencia energética"@es ;
+    rdfs:label "Energy label"@en ;
+    rdfs:comment "Distintivo asociado a un certificado registrado que acredita públicamente la calificación energética obtenida (Art. 2.ñ, Art. 15)."@es ;
+    rdfs:comment "Distinctive mark associated with a registered certificate that publicly attests to the energy rating obtained (Art. 2.ñ, Art. 15)."@en .
+
+edintcee:CompetentTechnician a owl:Class ;
+    rdfs:label "Técnico competente"@es ;
+    rdfs:label "Competent technician"@en ;
+    rdfs:comment "Técnico habilitado para realizar la certificación de eficiencia energética de edificios (Art. 4 bis)."@es ;
+    rdfs:comment "Technician qualified to carry out energy performance certification of buildings (Art. 4 bis)."@en .
+
+edintcee:ImprovementRecommendation a owl:Class ;
+    rdfs:label "Recomendación de mejora"@es ;
+    rdfs:label "Improvement recommendation"@en ;
+    rdfs:comment "Intervención técnicamente viable para la mejora de los niveles óptimos o rentables de la eficiencia energética, incluyendo estimación de costes y plazos de recuperación (Art. 8.2.f)."@es ;
+    rdfs:comment "Technically viable intervention for improving optimal or cost-effective energy efficiency levels, including cost estimates and payback periods (Art. 8.2.f)."@en .
+
+edintcee:CalculationProcedure a owl:Class ;
+    rdfs:label "Procedimiento de cálculo"@es ;
+    rdfs:label "Calculation procedure"@en ;
+    rdfs:comment "Procedimiento reconocido (general o simplificado) inscrito en el Registro general de documentos reconocidos, utilizado para obtener la calificación de eficiencia energética (Art. 4.2.a, Art. 5)."@es ;
+    rdfs:comment "Recognised procedure (general or simplified) registered in the general registry of recognised documents, used to obtain the energy performance rating (Art. 4.2.a, Art. 5)."@en .
+
+edintcee:UserRecommendations a owl:Class ;
+    rdfs:label "Recomendaciones de uso para el usuario"@es ;
+    rdfs:label "User recommendations"@en ;
+    rdfs:comment "Documento con recomendaciones para el usuario/arrendatario del edificio sobre cómo utilizar el edificio y sus sistemas para lograr la máxima eficiencia energética (Art. 8.1.f)."@es ;
+    rdfs:comment "Document with recommendations for the building user/tenant on how to use the building and its systems to achieve optimal energy efficiency (Art. 8.1.f)."@en .
+
+# --- Datatype enumerations ---
+
+edintcee:RatingLetterValue a rdfs:Datatype ;
+    rdfs:subClassOf xsd:string ;
+    rdfs:label "Valor de letra de calificación"@es ;
+    rdfs:label "Rating letter value"@en ;
+    rdfs:comment "Valores posibles: A, B, C, D, E, F, G."@es ;
+    rdfs:comment "Possible values: A, B, C, D, E, F, G."@en .
+
+edintcee:RecommendationTypeValue a rdfs:Datatype ;
+    rdfs:subClassOf xsd:string ;
+    rdfs:label "Valor de tipo de recomendación"@es ;
+    rdfs:label "Recommendation type value"@en ;
+    rdfs:comment "Valores: envelope, installation, automation, combined."@es ;
+    rdfs:comment "Values: envelope, installation, automation, combined."@en .
+
+edintcee:ProcedureTypeValue a rdfs:Datatype ;
+    rdfs:subClassOf xsd:string ;
+    rdfs:label "Valor de tipo de procedimiento"@es ;
+    rdfs:label "Procedure type value"@en ;
+    rdfs:comment "Valores: general, simplified."@es ;
+    rdfs:comment "Values: general, simplified."@en .
+
+edintcee:BuildingTypeValue a rdfs:Datatype ;
+    rdfs:subClassOf xsd:string ;
+    rdfs:label "Valor de tipo de edificio"@es ;
+    rdfs:label "Building type value"@en ;
+    rdfs:comment "Valores: new, existing."@es ;
+    rdfs:comment "Values: new, existing."@en .
+
+edintcee:LabelScopeValue a rdfs:Datatype ;
+    rdfs:subClassOf xsd:string ;
+    rdfs:label "Valor de ámbito de etiqueta"@es ;
+    rdfs:label "Label scope value"@en ;
+    rdfs:comment "Valores: project, completedWork, existingBuilding."@es ;
+    rdfs:comment "Values: project, completedWork, existingBuilding."@en .
+
+# =============================================================================
+# OBJECT PROPERTIES
+# =============================================================================
+
+# --- Core relationships ---
+
+edintcee:hasRating a owl:ObjectProperty ;
+    rdfs:label "tiene calificación"@es ;
+    rdfs:label "has rating"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:EnergyRating ;
+    rdfs:comment "Vincula un certificado a sus indicadores de calificación energética."@es ;
+    rdfs:comment "Links a certificate to its energy rating indicators."@en ;
+    owl:inverseOf edintcee:ratingOf .
+
+edintcee:issuedBy a owl:ObjectProperty ;
+    rdfs:label "emitido por"@es ;
+    rdfs:label "issued by"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:CompetentTechnician ;
+    rdfs:comment "Técnico competente que suscribe el certificado."@es ;
+    rdfs:comment "Competent technician who signs the certificate."@en ;
+    owl:inverseOf edintcee:issuedCertificate .
+
+edintcee:hasLabel a owl:ObjectProperty ;
+    rdfs:label "tiene etiqueta"@es ;
+    rdfs:label "has label"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:EnergyLabel ;
+    rdfs:comment "Etiqueta de eficiencia energética asociada al certificado registrado."@es ;
+    rdfs:comment "Energy label associated with the registered certificate."@en ;
+    owl:inverseOf edintcee:labelFor .
+
+edintcee:hasRecommendation a owl:ObjectProperty ;
+    rdfs:label "tiene recomendación"@es ;
+    rdfs:label "has recommendation"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:ImprovementRecommendation ;
+    rdfs:comment "Recomendación de mejora incluida en el certificado."@es ;
+    rdfs:comment "Improvement recommendation included in the certificate."@en ;
+    owl:inverseOf edintcee:recommendationFor .
+
+edintcee:usesProcedure a owl:ObjectProperty ;
+    rdfs:label "usa procedimiento"@es ;
+    rdfs:label "uses procedure"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:CalculationProcedure ;
+    rdfs:comment "Procedimiento de cálculo reconocido utilizado para obtener la calificación."@es ;
+    rdfs:comment "Recognised calculation procedure used to obtain the rating."@en ;
+    owl:inverseOf edintcee:procedureUsedBy .
+
+edintcee:predecessorCertificate a owl:ObjectProperty ;
+    rdfs:label "certificado anterior"@es ;
+    rdfs:label "predecessor certificate"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:EnergyCertificate ;
+    rdfs:comment "Certificado anterior que este certificado renueva o reemplaza."@es ;
+    rdfs:comment "Previous certificate that this certificate renews or replaces."@en ;
+    owl:inverseOf edintcee:successorCertificate .
+
+edintcee:hasUserRecommendations a owl:ObjectProperty ;
+    rdfs:label "tiene recomendaciones de uso"@es ;
+    rdfs:label "has user recommendations"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:UserRecommendations ;
+    rdfs:comment "Documento de recomendaciones de uso entregado al usuario/arrendatario del edificio (Art. 8.1.f)."@es ;
+    rdfs:comment "User recommendations document delivered to the building user/tenant (Art. 8.1.f)."@en .
+
+# --- SKOS-controlled properties ---
+
+edintcee:observedBuildingUse a owl:ObjectProperty ;
+    rdfs:label "uso del edificio observado"@es ;
+    rdfs:label "observed building use"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-bu:BuildingUses
+            ]
+        )
+    ] ;
+    rdfs:comment "Uso del edificio según el vocabulario controlado de usos de edificio."@es ;
+    rdfs:comment "Building use according to the building-use controlled vocabulary."@en .
+
+edintcee:observedClimaticZone a owl:ObjectProperty ;
+    rdfs:label "zona climática observada"@es ;
+    rdfs:label "observed climatic zone"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-cz:ClimaticZones
+            ]
+        )
+    ] ;
+    rdfs:comment "Zona climática según el vocabulario controlado de zonas climáticas."@es ;
+    rdfs:comment "Climatic zone according to the climatic-zone controlled vocabulary."@en .
+
+edintcee:heatingEnergySource a owl:ObjectProperty ;
+    rdfs:label "fuente energética de calefacción"@es ;
+    rdfs:label "heating energy source"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-es:EnergySources
+            ]
+        )
+    ] ;
+    rdfs:comment "Fuente de energía del sistema de calefacción según el vocabulario controlado de fuentes de energía."@es ;
+    rdfs:comment "Energy source of the heating system according to the energy-source controlled vocabulary."@en .
+
+edintcee:coolingEnergySource a owl:ObjectProperty ;
+    rdfs:label "fuente energética de refrigeración"@es ;
+    rdfs:label "cooling energy source"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-es:EnergySources
+            ]
+        )
+    ] ;
+    rdfs:comment "Fuente de energía del sistema de refrigeración según el vocabulario controlado de fuentes de energía."@es ;
+    rdfs:comment "Energy source of the cooling system according to the energy-source controlled vocabulary."@en .
+
+edintcee:dhwEnergySource a owl:ObjectProperty ;
+    rdfs:label "fuente energética de ACS"@es ;
+    rdfs:label "DHW energy source"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-es:EnergySources
+            ]
+        )
+    ] ;
+    rdfs:comment "Fuente de energía del sistema de agua caliente sanitaria según el vocabulario controlado de fuentes de energía."@es ;
+    rdfs:comment "Energy source of the domestic hot water system according to the energy-source controlled vocabulary."@en .
+
+edintcee:ventilationEnergySource a owl:ObjectProperty ;
+    rdfs:label "fuente energética de ventilación"@es ;
+    rdfs:label "ventilation energy source"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-es:EnergySources
+            ]
+        )
+    ] ;
+    rdfs:comment "Fuente de energía del sistema de ventilación según el vocabulario controlado de fuentes de energía."@es ;
+    rdfs:comment "Energy source of the ventilation system according to the energy-source controlled vocabulary."@en .
+
+edintcee:renewableEnergySource a owl:ObjectProperty ;
+    rdfs:label "fuente de energía renovable"@es ;
+    rdfs:label "renewable energy source"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-es:EnergySources
+            ]
+        )
+    ] ;
+    rdfs:comment "Tipo de fuente de energía renovable según el vocabulario controlado de fuentes de energía."@es ;
+    rdfs:comment "Type of renewable energy source according to the energy-source controlled vocabulary."@en .
+
+# --- Rating scale version (SKOS-controlled) ---
+
+edintcee:ratingScaleVersion a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "versión de la escala de calificación"@es ;
+    rdfs:label "rating scale version"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-rsv:RatingScaleVersions
+            ]
+        )
+    ] ;
+    rdfs:comment "Versión de la escala de calificación energética aplicada, según el vocabulario controlado de versiones de escala. Permite distinguir entre la escala original del RD 390/2021 y la escala recalculada conforme a la Directiva (UE) 2024/1275 (EPBD III)."@es ;
+    rdfs:comment "Version of the energy rating scale applied, according to the rating-scale-version controlled vocabulary. Allows distinguishing between the original scale from RD 390/2021 and the recalculated scale per Directive (EU) 2024/1275 (EPBD III)."@en .
+
+# --- Inverse properties ---
+
+edintcee:ratingOf a owl:ObjectProperty ;
+    rdfs:label "calificación de"@es ;
+    rdfs:label "rating of"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range edintcee:EnergyCertificate ;
+    rdfs:comment "Certificado al que pertenece esta calificación."@es ;
+    rdfs:comment "Certificate this rating belongs to."@en .
+
+edintcee:issuedCertificate a owl:ObjectProperty ;
+    rdfs:label "certificado emitido"@es ;
+    rdfs:label "issued certificate"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range edintcee:EnergyCertificate ;
+    rdfs:comment "Certificado emitido por este técnico."@es ;
+    rdfs:comment "Certificate issued by this technician."@en .
+
+edintcee:labelFor a owl:ObjectProperty ;
+    rdfs:label "etiqueta para"@es ;
+    rdfs:label "label for"@en ;
+    rdfs:domain edintcee:EnergyLabel ;
+    rdfs:range edintcee:EnergyCertificate ;
+    rdfs:comment "Certificado al que corresponde esta etiqueta."@es ;
+    rdfs:comment "Certificate this label belongs to."@en .
+
+edintcee:recommendationFor a owl:ObjectProperty ;
+    rdfs:label "recomendación para"@es ;
+    rdfs:label "recommendation for"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range edintcee:EnergyCertificate ;
+    rdfs:comment "Certificado al que pertenece esta recomendación."@es ;
+    rdfs:comment "Certificate this recommendation belongs to."@en .
+
+edintcee:procedureUsedBy a owl:ObjectProperty ;
+    rdfs:label "procedimiento usado por"@es ;
+    rdfs:label "procedure used by"@en ;
+    rdfs:domain edintcee:CalculationProcedure ;
+    rdfs:range edintcee:EnergyCertificate ;
+    rdfs:comment "Certificado que utiliza este procedimiento."@es ;
+    rdfs:comment "Certificate that uses this procedure."@en .
+
+edintcee:successorCertificate a owl:ObjectProperty ;
+    rdfs:label "certificado sucesor"@es ;
+    rdfs:label "successor certificate"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:EnergyCertificate ;
+    rdfs:comment "Certificado que reemplaza o renueva este certificado."@es ;
+    rdfs:comment "Certificate that renews or replaces this certificate."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — Certificate metadata
+# =============================================================================
+
+edintcee:certificateNumber a owl:DatatypeProperty ;
+    rdfs:label "número de certificado"@es ;
+    rdfs:label "certificate number"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Número de registro del certificado en la comunidad autónoma (Art. 6.6)."@es ;
+    rdfs:comment "Certificate registration number in the autonomous community (Art. 6.6)."@en .
+
+edintcee:issueDate a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "fecha de emisión"@es ;
+    rdfs:label "issue date"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:date ;
+    rdfs:comment "Fecha en la que el técnico competente suscribe el certificado."@es ;
+    rdfs:comment "Date on which the competent technician signs the certificate."@en .
+
+edintcee:visitDate a owl:DatatypeProperty ;
+    rdfs:label "fecha de visita"@es ;
+    rdfs:label "visit date"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:date ;
+    rdfs:comment "Fecha de la visita in situ al edificio (Art. 6.5, Art. 8.2.g)."@es ;
+    rdfs:comment "Date of the on-site visit to the building (Art. 6.5, Art. 8.2.g)."@en .
+
+edintcee:registrationDate a owl:DatatypeProperty ;
+    rdfs:label "fecha de registro"@es ;
+    rdfs:label "registration date"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:date ;
+    rdfs:comment "Fecha en la que el certificado se registra en el órgano competente de la CCAA (Art. 6.6)."@es ;
+    rdfs:comment "Date on which the certificate is registered with the competent authority of the autonomous community (Art. 6.6)."@en .
+
+edintcee:validUntil a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "válido hasta"@es ;
+    rdfs:label "valid until"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:date ;
+    rdfs:comment "Fecha de caducidad del certificado, máximo 10 años desde la emisión (Art. 13)."@es ;
+    rdfs:comment "Expiry date of the certificate, maximum 10 years from issue (Art. 13)."@en .
+
+edintcee:visitDescription a owl:DatatypeProperty ;
+    rdfs:label "descripción de la visita"@es ;
+    rdfs:label "visit description"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Descripción de la visita in situ realizada (Art. 8.2.g)."@es ;
+    rdfs:comment "Description of the on-site visit carried out (Art. 8.2.g)."@en .
+
+edintcee:applicableRegulation a owl:DatatypeProperty ;
+    rdfs:label "normativa aplicable"@es ;
+    rdfs:label "applicable regulation"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Normativa aplicada en la evaluación (Art. 8.2.c)."@es ;
+    rdfs:comment "Regulation applied in the evaluation (Art. 8.2.c)."@en .
+
+edintcee:registrationCCAA a owl:DatatypeProperty ;
+    rdfs:label "CCAA de registro"@es ;
+    rdfs:label "registration autonomous community"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Comunidad autónoma donde se registra el certificado (Art. 6.6)."@es ;
+    rdfs:comment "Autonomous community where the certificate is registered (Art. 6.6)."@en .
+
+# --- Verification & Registration ---
+
+edintcee:registryURL a owl:DatatypeProperty ;
+    rdfs:label "URL del registro"@es ;
+    rdfs:label "registry URL"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "URL del certificado en el registro autonómico."@es ;
+    rdfs:comment "URL of the certificate in the autonomous registry."@en .
+
+edintcee:certificateHash a owl:DatatypeProperty ;
+    rdfs:label "hash del certificado"@es ;
+    rdfs:label "certificate hash"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Hash criptográfico del certificado para verificación de integridad."@es ;
+    rdfs:comment "Cryptographic hash of the certificate for integrity verification."@en .
+
+edintcee:qrCodeReference a owl:DatatypeProperty ;
+    rdfs:label "referencia QR"@es ;
+    rdfs:label "QR code reference"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Referencia codificada en el código QR del certificado."@es ;
+    rdfs:comment "Reference encoded in the certificate QR code."@en .
+
+edintcee:xmlReportReference a owl:DatatypeProperty ;
+    rdfs:label "referencia al informe XML"@es ;
+    rdfs:label "XML report reference"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Referencia al informe de evaluación energética en formato electrónico (XML) (Art. 8.1.c)."@es ;
+    rdfs:comment "Reference to the energy evaluation report in electronic format (XML) (Art. 8.1.c)."@en .
+
+edintcee:calculationDocumentsReference a owl:DatatypeProperty ;
+    rdfs:label "referencia a documentos de cálculo"@es ;
+    rdfs:label "calculation documents reference"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Referencia a documentos o ficheros digitales necesarios para la evaluación (Art. 8.1.d)."@es ;
+    rdfs:comment "Reference to documents or digital files needed for the evaluation (Art. 8.1.d)."@en .
+
+edintcee:costEffectivenessReference a owl:DatatypeProperty ;
+    rdfs:label "referencia a análisis coste-eficacia"@es ;
+    rdfs:label "cost-effectiveness analysis reference"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Referencia al análisis coste-eficacia de las recomendaciones (Art. 8.2.f, Reglamento Delegado UE 244/2012)."@es ;
+    rdfs:comment "Reference to the cost-effectiveness analysis of recommendations (Art. 8.2.f, Delegated Regulation EU 244/2012)."@en .
+
+edintcee:financingInformation a owl:DatatypeProperty ;
+    rdfs:label "información de financiación"@es ;
+    rdfs:label "financing information"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Información sobre incentivos financieros, ayudas o posibilidad de financiación para las mejoras recomendadas."@es ;
+    rdfs:comment "Information about financial incentives, grants or financing possibilities for recommended improvements."@en .
+
+edintcee:consumptionDataAvailableToOwner a owl:DatatypeProperty ;
+    rdfs:label "datos de consumo disponibles para el propietario"@es ;
+    rdfs:label "consumption data available to owner"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Los datos de consumo están disponibles para el propietario del edificio (Art. 6.7)."@es ;
+    rdfs:comment "Consumption data is available to the building owner (Art. 6.7)."@en .
+
+edintcee:aggregatedDataAvailableForResearch a owl:DatatypeProperty ;
+    rdfs:label "datos agregados disponibles para investigación"@es ;
+    rdfs:label "aggregated data available for research"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Los datos agregados y anonimizados están disponibles para uso estadístico y de investigación (Art. 6.7)."@es ;
+    rdfs:comment "Aggregated and anonymized data are available for statistical and research use (Art. 6.7)."@en .
+
+edintcee:noImprovementJustification a owl:DatatypeProperty ;
+    rdfs:label "justificación de inexistencia de potencial de mejora"@es ;
+    rdfs:label "no improvement potential justification"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Justificación técnica de la inexistencia de potencial razonable para la mejora (Art. 8.2.f)."@es ;
+    rdfs:comment "Technical justification for the absence of reasonable improvement potential (Art. 8.2.f)."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — Observed building data
+# =============================================================================
+
+edintcee:observedCadastralRef a owl:DatatypeProperty ;
+    rdfs:label "referencia catastral observada"@es ;
+    rdfs:label "observed cadastral reference"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Referencia catastral del inmueble consignada en el certificado (Art. 8.2.a)."@es ;
+    rdfs:comment "Cadastral reference of the property as stated in the certificate (Art. 8.2.a)."@en .
+
+edintcee:observedAddress a owl:DatatypeProperty ;
+    rdfs:label "dirección observada"@es ;
+    rdfs:label "observed address"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Dirección completa del inmueble (Art. 8.2.a)."@es ;
+    rdfs:comment "Full address of the property (Art. 8.2.a)."@en .
+
+edintcee:observedMunicipality a owl:DatatypeProperty ;
+    rdfs:label "municipio observado"@es ;
+    rdfs:label "observed municipality"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Municipio donde se ubica el edificio."@es ;
+    rdfs:comment "Municipality where the building is located."@en .
+
+edintcee:observedProvince a owl:DatatypeProperty ;
+    rdfs:label "provincia observada"@es ;
+    rdfs:label "observed province"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Provincia donde se ubica el edificio."@es ;
+    rdfs:comment "Province where the building is located."@en .
+
+edintcee:observedUsefulSurface a owl:DatatypeProperty ;
+    rdfs:label "superficie útil observada (m²)"@es ;
+    rdfs:label "observed useful surface (m²)"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Superficie útil considerada para la certificación (Art. 2.t)."@es ;
+    rdfs:comment "Useful surface area considered for certification (Art. 2.t)."@en .
+
+edintcee:observedConstructionYear a owl:DatatypeProperty ;
+    rdfs:label "año de construcción observado"@es ;
+    rdfs:label "observed construction year"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:gYear ;
+    rdfs:comment "Año de construcción declarado del edificio."@es ;
+    rdfs:comment "Declared construction year of the building."@en .
+
+edintcee:observedBuildingType a owl:DatatypeProperty ;
+    rdfs:label "tipo de edificio observado"@es ;
+    rdfs:label "observed building type"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range edintcee:BuildingTypeValue ;
+    rdfs:comment "Valores: 'new' o 'existing' (Art. 3.1)."@es ;
+    rdfs:comment "Values: 'new' or 'existing' (Art. 3.1)."@en .
+
+edintcee:observedHeritageProtection a owl:DatatypeProperty ;
+    rdfs:label "protección patrimonial observada"@es ;
+    rdfs:label "observed heritage protection"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Si el edificio tiene protección patrimonial (Art. 3.2.a)."@es ;
+    rdfs:comment "Whether the building has heritage protection (Art. 3.2.a)."@en .
+
+edintcee:observedIsBuildingPart a owl:DatatypeProperty ;
+    rdfs:label "es parte de edificio"@es ;
+    rdfs:label "is building part"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indica si la certificación se refiere a una parte de un edificio."@es ;
+    rdfs:comment "Indicates whether the certification refers to a part of a building."@en .
+
+edintcee:observedPartDescription a owl:DatatypeProperty ;
+    rdfs:label "descripción de la parte"@es ;
+    rdfs:label "part description"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Descripción de la parte del edificio certificada (vivienda, local, etc.)."@es ;
+    rdfs:comment "Description of the certified part of the building (dwelling, premises, etc.)."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — Energy characteristics (envelope & systems)
+# =============================================================================
+
+edintcee:envelopeDescription a owl:DatatypeProperty ;
+    rdfs:label "descripción de envolvente"@es ;
+    rdfs:label "envelope description"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Descripción de la envolvente térmica del edificio (Art. 8.2.d)."@es ;
+    rdfs:comment "Description of the thermal envelope of the building (Art. 8.2.d)."@en .
+
+edintcee:envelopeArea a owl:DatatypeProperty ;
+    rdfs:label "superficie de envolvente (m²)"@es ;
+    rdfs:label "envelope area (m²)"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Superficie de la envolvente térmica en contacto con el exterior."@es ;
+    rdfs:comment "Surface area of the thermal envelope in contact with the exterior."@en .
+
+edintcee:globalHeatTransferCoeff a owl:DatatypeProperty ;
+    rdfs:label "coeficiente global de transmitancia (W/m²·K)"@es ;
+    rdfs:label "global heat transfer coefficient (W/m²·K)"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Coeficiente global de transmitancia térmica U de la envolvente."@es ;
+    rdfs:comment "Global thermal transmittance coefficient U of the envelope."@en .
+
+edintcee:thermalBridgeLosses a owl:DatatypeProperty ;
+    rdfs:label "pérdidas por puentes térmicos lineales (W/K)"@es ;
+    rdfs:label "linear thermal bridge losses (W/K)"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Pérdidas por puentes térmicos lineales."@es ;
+    rdfs:comment "Linear thermal bridge losses."@en .
+
+edintcee:windowAreaRatio a owl:DatatypeProperty ;
+    rdfs:label "ratio huecos/fachada (%)"@es ;
+    rdfs:label "window-to-wall ratio (%)"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Porcentaje de huecos/acristalamiento sobre fachada."@es ;
+    rdfs:comment "Percentage of glazing/openings relative to facade area."@en .
+
+edintcee:architecturalProtectionType a owl:DatatypeProperty ;
+    rdfs:label "tipo de protección arquitectónica"@es ;
+    rdfs:label "architectural protection type"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Tipo y nivel de catalogación arquitectónica (ej: 'Bien de Interés Cultural', 'Protegido por PGOU')."@es ;
+    rdfs:comment "Type and level of architectural catalogation/protection."@en .
+
+edintcee:normalOperatingConditions a owl:DatatypeProperty ;
+    rdfs:label "condiciones normales de funcionamiento"@es ;
+    rdfs:label "normal operating conditions"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Condiciones normales de funcionamiento del edificio utilizadas para la calificación (Art. 8.2.d)."@es ;
+    rdfs:comment "Normal operating conditions of the building used for the energy rating (Art. 8.2.d)."@en .
+
+edintcee:comfortConditions a owl:DatatypeProperty ;
+    rdfs:label "condiciones de confort"@es ;
+    rdfs:label "comfort conditions"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Condiciones de confort consideradas en la evaluación energética (Art. 8.2.d)."@es ;
+    rdfs:comment "Comfort conditions considered in the energy evaluation (Art. 8.2.d)."@en .
+
+edintcee:linkedToBuildingBook a owl:DatatypeProperty ;
+    rdfs:label "vinculado al Libro del Edificio"@es ;
+    rdfs:label "linked to Building Book"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Si el certificado está incorporado al Libro del Edificio (Art. 6.8)."@es ;
+    rdfs:comment "Whether the certificate is included in the Building Book (Art. 6.8)."@en .
+
+edintcee:representativeBuildingReference a owl:DatatypeProperty ;
+    rdfs:label "referencia del edificio representativo"@es ;
+    rdfs:label "representative building reference"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Referencia del edificio representativo utilizado para la certificación (viviendas unifamiliares) (Art. 6.3)."@es ;
+    rdfs:comment "Reference to the representative building used for certification (single-family homes) (Art. 6.3)."@en .
+
+edintcee:usesSameProcedureVersion a owl:DatatypeProperty ;
+    rdfs:label "usa misma versión del procedimiento"@es ;
+    rdfs:label "uses same procedure version"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "En la comparación proyecto→obra terminada, se usa la misma versión del documento reconocido (Art. 9.4)."@es ;
+    rdfs:comment "When comparing project→completed work certificates, the same version of the recognized document is used (Art. 9.4)."@en .
+
+# --- Systems ---
+
+edintcee:hasHeatingSystem a owl:DatatypeProperty ;
+    rdfs:label "dispone de calefacción"@es ;
+    rdfs:label "has heating system"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean .
+
+edintcee:heatingSystemType a owl:DatatypeProperty ;
+    rdfs:label "tipo de sistema de calefacción"@es ;
+    rdfs:label "heating system type"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string .
+
+edintcee:heatingEfficiency a owl:DatatypeProperty ;
+    rdfs:label "rendimiento estacional calefacción"@es ;
+    rdfs:label "seasonal heating efficiency"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal .
+
+edintcee:hasCoolingSystem a owl:DatatypeProperty ;
+    rdfs:label "dispone de refrigeración"@es ;
+    rdfs:label "has cooling system"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean .
+
+edintcee:coolingSystemType a owl:DatatypeProperty ;
+    rdfs:label "tipo de sistema de refrigeración"@es ;
+    rdfs:label "cooling system type"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string .
+
+edintcee:coolingEfficiency a owl:DatatypeProperty ;
+    rdfs:label "rendimiento estacional refrigeración"@es ;
+    rdfs:label "seasonal cooling efficiency"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal .
+
+edintcee:hasDHWSystem a owl:DatatypeProperty ;
+    rdfs:label "dispone de ACS"@es ;
+    rdfs:label "has DHW system"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean .
+
+edintcee:dhwSystemType a owl:DatatypeProperty ;
+    rdfs:label "tipo de sistema ACS"@es ;
+    rdfs:label "DHW system type"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string .
+
+edintcee:hasRenewableGeneration a owl:DatatypeProperty ;
+    rdfs:label "dispone de generación renovable"@es ;
+    rdfs:label "has renewable generation"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean .
+
+edintcee:renewableType a owl:DatatypeProperty ;
+    rdfs:label "tipo de renovable"@es ;
+    rdfs:label "renewable type"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string .
+
+edintcee:renewableCapacity a owl:DatatypeProperty ;
+    rdfs:label "potencia renovable instalada (kW)"@es ;
+    rdfs:label "renewable installed capacity (kW)"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal .
+
+edintcee:hasAutomationSystem a owl:DatatypeProperty ;
+    rdfs:label "dispone de automatización"@es ;
+    rdfs:label "has automation system"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean .
+
+edintcee:hasMechanicalVentilation a owl:DatatypeProperty ;
+    rdfs:label "dispone de ventilación mecánica"@es ;
+    rdfs:label "has mechanical ventilation"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean .
+
+edintcee:hasHeatRecovery a owl:DatatypeProperty ;
+    rdfs:label "dispone de recuperador de calor"@es ;
+    rdfs:label "has heat recovery"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:boolean .
+
+edintcee:lightingSystemType a owl:DatatypeProperty ;
+    rdfs:label "tipo de sistema de iluminación"@es ;
+    rdfs:label "lighting system type"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Tipo de sistema de iluminación (LED, fluorescente, halógena, etc.)."@es ;
+    rdfs:comment "Lighting system type (LED, fluorescent, halogen, etc.)."@en .
+
+edintcee:lightingEfficiency a owl:DatatypeProperty ;
+    rdfs:label "eficiencia del sistema de iluminación"@es ;
+    rdfs:label "lighting system efficiency"@en ;
+    rdfs:domain edintcee:EnergyCertificate ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Eficiencia del sistema de iluminación (lm/W o similar)."@es ;
+    rdfs:comment "Lighting system efficiency (lm/W or similar)."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — EnergyRating
+# =============================================================================
+
+edintcee:ratingLetter a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "letra de calificación"@es ;
+    rdfs:label "rating letter"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range edintcee:RatingLetterValue ;
+    rdfs:comment "Letra de la calificación global de eficiencia energética en la escala A-G."@es ;
+    rdfs:comment "Global energy efficiency rating letter on the A-G scale."@en .
+
+edintcee:primaryEnergyTotal a owl:DatatypeProperty ;
+    rdfs:label "energía primaria total (kWh/m²·año)"@es ;
+    rdfs:label "total primary energy (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:primaryEnergyNonRenewable a owl:DatatypeProperty ;
+    rdfs:label "energía primaria no renovable (kWh/m²·año)"@es ;
+    rdfs:label "non-renewable primary energy (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:primaryEnergyRenewable a owl:DatatypeProperty ;
+    rdfs:label "energía primaria renovable (kWh/m²·año)"@es ;
+    rdfs:label "renewable primary energy (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:co2Emissions a owl:DatatypeProperty ;
+    rdfs:label "emisiones de CO2 (kgCO2/m²·año)"@es ;
+    rdfs:label "CO2 emissions (kgCO2/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:heatingDemand a owl:DatatypeProperty ;
+    rdfs:label "demanda de calefacción (kWh/m²·año)"@es ;
+    rdfs:label "heating demand (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:coolingDemand a owl:DatatypeProperty ;
+    rdfs:label "demanda de refrigeración (kWh/m²·año)"@es ;
+    rdfs:label "cooling demand (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:dhwDemand a owl:DatatypeProperty ;
+    rdfs:label "demanda de ACS (kWh/m²·año)"@es ;
+    rdfs:label "DHW demand (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:heatingConsumption a owl:DatatypeProperty ;
+    rdfs:label "consumo de calefacción (kWh/m²·año)"@es ;
+    rdfs:label "heating consumption (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:coolingConsumption a owl:DatatypeProperty ;
+    rdfs:label "consumo de refrigeración (kWh/m²·año)"@es ;
+    rdfs:label "cooling consumption (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:dhwConsumption a owl:DatatypeProperty ;
+    rdfs:label "consumo de ACS (kWh/m²·año)"@es ;
+    rdfs:label "DHW consumption (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:lightingConsumption a owl:DatatypeProperty ;
+    rdfs:label "consumo de iluminación (kWh/m²·año)"@es ;
+    rdfs:label "lighting consumption (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+# --- Measured Consumption (Art. 6.7) ---
+
+edintcee:measuredHeatingConsumption a owl:DatatypeProperty ;
+    rdfs:label "consumo medido de calefacción (kWh/m²·año)"@es ;
+    rdfs:label "measured heating consumption (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:measuredCoolingConsumption a owl:DatatypeProperty ;
+    rdfs:label "consumo medido de refrigeración (kWh/m²·año)"@es ;
+    rdfs:label "measured cooling consumption (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:measuredDHWConsumption a owl:DatatypeProperty ;
+    rdfs:label "consumo medido de ACS (kWh/m²·año)"@es ;
+    rdfs:label "measured DHW consumption (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:measuredTotalConsumption a owl:DatatypeProperty ;
+    rdfs:label "consumo total medido (kWh/m²·año)"@es ;
+    rdfs:label "total measured consumption (kWh/m²·year)"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:decimal .
+
+edintcee:measurementPeriodStart a owl:DatatypeProperty ;
+    rdfs:label "fecha inicio periodo de medición"@es ;
+    rdfs:label "measurement period start"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:date .
+
+edintcee:measurementPeriodEnd a owl:DatatypeProperty ;
+    rdfs:label "fecha fin periodo de medición"@es ;
+    rdfs:label "measurement period end"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:date .
+
+edintcee:dataBasis a owl:DatatypeProperty ;
+    rdfs:label "base de datos"@es ;
+    rdfs:label "data basis"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Indica si los indicadores se basan en datos medidos o calculados: 'measured', 'calculated', 'mixed'."@es ;
+    rdfs:comment "Indicates whether indicators are based on measured or calculated data: 'measured', 'calculated', 'mixed'."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — ImprovementRecommendation
+# =============================================================================
+
+edintcee:recommendationType a owl:DatatypeProperty ;
+    rdfs:label "tipo de recomendación"@es ;
+    rdfs:label "recommendation type"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range edintcee:RecommendationTypeValue ;
+    rdfs:comment "Ámbito de la intervención: envelope, installation, automation, combined (Art. 8.2.f)."@es ;
+    rdfs:comment "Scope of the intervention: envelope, installation, automation, combined (Art. 8.2.f)."@en .
+
+edintcee:recommendationDescription a owl:DatatypeProperty ;
+    rdfs:label "descripción de la recomendación"@es ;
+    rdfs:label "recommendation description"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range xsd:string .
+
+edintcee:estimatedSavingPct a owl:DatatypeProperty ;
+    rdfs:label "ahorro estimado (%)"@es ;
+    rdfs:label "estimated saving (%)"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range xsd:decimal .
+
+edintcee:estimatedSavingKwh a owl:DatatypeProperty ;
+    rdfs:label "ahorro estimado (kWh/año)"@es ;
+    rdfs:label "estimated saving (kWh/year)"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range xsd:decimal .
+
+edintcee:paybackPeriod a owl:DatatypeProperty ;
+    rdfs:label "plazo de recuperación (años)"@es ;
+    rdfs:label "payback period (years)"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range xsd:decimal .
+
+edintcee:estimatedCost a owl:DatatypeProperty ;
+    rdfs:label "coste estimado (€)"@es ;
+    rdfs:label "estimated cost (€)"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range xsd:decimal .
+
+edintcee:priority a owl:DatatypeProperty ;
+    rdfs:label "prioridad"@es ;
+    rdfs:label "priority"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Orden de la recomendación en la secuencia temporal de aplicación (Art. 8.2.f.4º)."@es ;
+    rdfs:comment "Order of the recommendation in the temporal sequence of application (Art. 8.2.f.4º)."@en .
+
+edintcee:improvedRatingLetter a owl:DatatypeProperty ;
+    rdfs:label "calificación estimada tras mejora"@es ;
+    rdfs:label "improved rating letter"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Letra de calificación energética estimada tras la implementación de la recomendación."@es ;
+    rdfs:comment "Estimated energy rating letter after implementation of the recommendation."@en .
+
+edintcee:comfortHealthBenefit a owl:DatatypeProperty ;
+    rdfs:label "beneficio en confort/salud"@es ;
+    rdfs:label "comfort/health benefit"@en ;
+    rdfs:domain edintcee:ImprovementRecommendation ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Mejoras en confort, salud o bienestar derivadas de la implementación (Art. 8.2.f)."@es ;
+    rdfs:comment "Comfort, health or well-being improvements derived from implementation (Art. 8.2.f)."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — CompetentTechnician
+# =============================================================================
+
+edintcee:technicianName a owl:DatatypeProperty ;
+    rdfs:label "nombre del técnico"@es ;
+    rdfs:label "technician name"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Nombre y apellidos del técnico competente (Anexo IV)."@es ;
+    rdfs:comment "Full name of the competent technician (Annex IV)."@en .
+
+edintcee:technicianDomicile a owl:DatatypeProperty ;
+    rdfs:label "domicilio del técnico"@es ;
+    rdfs:label "technician domicile"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Dirección completa del técnico (Anexo IV)."@es ;
+    rdfs:comment "Full address of the technician (Annex IV)."@en .
+
+edintcee:technicianNIF a owl:DatatypeProperty ;
+    rdfs:label "NIF/NIE del técnico"@es ;
+    rdfs:label "technician NIF/NIE"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string .
+
+edintcee:technicianQualification a owl:DatatypeProperty ;
+    rdfs:label "titulación del técnico"@es ;
+    rdfs:label "technician qualification"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Titulación académica que habilita al técnico (Art. 4 bis)."@es ;
+    rdfs:comment "Academic qualification enabling the technician (Art. 4 bis)."@en .
+
+edintcee:technicianRegistrationCCAA a owl:DatatypeProperty ;
+    rdfs:label "CCAA de registro del técnico"@es ;
+    rdfs:label "technician registration autonomous community"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string .
+
+edintcee:technicianAddress a owl:DatatypeProperty ;
+    rdfs:label "domicilio fiscal"@es ;
+    rdfs:label "fiscal address"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Dirección fiscal del técnico competente (Anexo IV)."@es ;
+    rdfs:comment "Fiscal address of the competent technician (Annex IV)."@en .
+
+edintcee:technicianMunicipality a owl:DatatypeProperty ;
+    rdfs:label "municipio"@es ;
+    rdfs:label "municipality"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string .
+
+edintcee:technicianPostalCode a owl:DatatypeProperty ;
+    rdfs:label "código postal"@es ;
+    rdfs:label "postal code"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string .
+
+edintcee:technicianProvince a owl:DatatypeProperty ;
+    rdfs:label "provincia"@es ;
+    rdfs:label "province"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string .
+
+edintcee:technicianEmail a owl:DatatypeProperty ;
+    rdfs:label "correo electrónico"@es ;
+    rdfs:label "email"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string .
+
+edintcee:technicianPhone a owl:DatatypeProperty ;
+    rdfs:label "teléfono"@es ;
+    rdfs:label "phone"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string .
+
+edintcee:technicianAccessPath a owl:DatatypeProperty ;
+    rdfs:label "vía de acceso"@es ;
+    rdfs:label "access path"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Vía de acceso a la actividad de técnico competente según Art. 4 bis: 'projectCertification', 'universityTitle_b', 'universityTitle_c', 'vocationalTraining', 'competenceStandard'."@en ;
+    rdfs:comment "Vía de acceso a la actividad de técnico competente según Art. 4 bis del RD 390/2021."@es .
+
+edintcee:technicianCourseModules a owl:DatatypeProperty ;
+    rdfs:label "módulos del curso cursados"@es ;
+    rdfs:label "course modules completed"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Módulos del curso de conocimientos básicos, específicos y administrativos cursados: 'none', 'module1', 'module2', 'module1And2'."@en ;
+    rdfs:comment "Módulos del curso de conocimientos básicos, específicos y administrativos cursados."@es .
+
+edintcee:technicianPublicAuthorization a owl:DatatypeProperty ;
+    rdfs:label "autorización para hacer público"@es ;
+    rdfs:label "public authorization"@en ;
+    rdfs:domain edintcee:CompetentTechnician ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Autorización voluntaria o rechazo para hacer público el nombre, apellidos y datos de contacto (Art. 4 quáter.4, Anexo IV)."@es ;
+    rdfs:comment "Voluntary authorization or refusal to make name, surname and contact data public (Art. 4 quáter.4, Annex IV)."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — EnergyLabel
+# =============================================================================
+
+edintcee:labelRatingLetter a owl:DatatypeProperty ;
+    rdfs:label "letra de la etiqueta"@es ;
+    rdfs:label "label rating letter"@en ;
+    rdfs:domain edintcee:EnergyLabel ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Letra de calificación mostrada en la etiqueta (Art. 15)."@es ;
+    rdfs:comment "Rating letter shown on the label (Art. 15)."@en .
+
+edintcee:labelScope a owl:DatatypeProperty ;
+    rdfs:label "ámbito de la etiqueta"@es ;
+    rdfs:label "label scope"@en ;
+    rdfs:domain edintcee:EnergyLabel ;
+    rdfs:range edintcee:LabelScopeValue ;
+    rdfs:comment "Tipo de certificado al que corresponde la etiqueta: project, completedWork, existingBuilding (Art. 15.2)."@es ;
+    rdfs:comment "Type of certificate the label corresponds to: project, completedWork, existingBuilding (Art. 15.2)."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — CalculationProcedure
+# =============================================================================
+
+edintcee:procedureName a owl:DatatypeProperty ;
+    rdfs:label "nombre del procedimiento"@es ;
+    rdfs:label "procedure name"@en ;
+    rdfs:domain edintcee:CalculationProcedure ;
+    rdfs:range xsd:string .
+
+edintcee:procedureVersion a owl:DatatypeProperty ;
+    rdfs:label "versión del procedimiento"@es ;
+    rdfs:label "procedure version"@en ;
+    rdfs:domain edintcee:CalculationProcedure ;
+    rdfs:range xsd:string .
+
+edintcee:procedureType a owl:DatatypeProperty ;
+    rdfs:label "tipo de procedimiento"@es ;
+    rdfs:label "procedure type"@en ;
+    rdfs:domain edintcee:CalculationProcedure ;
+    rdfs:range edintcee:ProcedureTypeValue ;
+    rdfs:comment "Valores: 'general' o 'simplified'."@es ;
+    rdfs:comment "Values: 'general' or 'simplified'."@en .
+
+# =============================================================================
+# DATATYPE PROPERTIES — UserRecommendations
+# =============================================================================
+
+edintcee:userRecommendationsDelivered a owl:DatatypeProperty ;
+    rdfs:label "recomendaciones entregadas"@es ;
+    rdfs:label "recommendations delivered"@en ;
+    rdfs:domain edintcee:UserRecommendations ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Si el documento de recomendaciones de uso fue entregado al arrendatario/propietario."@es ;
+    rdfs:comment "Whether the user recommendations document was delivered to the tenant/owner."@en .
+
+edintcee:userRecommendationsDeliveryDate a owl:DatatypeProperty ;
+    rdfs:label "fecha de entrega de recomendaciones"@es ;
+    rdfs:label "recommendations delivery date"@en ;
+    rdfs:domain edintcee:UserRecommendations ;
+    rdfs:range xsd:date ;
+    rdfs:comment "Fecha en la que se entregaron las recomendaciones de uso."@es ;
+    rdfs:comment "Date on which the user recommendations were delivered."@en .
+
+edintcee:userRecommendationsRecipient a owl:DatatypeProperty ;
+    rdfs:label "destinatario de recomendaciones"@es ;
+    rdfs:label "recommendations recipient"@en ;
+    rdfs:domain edintcee:UserRecommendations ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Destinatario de las recomendaciones: propietario, arrendatario o ambos."@es ;
+    rdfs:comment "Recipient of the recommendations: owner, tenant, or both."@en .
+
+# =============================================================================
+# END OF ONTOLOGY
+# =============================================================================

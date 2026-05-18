@@ -1,47 +1,40 @@
-# Ontología XXX
+# Ontología de Certificados de Eficiencia Energética de Edificios
 
-La ontología XXX represent el dominio XXXX.
+Esta ontología permite representar el dominio de los certificados de eficiencia energética de edificios, centrada en el certificado como unidad documental, su calificación energética, etiqueta, técnico competente, recomendaciones de mejora, procedimiento de cálculo y recomendaciones de uso para el usuario.
 
+Está siendo desarrollada en el contexto del Espacio de Datos para las Infraestructuras Urbanas Inteligentes ([EDINT](https://edint.es/)).
 
-# Propósito y alcance de la ontología
+# Propósito y alcance de la ontología (Purpose and scope of the ontology)
 
-El propósito de la ontología XXX es YYYY. 
-El alcance de la ontología XXX está limitado a ZZZZ.
+El propósito de esta ontología es modelar los certificados de eficiencia energética de edificios según el Real Decreto 390/2021 para habilitar la interoperabilidad de datos de CEE en el contexto de los datos enlazados (Linked Data). El alcance se limita a la representación del certificado como unidad documental, incluyendo la calificación energética, la etiqueta, el técnico competente, las recomendaciones de mejora, el procedimiento de cálculo y las recomendaciones de uso para el usuario. Quedan fuera del alcance la modelización del edificio como entidad independiente (se delega a ontologías externas como BOT, schema.org, etc.), así como los procesos administrativos de registro y las titularidades.
 
-# Prefijo y espacio de nombres de la ontología
+# Prefijo y espacio de nombres (Prefix and namespace)
 
-El prefijo de la ontología es: XXX y se encuentra publicada en el espacio de nombres: https://webdomain.ext/def/domain/subdomain# 
+El prefijo de esta ontología es `edintcee`. Se publica en el espacio de nombres: http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/
 
-# Modelo conceptual de la ontología
-
-Cada repositorio de desarrollo de ontologías debe incluir, en este README principal, una representación visual de la conceptualización de la ontología.
-Esta imagen ayuda a los usuarios y colaboradores a comprender rápidamente la estructura de la ontología, sus conceptos clave y las relaciones entre ellos.
-
-- La imagen debe estar ubicada en la carpeta de conceptualización.
-- Formatos aceptados: .svg, .png o .drawio.
-- Debe referenciarse en este README usando la sintaxis de Markdown, por ejemplo:
-
+# Modelo conceptual (Ontology conceptualization)
 
 ![Diagrama del modelo conceptual](diagrams/diagrama.png)
 
-# Estructura del repositorio
-
-El repositorio debe contener (al menos) las siguientes carpetas
+# Estructura del repositorio (Repository structure)
 
 | Carpeta | Descripción |
 |--------|--------------|
-| **diagrams/** | Contiene diagramas y otros recursos que representan el modelo conceptual de la ontología (por ejemplo, jerarquías de clases, relaciones). |
-| **documentation/** | Contiene la documentación de la ontología y artefactos relacionados en formato HTML o dirigida a usuarios. |
-| **tests/** | Contiene las pruebas para la evaluación de la ontología. |
-| **kos/** | Contiene la implementación de vocabularios controlados o KOS, generalmente implementaciones SKOS en RDF.|
-| **ontology/** | Contiene los archivos de implementación de la ontología en formatos como .owl, .rdf, .ttl o .jsonld |
+| **diagrams/**     | Almacena diagramas y otros recursos que representan el modelo conceptual de la ontología (por ejemplo, jerarquías de clases, relaciones).                                     |
+| **documentation/**         | Almacena la documentación HTML u orientada a humanos de la ontología y artefactos relacionados.                                                                               |
+| **examples/**     | Incluye ejemplos que demuestran cómo instanciar o aplicar la ontología en escenarios de datos reales.                                                                         |
+| **kos/**          | Almacena vocabularios controlados o implementación de KOS, generalmente implementaciones SKOS en RDF.                                                                         |
+| **ontology/**     | Contiene los archivos de implementación reales de la ontología en formatos como `.owl`, `.rdf`, `.ttl` o `.jsonld`.                                                           |
 | **requirements/** | Contiene todos los documentos utilizados para definir los requisitos de la ontología: ejemplos de datos, preguntas de competencia, requisitos funcionales, casos de uso, etc. |
-| **shapes/** | Contiene las restricciones SHACL utilizad para validar datos respecto a la ontología.  |
+| **shapes/**       | Contiene los SHACL shapes utilizadas para definir y validar las restricciones de la ontología.                                                                                |
 
-# Mantenimiento del proyecto
 
-Para gestionar esos incidentes o las mejoras sugeridas con respecto a la ontología, recomendamos seguir las guías proporcionadas en [Issues Management](https://github.com/nombre-repositorio/wiki/issues-management) para generar incidecias (trabajo en progreso).
+# Mantenimiento y evolución (Maintenance and evolution)
 
-# Financiación
+Para manejar las incidencias o mejoras sugeridas con respecto a la ontología, recomendamos seguir las guías proporcionadas en ([Issues Management](./ISSUES.md)) para generar una incidencia.
 
-Incluir aquí la información sobre financiación del proyecto e imágenes necesarias.
+# Financiación (Funding)
+
+Esta ontología ha sido desarrollada en el contexto del Espacio de Datos para las Infraestructuras Urbanas Inteligentes ([EDINT](https://edint.es)).
+
+![Logos](./resources/EDINT_UE_V-Color.png)
