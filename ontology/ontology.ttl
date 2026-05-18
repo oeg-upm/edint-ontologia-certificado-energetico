@@ -9,6 +9,7 @@
 @prefix edintceekos-bu: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/building-use/> .
 @prefix edintceekos-es: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/> .
 @prefix edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/> .
+@prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-scale-version/> .
 
 # =============================================================================
 # ONTOLOGY METADATA
@@ -69,7 +70,7 @@ edintcee:EnergyCertificate a owl:Class ;
     ] , [
         a owl:Restriction ;
         owl:onProperty edintcee:hasUserRecommendations ;
-        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
         owl:onClass edintcee:UserRecommendations
     ] , [
         a owl:Restriction ;
@@ -115,6 +116,11 @@ edintcee:EnergyRating a owl:Class ;
         a owl:Restriction ;
         owl:onProperty edintcee:ratingLetter ;
         owl:cardinality "1"^^xsd:nonNegativeInteger
+    ] , [
+        a owl:Restriction ;
+        owl:onProperty edintcee:ratingScaleVersion ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass skos:Concept
     ] , [
         a owl:Restriction ;
         owl:onProperty edintcee:primaryEnergyNonRenewable ;
@@ -380,6 +386,25 @@ edintcee:renewableEnergySource a owl:ObjectProperty ;
     ] ;
     rdfs:comment "Tipo de fuente de energía renovable según el vocabulario controlado de fuentes de energía."@es ;
     rdfs:comment "Type of renewable energy source according to the energy-source controlled vocabulary."@en .
+
+# --- Rating scale version (SKOS-controlled) ---
+
+edintcee:ratingScaleVersion a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "versión de la escala de calificación"@es ;
+    rdfs:label "rating scale version"@en ;
+    rdfs:domain edintcee:EnergyRating ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-rsv:RatingScaleVersions
+            ]
+        )
+    ] ;
+    rdfs:comment "Versión de la escala de calificación energética aplicada, según el vocabulario controlado de versiones de escala. Permite distinguir entre la escala original del RD 390/2021 y la escala recalculada conforme a la Directiva (UE) 2024/1275 (EPBD III)."@es ;
+    rdfs:comment "Version of the energy rating scale applied, according to the rating-scale-version controlled vocabulary. Allows distinguishing between the original scale from RD 390/2021 and the recalculated scale per Directive (EU) 2024/1275 (EPBD III)."@en .
 
 # --- Inverse properties ---
 
