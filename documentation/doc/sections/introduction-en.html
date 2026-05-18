@@ -1,0 +1,10 @@
+<h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology models energy performance certificates (CEE) for buildings according to the Spanish Royal Decree 390/2021, which transposes the European Energy Performance of Buildings Directive (EPBD). The ontology is centred on the certificate as a documentary unit, including its energy rating, label, competent technician, improvement recommendations, calculation procedure and user recommendations.
+
+The main motivation for this ontology is to enable interoperability of CEE data in the context of Linked Data and the EDINT data space for Smart Urban Infrastructures. Currently, CEE data is published as PDF documents or isolated databases, hindering their integration with other urban datasets such as cadastre, building information models or energy monitoring systems.
+
+The ontology deliberately does not model the building itself as a first-class entity — this responsibility is delegated to external ontologies such as BOT, schema.org or the EDINT territory ontology. Instead, the certificate points to the building via observed properties, and the building can point back to the certificate via a property defined in its own ontology.
+
+The SKOS concept schemes used for controlled vocabularies (building use, climatic zone, energy source) are published separately and linked from this ontology.
+</span>

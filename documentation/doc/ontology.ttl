@@ -1,0 +1,1581 @@
+@prefix : <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/> .
+
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/> rdf:type owl:Ontology ;
+                                                                   owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/0.1.0> ;
+                                                                   <http://purl.org/dc/terms/abstract> "Ontology focused on the energy performance certificate as a documentary unit, including energy rating, label, competent technician, improvement recommendations, calculation procedure and user recommendations."@en ,
+                                                                                                       "Ontología centrada en el certificado de eficiencia energética como unidad documental, incluyendo calificación energética, etiqueta, técnico competente, recomendaciones de mejora, procedimiento de cálculo y recomendaciones de uso para el usuario."@es ;
+                                                                   <http://purl.org/dc/terms/created> "2026-05-14"^^xsd:date ;
+                                                                   <http://purl.org/dc/terms/creator> "Daniel Doña" ,
+                                                                                                      "Edna Ruckhaus" ,
+                                                                                                      "FEMP" ,
+                                                                                                      "Lucía Sánchez" ,
+                                                                                                      "Maria del Socorro Bernardos" ,
+                                                                                                      "Oscar Corcho" ;
+                                                                   <http://purl.org/dc/terms/description> "An ontology modelling energy performance certificates for buildings according to Spanish Royal Decree 390/2021. The root class is EnergyCertificate; the building is an external entity that points to the certificate via a property defined in its own ontology."@en ,
+                                                                                                          "Ontología que modela los certificados de eficiencia energética de edificios según el Real Decreto 390/2021. La clase raíz es EnergyCertificate; el edificio es una entidad externa que apunta al certificado mediante una propiedad definida en su propia ontología."@es ;
+                                                                   <http://purl.org/dc/terms/hasFormat> :ontology.ttl ;
+                                                                   <http://purl.org/dc/terms/issued> "2026-05-14"^^xsd:date ;
+                                                                   <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                                                   <http://purl.org/dc/terms/modified> "2026-05-14"^^xsd:date ;
+                                                                   <http://purl.org/dc/terms/title> "Energy Performance Certificate Ontology for Buildings"@en ,
+                                                                                                    "Ontología de Certificados de Eficiencia Energética de Edificios"@es ;
+                                                                   <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintcee" ;
+                                                                   <http://purl.org/vocab/vann/preferredNamespaceUri> "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/" ;
+                                                                   rdfs:comment "Initial (core) version focusing on the main classes: EnergyCertificate, EnergyRating, EnergyLabel, CompetentTechnician, ImprovementRecommendation, CalculationProcedure and UserRecommendations, with their relationships and properties."@en ,
+                                                                                "Versión inicial (core) centrada en las clases principales: EnergyCertificate, EnergyRating, EnergyLabel, CompetentTechnician, ImprovementRecommendation, CalculationProcedure y UserRecommendations, con sus relaciones y propiedades."@es ;
+                                                                   rdfs:seeAlso <https://www.boe.es/eli/es/rd/2021/06/01/390> ;
+                                                                   owl:versionInfo "0.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/hasFormat
+<http://purl.org/dc/terms/hasFormat> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/BuildingTypeValue
+:BuildingTypeValue rdf:type rdfs:Datatype .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/LabelScopeValue
+:LabelScopeValue rdf:type rdfs:Datatype .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ProcedureTypeValue
+:ProcedureTypeValue rdf:type rdfs:Datatype .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/RatingLetterValue
+:RatingLetterValue rdf:type rdfs:Datatype .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/RecommendationTypeValue
+:RecommendationTypeValue rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEnergySource
+:coolingEnergySource rdf:type owl:ObjectProperty ;
+                     rdfs:domain :EnergyCertificate ;
+                     rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                         owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/EnergySources>
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+                     rdfs:comment "Energy source of the cooling system according to the energy-source controlled vocabulary."@en ,
+                                  "Fuente de energía del sistema de refrigeración según el vocabulario controlado de fuentes de energía."@es ;
+                     rdfs:label "cooling energy source"@en ,
+                                "fuente energética de refrigeración"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource
+:dhwEnergySource rdf:type owl:ObjectProperty ;
+                 rdfs:domain :EnergyCertificate ;
+                 rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                     owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/EnergySources>
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+                 rdfs:comment "Energy source of the domestic hot water system according to the energy-source controlled vocabulary."@en ,
+                              "Fuente de energía del sistema de agua caliente sanitaria según el vocabulario controlado de fuentes de energía."@es ;
+                 rdfs:label "DHW energy source"@en ,
+                            "fuente energética de ACS"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel
+:hasLabel rdf:type owl:ObjectProperty ;
+          owl:inverseOf :labelFor ;
+          rdfs:domain :EnergyCertificate ;
+          rdfs:range :EnergyLabel ;
+          rdfs:comment "Energy label associated with the registered certificate."@en ,
+                       "Etiqueta de eficiencia energética asociada al certificado registrado."@es ;
+          rdfs:label "has label"@en ,
+                     "tiene etiqueta"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRating
+:hasRating rdf:type owl:ObjectProperty ;
+           owl:inverseOf :ratingOf ;
+           rdfs:domain :EnergyCertificate ;
+           rdfs:range :EnergyRating ;
+           rdfs:comment "Links a certificate to its energy rating indicators."@en ,
+                        "Vincula un certificado a sus indicadores de calificación energética."@es ;
+           rdfs:label "has rating"@en ,
+                      "tiene calificación"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRecommendation
+:hasRecommendation rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :recommendationFor ;
+                   rdfs:domain :EnergyCertificate ;
+                   rdfs:range :ImprovementRecommendation ;
+                   rdfs:comment "Improvement recommendation included in the certificate."@en ,
+                                "Recomendación de mejora incluida en el certificado."@es ;
+                   rdfs:label "has recommendation"@en ,
+                              "tiene recomendación"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations
+:hasUserRecommendations rdf:type owl:ObjectProperty ;
+                        rdfs:domain :EnergyCertificate ;
+                        rdfs:range :UserRecommendations ;
+                        rdfs:comment "Documento de recomendaciones de uso entregado al usuario/arrendatario del edificio (Art. 8.1.f)."@es ,
+                                     "User recommendations document delivered to the building user/tenant (Art. 8.1.f)."@en ;
+                        rdfs:label "has user recommendations"@en ,
+                                   "tiene recomendaciones de uso"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEnergySource
+:heatingEnergySource rdf:type owl:ObjectProperty ;
+                     rdfs:domain :EnergyCertificate ;
+                     rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                         owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/EnergySources>
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+                     rdfs:comment "Energy source of the heating system according to the energy-source controlled vocabulary."@en ,
+                                  "Fuente de energía del sistema de calefacción según el vocabulario controlado de fuentes de energía."@es ;
+                     rdfs:label "fuente energética de calefacción"@es ,
+                                "heating energy source"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedBy
+:issuedBy rdf:type owl:ObjectProperty ;
+          owl:inverseOf :issuedCertificate ;
+          rdfs:domain :EnergyCertificate ;
+          rdfs:range :CompetentTechnician ;
+          rdfs:comment "Competent technician who signs the certificate."@en ,
+                       "Técnico competente que suscribe el certificado."@es ;
+          rdfs:label "emitido por"@es ,
+                     "issued by"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedCertificate
+:issuedCertificate rdf:type owl:ObjectProperty ;
+                   rdfs:domain :CompetentTechnician ;
+                   rdfs:range :EnergyCertificate ;
+                   rdfs:comment "Certificado emitido por este técnico."@es ,
+                                "Certificate issued by this technician."@en ;
+                   rdfs:label "certificado emitido"@es ,
+                              "issued certificate"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelFor
+:labelFor rdf:type owl:ObjectProperty ;
+          rdfs:domain :EnergyLabel ;
+          rdfs:range :EnergyCertificate ;
+          rdfs:comment "Certificado al que corresponde esta etiqueta."@es ,
+                       "Certificate this label belongs to."@en ;
+          rdfs:label "etiqueta para"@es ,
+                     "label for"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedBuildingUse
+:observedBuildingUse rdf:type owl:ObjectProperty ;
+                     rdfs:domain :EnergyCertificate ;
+                     rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                         owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/building-use/BuildingUses>
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+                     rdfs:comment "Building use according to the building-use controlled vocabulary."@en ,
+                                  "Uso del edificio según el vocabulario controlado de usos de edificio."@es ;
+                     rdfs:label "observed building use"@en ,
+                                "uso del edificio observado"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedClimaticZone
+:observedClimaticZone rdf:type owl:ObjectProperty ;
+                      rdfs:domain :EnergyCertificate ;
+                      rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                          owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/ClimaticZones>
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+                      rdfs:comment "Climatic zone according to the climatic-zone controlled vocabulary."@en ,
+                                   "Zona climática según el vocabulario controlado de zonas climáticas."@es ;
+                      rdfs:label "observed climatic zone"@en ,
+                                 "zona climática observada"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate
+:predecessorCertificate rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :successorCertificate ;
+                        rdfs:domain :EnergyCertificate ;
+                        rdfs:range :EnergyCertificate ;
+                        rdfs:comment "Certificado anterior que este certificado renueva o reemplaza."@es ,
+                                     "Previous certificate that this certificate renews or replaces."@en ;
+                        rdfs:label "certificado anterior"@es ,
+                                   "predecessor certificate"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureUsedBy
+:procedureUsedBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain :CalculationProcedure ;
+                 rdfs:range :EnergyCertificate ;
+                 rdfs:comment "Certificado que utiliza este procedimiento."@es ,
+                              "Certificate that uses this procedure."@en ;
+                 rdfs:label "procedimiento usado por"@es ,
+                            "procedure used by"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingOf
+:ratingOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :EnergyRating ;
+          rdfs:range :EnergyCertificate ;
+          rdfs:comment "Certificado al que pertenece esta calificación."@es ,
+                       "Certificate this rating belongs to."@en ;
+          rdfs:label "calificación de"@es ,
+                     "rating of"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationFor
+:recommendationFor rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ImprovementRecommendation ;
+                   rdfs:range :EnergyCertificate ;
+                   rdfs:comment "Certificado al que pertenece esta recomendación."@es ,
+                                "Certificate this recommendation belongs to."@en ;
+                   rdfs:label "recomendación para"@es ,
+                              "recommendation for"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableEnergySource
+:renewableEnergySource rdf:type owl:ObjectProperty ;
+                       rdfs:domain :EnergyCertificate ;
+                       rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                           owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/EnergySources>
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+                       rdfs:comment "Tipo de fuente de energía renovable según el vocabulario controlado de fuentes de energía."@es ,
+                                    "Type of renewable energy source according to the energy-source controlled vocabulary."@en ;
+                       rdfs:label "fuente de energía renovable"@es ,
+                                  "renewable energy source"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/successorCertificate
+:successorCertificate rdf:type owl:ObjectProperty ;
+                      rdfs:domain :EnergyCertificate ;
+                      rdfs:range :EnergyCertificate ;
+                      rdfs:comment "Certificado que reemplaza o renueva este certificado."@es ,
+                                   "Certificate that renews or replaces this certificate."@en ;
+                      rdfs:label "certificado sucesor"@es ,
+                                 "successor certificate"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/usesProcedure
+:usesProcedure rdf:type owl:ObjectProperty ;
+               owl:inverseOf :procedureUsedBy ;
+               rdfs:domain :EnergyCertificate ;
+               rdfs:range :CalculationProcedure ;
+               rdfs:comment "Procedimiento de cálculo reconocido utilizado para obtener la calificación."@es ,
+                            "Recognised calculation procedure used to obtain the rating."@en ;
+               rdfs:label "usa procedimiento"@es ,
+                          "uses procedure"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ventilationEnergySource
+:ventilationEnergySource rdf:type owl:ObjectProperty ;
+                         rdfs:domain :EnergyCertificate ;
+                         rdfs:range [ owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                             owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/EnergySources>
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                         rdfs:comment "Energy source of the ventilation system according to the energy-source controlled vocabulary."@en ,
+                                      "Fuente de energía del sistema de ventilación según el vocabulario controlado de fuentes de energía."@es ;
+                         rdfs:label "fuente energética de ventilación"@es ,
+                                    "ventilation energy source"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/aggregatedDataAvailableForResearch
+:aggregatedDataAvailableForResearch rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain :EnergyCertificate ;
+                                    rdfs:range xsd:boolean ;
+                                    rdfs:comment "Aggregated and anonymized data are available for statistical and research use (Art. 6.7)."@en ,
+                                                 "Los datos agregados y anonimizados están disponibles para uso estadístico y de investigación (Art. 6.7)."@es ;
+                                    rdfs:label "aggregated data available for research"@en ,
+                                               "datos agregados disponibles para investigación"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/applicableRegulation
+:applicableRegulation rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :EnergyCertificate ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Normativa aplicada en la evaluación (Art. 8.2.c)."@es ,
+                                   "Regulation applied in the evaluation (Art. 8.2.c)."@en ;
+                      rdfs:label "applicable regulation"@en ,
+                                 "normativa aplicable"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/architecturalProtectionType
+:architecturalProtectionType rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :EnergyCertificate ;
+                             rdfs:range xsd:string ;
+                             rdfs:comment "Tipo y nivel de catalogación arquitectónica (ej: 'Bien de Interés Cultural', 'Protegido por PGOU')."@es ,
+                                          "Type and level of architectural catalogation/protection."@en ;
+                             rdfs:label "architectural protection type"@en ,
+                                        "tipo de protección arquitectónica"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/calculationDocumentsReference
+:calculationDocumentsReference rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :EnergyCertificate ;
+                               rdfs:range xsd:anyURI ;
+                               rdfs:comment "Reference to documents or digital files needed for the evaluation (Art. 8.1.d)."@en ,
+                                            "Referencia a documentos o ficheros digitales necesarios para la evaluación (Art. 8.1.d)."@es ;
+                               rdfs:label "calculation documents reference"@en ,
+                                          "referencia a documentos de cálculo"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateHash
+:certificateHash rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :EnergyCertificate ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Cryptographic hash of the certificate for integrity verification."@en ,
+                              "Hash criptográfico del certificado para verificación de integridad."@es ;
+                 rdfs:label "certificate hash"@en ,
+                            "hash del certificado"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateNumber
+:certificateNumber rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EnergyCertificate ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Certificate registration number in the autonomous community (Art. 6.6)."@en ,
+                                "Número de registro del certificado en la comunidad autónoma (Art. 6.6)."@es ;
+                   rdfs:label "certificate number"@en ,
+                              "número de certificado"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions
+:co2Emissions rdf:type owl:DatatypeProperty ;
+              rdfs:domain :EnergyRating ;
+              rdfs:range xsd:decimal ;
+              rdfs:label "CO2 emissions (kgCO2/m²·year)"@en ,
+                         "emisiones de CO2 (kgCO2/m²·año)"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortConditions
+:comfortConditions rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EnergyCertificate ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Comfort conditions considered in the energy evaluation (Art. 8.2.d)."@en ,
+                                "Condiciones de confort consideradas en la evaluación energética (Art. 8.2.d)."@es ;
+                   rdfs:label "comfort conditions"@en ,
+                              "condiciones de confort"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortHealthBenefit
+:comfortHealthBenefit rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :ImprovementRecommendation ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Comfort, health or well-being improvements derived from implementation (Art. 8.2.f)."@en ,
+                                   "Mejoras en confort, salud o bienestar derivadas de la implementación (Art. 8.2.f)."@es ;
+                      rdfs:label "beneficio en confort/salud"@es ,
+                                 "comfort/health benefit"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/consumptionDataAvailableToOwner
+:consumptionDataAvailableToOwner rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :EnergyCertificate ;
+                                 rdfs:range xsd:boolean ;
+                                 rdfs:comment "Consumption data is available to the building owner (Art. 6.7)."@en ,
+                                              "Los datos de consumo están disponibles para el propietario del edificio (Art. 6.7)."@es ;
+                                 rdfs:label "consumption data available to owner"@en ,
+                                            "datos de consumo disponibles para el propietario"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption
+:coolingConsumption rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :EnergyRating ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:label "consumo de refrigeración (kWh/m²·año)"@es ,
+                               "cooling consumption (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand
+:coolingDemand rdf:type owl:DatatypeProperty ;
+               rdfs:domain :EnergyRating ;
+               rdfs:range xsd:decimal ;
+               rdfs:label "cooling demand (kWh/m²·year)"@en ,
+                          "demanda de refrigeración (kWh/m²·año)"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency
+:coolingEfficiency rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EnergyCertificate ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:label "rendimiento estacional refrigeración"@es ,
+                              "seasonal cooling efficiency"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingSystemType
+:coolingSystemType rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EnergyCertificate ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "cooling system type"@en ,
+                              "tipo de sistema de refrigeración"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/costEffectivenessReference
+:costEffectivenessReference rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :EnergyCertificate ;
+                            rdfs:range xsd:anyURI ;
+                            rdfs:comment "Reference to the cost-effectiveness analysis of recommendations (Art. 8.2.f, Delegated Regulation EU 244/2012)."@en ,
+                                         "Referencia al análisis coste-eficacia de las recomendaciones (Art. 8.2.f, Reglamento Delegado UE 244/2012)."@es ;
+                            rdfs:label "cost-effectiveness analysis reference"@en ,
+                                       "referencia a análisis coste-eficacia"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dataBasis
+:dataBasis rdf:type owl:DatatypeProperty ;
+           rdfs:domain :EnergyRating ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Indica si los indicadores se basan en datos medidos o calculados: 'measured', 'calculated', 'mixed'."@es ,
+                        "Indicates whether indicators are based on measured or calculated data: 'measured', 'calculated', 'mixed'."@en ;
+           rdfs:label "base de datos"@es ,
+                      "data basis"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption
+:dhwConsumption rdf:type owl:DatatypeProperty ;
+                rdfs:domain :EnergyRating ;
+                rdfs:range xsd:decimal ;
+                rdfs:label "DHW consumption (kWh/m²·year)"@en ,
+                           "consumo de ACS (kWh/m²·año)"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand
+:dhwDemand rdf:type owl:DatatypeProperty ;
+           rdfs:domain :EnergyRating ;
+           rdfs:range xsd:decimal ;
+           rdfs:label "DHW demand (kWh/m²·year)"@en ,
+                      "demanda de ACS (kWh/m²·año)"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType
+:dhwSystemType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :EnergyCertificate ;
+               rdfs:range xsd:string ;
+               rdfs:label "DHW system type"@en ,
+                          "tipo de sistema ACS"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea
+:envelopeArea rdf:type owl:DatatypeProperty ;
+              rdfs:domain :EnergyCertificate ;
+              rdfs:range xsd:decimal ;
+              rdfs:comment "Superficie de la envolvente térmica en contacto con el exterior."@es ,
+                           "Surface area of the thermal envelope in contact with the exterior."@en ;
+              rdfs:label "envelope area (m²)"@en ,
+                         "superficie de envolvente (m²)"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription
+:envelopeDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :EnergyCertificate ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Descripción de la envolvente térmica del edificio (Art. 8.2.d)."@es ,
+                                  "Description of the thermal envelope of the building (Art. 8.2.d)."@en ;
+                     rdfs:label "descripción de envolvente"@es ,
+                                "envelope description"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost
+:estimatedCost rdf:type owl:DatatypeProperty ;
+               rdfs:domain :ImprovementRecommendation ;
+               rdfs:range xsd:decimal ;
+               rdfs:label "coste estimado (€)"@es ,
+                          "estimated cost (€)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh
+:estimatedSavingKwh rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :ImprovementRecommendation ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:label "ahorro estimado (kWh/año)"@es ,
+                               "estimated saving (kWh/year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct
+:estimatedSavingPct rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :ImprovementRecommendation ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:label "ahorro estimado (%)"@es ,
+                               "estimated saving (%)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation
+:financingInformation rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :EnergyCertificate ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Información sobre incentivos financieros, ayudas o posibilidad de financiación para las mejoras recomendadas."@es ,
+                                   "Information about financial incentives, grants or financing possibilities for recommended improvements."@en ;
+                      rdfs:label "financing information"@en ,
+                                 "información de financiación"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff
+:globalHeatTransferCoeff rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :EnergyCertificate ;
+                         rdfs:range xsd:decimal ;
+                         rdfs:comment "Coeficiente global de transmitancia térmica U de la envolvente."@es ,
+                                      "Global thermal transmittance coefficient U of the envelope."@en ;
+                         rdfs:label "coeficiente global de transmitancia (W/m²·K)"@es ,
+                                    "global heat transfer coefficient (W/m²·K)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasAutomationSystem
+:hasAutomationSystem rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :EnergyCertificate ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:label "dispone de automatización"@es ,
+                                "has automation system"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasCoolingSystem
+:hasCoolingSystem rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :EnergyCertificate ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:label "dispone de refrigeración"@es ,
+                             "has cooling system"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasDHWSystem
+:hasDHWSystem rdf:type owl:DatatypeProperty ;
+              rdfs:domain :EnergyCertificate ;
+              rdfs:range xsd:boolean ;
+              rdfs:label "dispone de ACS"@es ,
+                         "has DHW system"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasHeatRecovery
+:hasHeatRecovery rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :EnergyCertificate ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "dispone de recuperador de calor"@es ,
+                            "has heat recovery"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasHeatingSystem
+:hasHeatingSystem rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :EnergyCertificate ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:label "dispone de calefacción"@es ,
+                             "has heating system"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasMechanicalVentilation
+:hasMechanicalVentilation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :EnergyCertificate ;
+                          rdfs:range xsd:boolean ;
+                          rdfs:label "dispone de ventilación mecánica"@es ,
+                                     "has mechanical ventilation"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRenewableGeneration
+:hasRenewableGeneration rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :EnergyCertificate ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:label "dispone de generación renovable"@es ,
+                                   "has renewable generation"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption
+:heatingConsumption rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :EnergyRating ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:label "consumo de calefacción (kWh/m²·año)"@es ,
+                               "heating consumption (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand
+:heatingDemand rdf:type owl:DatatypeProperty ;
+               rdfs:domain :EnergyRating ;
+               rdfs:range xsd:decimal ;
+               rdfs:label "demanda de calefacción (kWh/m²·año)"@es ,
+                          "heating demand (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency
+:heatingEfficiency rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EnergyCertificate ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:label "rendimiento estacional calefacción"@es ,
+                              "seasonal heating efficiency"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingSystemType
+:heatingSystemType rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EnergyCertificate ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "heating system type"@en ,
+                              "tipo de sistema de calefacción"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/improvedRatingLetter
+:improvedRatingLetter rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :ImprovementRecommendation ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Estimated energy rating letter after implementation of the recommendation."@en ,
+                                   "Letra de calificación energética estimada tras la implementación de la recomendación."@es ;
+                      rdfs:label "calificación estimada tras mejora"@es ,
+                                 "improved rating letter"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/isLowEnergyDemandBuilding
+:isLowEnergyDemandBuilding rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :EnergyCertificate ;
+                           rdfs:range xsd:boolean ;
+                           rdfs:comment "Indica si el edificio es de baja demanda energética (Art. 3.2.c)."@es ,
+                                        "Indicates whether the building is a low energy demand building (Art. 3.2.c)."@en ;
+                           rdfs:label "edificio de baja demanda energética"@es ,
+                                      "low energy demand building"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/isNearlyZeroEnergyBuilding
+:isNearlyZeroEnergyBuilding rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :EnergyCertificate ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:comment "El edificio cumple con los requisitos de consumo de energía casi nulo (Disposición Adicional 2)."@es ,
+                                         "The building meets nearly zero-energy building requirements (Additional Provision 2)."@en ;
+                            rdfs:label "edificio de consumo de energía casi nulo (nZEB)"@es ,
+                                       "nearly zero-energy building (nZEB)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/isSubjectToITO
+:isSubjectToITO rdf:type owl:DatatypeProperty ;
+                rdfs:domain :EnergyCertificate ;
+                rdfs:range xsd:boolean ;
+                rdfs:comment "El edificio está sujeto a la Inspección Técnica del Edificio obligatoria (Art. 3.1.f)."@es ,
+                             "The building is subject to mandatory Technical Building Inspection (Art. 3.1.f)."@en ;
+                rdfs:label "subject to Technical Building Inspection"@en ,
+                           "sujeto a ITO"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issueDate
+:issueDate rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :EnergyCertificate ;
+           rdfs:range xsd:date ;
+           rdfs:comment "Date on which the competent technician signs the certificate."@en ,
+                        "Fecha en la que el técnico competente suscribe el certificado."@es ;
+           rdfs:label "fecha de emisión"@es ,
+                      "issue date"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelRatingLetter
+:labelRatingLetter rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EnergyLabel ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Letra de calificación mostrada en la etiqueta (Art. 15)."@es ,
+                                "Rating letter shown on the label (Art. 15)."@en ;
+                   rdfs:label "label rating letter"@en ,
+                              "letra de la etiqueta"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelScope
+:labelScope rdf:type owl:DatatypeProperty ;
+            rdfs:domain :EnergyLabel ;
+            rdfs:range :LabelScopeValue ;
+            rdfs:comment "Tipo de certificado al que corresponde la etiqueta: project, completedWork, existingBuilding (Art. 15.2)."@es ,
+                         "Type of certificate the label corresponds to: project, completedWork, existingBuilding (Art. 15.2)."@en ;
+            rdfs:label "label scope"@en ,
+                       "ámbito de la etiqueta"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption
+:lightingConsumption rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :EnergyRating ;
+                     rdfs:range xsd:decimal ;
+                     rdfs:label "consumo de iluminación (kWh/m²·año)"@es ,
+                                "lighting consumption (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency
+:lightingEfficiency rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :EnergyCertificate ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:comment "Eficiencia del sistema de iluminación (lm/W o similar)."@es ,
+                                 "Lighting system efficiency (lm/W or similar)."@en ;
+                    rdfs:label "eficiencia del sistema de iluminación"@es ,
+                               "lighting system efficiency"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingSystemType
+:lightingSystemType rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :EnergyCertificate ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Lighting system type (LED, fluorescent, halogen, etc.)."@en ,
+                                 "Tipo de sistema de iluminación (LED, fluorescente, halógena, etc.)."@es ;
+                    rdfs:label "lighting system type"@en ,
+                               "tipo de sistema de iluminación"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/linkedToBuildingBook
+:linkedToBuildingBook rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :EnergyCertificate ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:comment "Si el certificado está incorporado al Libro del Edificio (Art. 6.8)."@es ,
+                                   "Whether the certificate is included in the Building Book (Art. 6.8)."@en ;
+                      rdfs:label "linked to Building Book"@en ,
+                                 "vinculado al Libro del Edificio"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption
+:measuredCoolingConsumption rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :EnergyRating ;
+                            rdfs:range xsd:decimal ;
+                            rdfs:label "consumo medido de refrigeración (kWh/m²·año)"@es ,
+                                       "measured cooling consumption (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption
+:measuredDHWConsumption rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :EnergyRating ;
+                        rdfs:range xsd:decimal ;
+                        rdfs:label "consumo medido de ACS (kWh/m²·año)"@es ,
+                                   "measured DHW consumption (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption
+:measuredHeatingConsumption rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :EnergyRating ;
+                            rdfs:range xsd:decimal ;
+                            rdfs:label "consumo medido de calefacción (kWh/m²·año)"@es ,
+                                       "measured heating consumption (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption
+:measuredTotalConsumption rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :EnergyRating ;
+                          rdfs:range xsd:decimal ;
+                          rdfs:label "consumo total medido (kWh/m²·año)"@es ,
+                                     "total measured consumption (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodEnd
+:measurementPeriodEnd rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :EnergyRating ;
+                      rdfs:range xsd:date ;
+                      rdfs:label "fecha fin periodo de medición"@es ,
+                                 "measurement period end"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodStart
+:measurementPeriodStart rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :EnergyRating ;
+                        rdfs:range xsd:date ;
+                        rdfs:label "fecha inicio periodo de medición"@es ,
+                                   "measurement period start"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/noImprovementJustification
+:noImprovementJustification rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :EnergyCertificate ;
+                            rdfs:range xsd:string ;
+                            rdfs:comment "Justificación técnica de la inexistencia de potencial razonable para la mejora (Art. 8.2.f)."@es ,
+                                         "Technical justification for the absence of reasonable improvement potential (Art. 8.2.f)."@en ;
+                            rdfs:label "justificación de inexistencia de potencial de mejora"@es ,
+                                       "no improvement potential justification"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/normalOperatingConditions
+:normalOperatingConditions rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :EnergyCertificate ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Condiciones normales de funcionamiento del edificio utilizadas para la calificación (Art. 8.2.d)."@es ,
+                                        "Normal operating conditions of the building used for the energy rating (Art. 8.2.d)."@en ;
+                           rdfs:label "condiciones normales de funcionamiento"@es ,
+                                      "normal operating conditions"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress
+:observedAddress rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :EnergyCertificate ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Dirección completa del inmueble (Art. 8.2.a)."@es ,
+                              "Full address of the property (Art. 8.2.a)."@en ;
+                 rdfs:label "dirección observada"@es ,
+                            "observed address"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedBuildingType
+:observedBuildingType rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :EnergyCertificate ;
+                      rdfs:range :BuildingTypeValue ;
+                      rdfs:comment "Valores: 'new' o 'existing' (Art. 3.1)."@es ,
+                                   "Values: 'new' or 'existing' (Art. 3.1)."@en ;
+                      rdfs:label "observed building type"@en ,
+                                 "tipo de edificio observado"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef
+:observedCadastralRef rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :EnergyCertificate ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Cadastral reference of the property as stated in the certificate (Art. 8.2.a)."@en ,
+                                   "Referencia catastral del inmueble consignada en el certificado (Art. 8.2.a)."@es ;
+                      rdfs:label "observed cadastral reference"@en ,
+                                 "referencia catastral observada"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear
+:observedConstructionYear rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :EnergyCertificate ;
+                          rdfs:range xsd:gYear ;
+                          rdfs:comment "Año de construcción declarado del edificio."@es ,
+                                       "Declared construction year of the building."@en ;
+                          rdfs:label "año de construcción observado"@es ,
+                                     "observed construction year"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedHeritageProtection
+:observedHeritageProtection rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :EnergyCertificate ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:comment "Si el edificio tiene protección patrimonial (Art. 3.2.a)."@es ,
+                                         "Whether the building has heritage protection (Art. 3.2.a)."@en ;
+                            rdfs:label "observed heritage protection"@en ,
+                                       "protección patrimonial observada"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedIsBuildingPart
+:observedIsBuildingPart rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :EnergyCertificate ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:comment "Indica si la certificación se refiere a una parte de un edificio."@es ,
+                                     "Indicates whether the certification refers to a part of a building."@en ;
+                        rdfs:label "es parte de edificio"@es ,
+                                   "is building part"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality
+:observedMunicipality rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :EnergyCertificate ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Municipality where the building is located."@en ,
+                                   "Municipio donde se ubica el edificio."@es ;
+                      rdfs:label "municipio observado"@es ,
+                                 "observed municipality"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription
+:observedPartDescription rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :EnergyCertificate ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Descripción de la parte del edificio certificada (vivienda, local, etc.)."@es ,
+                                      "Description of the certified part of the building (dwelling, premises, etc.)."@en ;
+                         rdfs:label "descripción de la parte"@es ,
+                                    "part description"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince
+:observedProvince rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :EnergyCertificate ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Province where the building is located."@en ,
+                               "Provincia donde se ubica el edificio."@es ;
+                  rdfs:label "observed province"@en ,
+                             "provincia observada"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface
+:observedUsefulSurface rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :EnergyCertificate ;
+                       rdfs:range xsd:decimal ;
+                       rdfs:comment "Superficie útil considerada para la certificación (Art. 2.t)."@es ,
+                                    "Useful surface area considered for certification (Art. 2.t)."@en ;
+                       rdfs:label "observed useful surface (m²)"@en ,
+                                  "superficie útil observada (m²)"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod
+:paybackPeriod rdf:type owl:DatatypeProperty ;
+               rdfs:domain :ImprovementRecommendation ;
+               rdfs:range xsd:decimal ;
+               rdfs:label "payback period (years)"@en ,
+                          "plazo de recuperación (años)"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable
+:primaryEnergyNonRenewable rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :EnergyRating ;
+                           rdfs:range xsd:decimal ;
+                           rdfs:label "energía primaria no renovable (kWh/m²·año)"@es ,
+                                      "non-renewable primary energy (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable
+:primaryEnergyRenewable rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :EnergyRating ;
+                        rdfs:range xsd:decimal ;
+                        rdfs:label "energía primaria renovable (kWh/m²·año)"@es ,
+                                   "renewable primary energy (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal
+:primaryEnergyTotal rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :EnergyRating ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:label "energía primaria total (kWh/m²·año)"@es ,
+                               "total primary energy (kWh/m²·year)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/priority
+:priority rdf:type owl:DatatypeProperty ;
+          rdfs:domain :ImprovementRecommendation ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Orden de la recomendación en la secuencia temporal de aplicación (Art. 8.2.f.4º)."@es ,
+                       "Order of the recommendation in the temporal sequence of application (Art. 8.2.f.4º)."@en ;
+          rdfs:label "prioridad"@es ,
+                     "priority"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureName
+:procedureName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :CalculationProcedure ;
+               rdfs:range xsd:string ;
+               rdfs:label "nombre del procedimiento"@es ,
+                          "procedure name"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureType
+:procedureType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :CalculationProcedure ;
+               rdfs:range :ProcedureTypeValue ;
+               rdfs:comment "Valores: 'general' o 'simplified'."@es ,
+                            "Values: 'general' or 'simplified'."@en ;
+               rdfs:label "procedure type"@en ,
+                          "tipo de procedimiento"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureVersion
+:procedureVersion rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :CalculationProcedure ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "procedure version"@en ,
+                             "versión del procedimiento"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/qrCodeReference
+:qrCodeReference rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :EnergyCertificate ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Reference encoded in the certificate QR code."@en ,
+                              "Referencia codificada en el código QR del certificado."@es ;
+                 rdfs:label "QR code reference"@en ,
+                            "referencia QR"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingLetter
+:ratingLetter rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :EnergyRating ;
+              rdfs:range :RatingLetterValue ;
+              rdfs:comment "Global energy efficiency rating letter on the A-G scale."@en ,
+                           "Letra de la calificación global de eficiencia energética en la escala A-G."@es ;
+              rdfs:label "letra de calificación"@es ,
+                         "rating letter"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationDescription
+:recommendationDescription rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :ImprovementRecommendation ;
+                           rdfs:range xsd:string ;
+                           rdfs:label "descripción de la recomendación"@es ,
+                                      "recommendation description"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationType
+:recommendationType rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :ImprovementRecommendation ;
+                    rdfs:range :RecommendationTypeValue ;
+                    rdfs:comment "Scope of the intervention: envelope, installation, automation, combined (Art. 8.2.f)."@en ,
+                                 "Ámbito de la intervención: envelope, installation, automation, combined (Art. 8.2.f)."@es ;
+                    rdfs:label "recommendation type"@en ,
+                               "tipo de recomendación"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA
+:registrationCCAA rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :EnergyCertificate ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Autonomous community where the certificate is registered (Art. 6.6)."@en ,
+                               "Comunidad autónoma donde se registra el certificado (Art. 6.6)."@es ;
+                  rdfs:label "CCAA de registro"@es ,
+                             "registration autonomous community"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationDate
+:registrationDate rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :EnergyCertificate ;
+                  rdfs:range xsd:date ;
+                  rdfs:comment "Date on which the certificate is registered with the competent authority of the autonomous community (Art. 6.6)."@en ,
+                               "Fecha en la que el certificado se registra en el órgano competente de la CCAA (Art. 6.6)."@es ;
+                  rdfs:label "fecha de registro"@es ,
+                             "registration date"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registryURL
+:registryURL rdf:type owl:DatatypeProperty ;
+             rdfs:domain :EnergyCertificate ;
+             rdfs:range xsd:anyURI ;
+             rdfs:comment "URL del certificado en el registro autonómico."@es ,
+                          "URL of the certificate in the autonomous registry."@en ;
+             rdfs:label "URL del registro"@es ,
+                        "registry URL"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity
+:renewableCapacity rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EnergyCertificate ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:label "potencia renovable instalada (kW)"@es ,
+                              "renewable installed capacity (kW)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableType
+:renewableType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :EnergyCertificate ;
+               rdfs:range xsd:string ;
+               rdfs:label "renewable type"@en ,
+                          "tipo de renovable"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/representativeBuildingReference
+:representativeBuildingReference rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :EnergyCertificate ;
+                                 rdfs:range xsd:string ;
+                                 rdfs:comment "Reference to the representative building used for certification (single-family homes) (Art. 6.3)."@en ,
+                                              "Referencia del edificio representativo utilizado para la certificación (viviendas unifamiliares) (Art. 6.3)."@es ;
+                                 rdfs:label "referencia del edificio representativo"@es ,
+                                            "representative building reference"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAccessPath
+:technicianAccessPath rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :CompetentTechnician ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Vía de acceso a la actividad de técnico competente según Art. 4 bis del RD 390/2021."@es ,
+                                   "Vía de acceso a la actividad de técnico competente según Art. 4 bis: 'projectCertification', 'universityTitle_b', 'universityTitle_c', 'vocationalTraining', 'competenceStandard'."@en ;
+                      rdfs:label "access path"@en ,
+                                 "vía de acceso"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress
+:technicianAddress rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :CompetentTechnician ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Dirección fiscal del técnico competente (Anexo IV)."@es ,
+                                "Fiscal address of the competent technician (Annex IV)."@en ;
+                   rdfs:label "domicilio fiscal"@es ,
+                              "fiscal address"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianCourseModules
+:technicianCourseModules rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :CompetentTechnician ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Módulos del curso de conocimientos básicos, específicos y administrativos cursados."@es ,
+                                      "Módulos del curso de conocimientos básicos, específicos y administrativos cursados: 'none', 'module1', 'module2', 'module1And2'."@en ;
+                         rdfs:label "course modules completed"@en ,
+                                    "módulos del curso cursados"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile
+:technicianDomicile rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :CompetentTechnician ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Dirección completa del técnico (Anexo IV)."@es ,
+                                 "Full address of the technician (Annex IV)."@en ;
+                    rdfs:label "domicilio del técnico"@es ,
+                               "technician domicile"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail
+:technicianEmail rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :CompetentTechnician ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "correo electrónico"@es ,
+                            "email"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality
+:technicianMunicipality rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :CompetentTechnician ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "municipality"@en ,
+                                   "municipio"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianNIF
+:technicianNIF rdf:type owl:DatatypeProperty ;
+               rdfs:domain :CompetentTechnician ;
+               rdfs:range xsd:string ;
+               rdfs:label "NIF/NIE del técnico"@es ,
+                          "technician NIF/NIE"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianName
+:technicianName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :CompetentTechnician ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Full name of the competent technician (Annex IV)."@en ,
+                             "Nombre y apellidos del técnico competente (Anexo IV)."@es ;
+                rdfs:label "nombre del técnico"@es ,
+                           "technician name"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPhone
+:technicianPhone rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :CompetentTechnician ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "phone"@en ,
+                            "teléfono"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode
+:technicianPostalCode rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :CompetentTechnician ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "código postal"@es ,
+                                 "postal code"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince
+:technicianProvince rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :CompetentTechnician ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "province"@en ,
+                               "provincia"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization
+:technicianPublicAuthorization rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :CompetentTechnician ;
+                               rdfs:range xsd:boolean ;
+                               rdfs:comment "Autorización voluntaria o rechazo para hacer público el nombre, apellidos y datos de contacto (Art. 4 quáter.4, Anexo IV)."@es ,
+                                            "Voluntary authorization or refusal to make name, surname and contact data public (Art. 4 quáter.4, Annex IV)."@en ;
+                               rdfs:label "autorización para hacer público"@es ,
+                                          "public authorization"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianQualification
+:technicianQualification rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :CompetentTechnician ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Academic qualification enabling the technician (Art. 4 bis)."@en ,
+                                      "Titulación académica que habilita al técnico (Art. 4 bis)."@es ;
+                         rdfs:label "technician qualification"@en ,
+                                    "titulación del técnico"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA
+:technicianRegistrationCCAA rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :CompetentTechnician ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "CCAA de registro del técnico"@es ,
+                                       "technician registration autonomous community"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses
+:thermalBridgeLosses rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :EnergyCertificate ;
+                     rdfs:range xsd:decimal ;
+                     rdfs:comment "Linear thermal bridge losses."@en ,
+                                  "Pérdidas por puentes térmicos lineales."@es ;
+                     rdfs:label "linear thermal bridge losses (W/K)"@en ,
+                                "pérdidas por puentes térmicos lineales (W/K)"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsDelivered
+:userRecommendationsDelivered rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :UserRecommendations ;
+                              rdfs:range xsd:boolean ;
+                              rdfs:comment "Si el documento de recomendaciones de uso fue entregado al arrendatario/propietario."@es ,
+                                           "Whether the user recommendations document was delivered to the tenant/owner."@en ;
+                              rdfs:label "recomendaciones entregadas"@es ,
+                                         "recommendations delivered"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsDeliveryDate
+:userRecommendationsDeliveryDate rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :UserRecommendations ;
+                                 rdfs:range xsd:date ;
+                                 rdfs:comment "Date on which the user recommendations were delivered."@en ,
+                                              "Fecha en la que se entregaron las recomendaciones de uso."@es ;
+                                 rdfs:label "fecha de entrega de recomendaciones"@es ,
+                                            "recommendations delivery date"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsRecipient
+:userRecommendationsRecipient rdf:type owl:DatatypeProperty ;
+                              rdfs:domain :UserRecommendations ;
+                              rdfs:range xsd:string ;
+                              rdfs:comment "Destinatario de las recomendaciones: propietario, arrendatario o ambos."@es ,
+                                           "Recipient of the recommendations: owner, tenant, or both."@en ;
+                              rdfs:label "destinatario de recomendaciones"@es ,
+                                         "recommendations recipient"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/usesSameProcedureVersion
+:usesSameProcedureVersion rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :EnergyCertificate ;
+                          rdfs:range xsd:boolean ;
+                          rdfs:comment "En la comparación proyecto→obra terminada, se usa la misma versión del documento reconocido (Art. 9.4)."@es ,
+                                       "When comparing project→completed work certificates, the same version of the recognized document is used (Art. 9.4)."@en ;
+                          rdfs:label "usa misma versión del procedimiento"@es ,
+                                     "uses same procedure version"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/validUntil
+:validUntil rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :EnergyCertificate ;
+            rdfs:range xsd:date ;
+            rdfs:comment "Expiry date of the certificate, maximum 10 years from issue (Art. 13)."@en ,
+                         "Fecha de caducidad del certificado, máximo 10 años desde la emisión (Art. 13)."@es ;
+            rdfs:label "valid until"@en ,
+                       "válido hasta"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDate
+:visitDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :EnergyCertificate ;
+           rdfs:range xsd:date ;
+           rdfs:comment "Date of the on-site visit to the building (Art. 6.5, Art. 8.2.g)."@en ,
+                        "Fecha de la visita in situ al edificio (Art. 6.5, Art. 8.2.g)."@es ;
+           rdfs:label "fecha de visita"@es ,
+                      "visit date"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDescription
+:visitDescription rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :EnergyCertificate ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Descripción de la visita in situ realizada (Art. 8.2.g)."@es ,
+                               "Description of the on-site visit carried out (Art. 8.2.g)."@en ;
+                  rdfs:label "descripción de la visita"@es ,
+                             "visit description"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio
+:windowAreaRatio rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :EnergyCertificate ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "Percentage of glazing/openings relative to facade area."@en ,
+                              "Porcentaje de huecos/acristalamiento sobre fachada."@es ;
+                 rdfs:label "ratio huecos/fachada (%)"@es ,
+                            "window-to-wall ratio (%)"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/xmlReportReference
+:xmlReportReference rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :EnergyCertificate ;
+                    rdfs:range xsd:anyURI ;
+                    rdfs:comment "Reference to the energy evaluation report in electronic format (XML) (Art. 8.1.c)."@en ,
+                                 "Referencia al informe de evaluación energética en formato electrónico (XML) (Art. 8.1.c)."@es ;
+                    rdfs:label "XML report reference"@en ,
+                               "referencia al informe XML"@es .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/BuildingTypeValue
+:BuildingTypeValue rdf:type owl:Class ;
+                   rdfs:subClassOf xsd:string .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CalculationProcedure
+:CalculationProcedure rdf:type owl:Class ;
+                      rdfs:comment "Procedimiento reconocido (general o simplificado) inscrito en el Registro general de documentos reconocidos, utilizado para obtener la calificación de eficiencia energética (Art. 4.2.a, Art. 5)."@es ,
+                                   "Recognised procedure (general or simplified) registered in the general registry of recognised documents, used to obtain the energy performance rating (Art. 4.2.a, Art. 5)."@en ;
+                      rdfs:label "Calculation procedure"@en ,
+                                 "Procedimiento de cálculo"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician
+:CompetentTechnician rdf:type owl:Class ;
+                     rdfs:comment "Technician qualified to carry out energy performance certification of buildings (Art. 4 bis)."@en ,
+                                  "Técnico habilitado para realizar la certificación de eficiencia energética de edificios (Art. 4 bis)."@es ;
+                     rdfs:label "Competent technician"@en ,
+                                "Técnico competente"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompletedWorkCertificate
+:CompletedWorkCertificate rdf:type owl:Class ;
+                          rdfs:subClassOf :EnergyCertificate ;
+                          rdfs:comment "Certificado de eficiencia energética obtenido a partir de las características efectivas del edificio terminado (Art. 2.c, Art. 9)."@es ,
+                                       "Energy performance certificate obtained from the effective characteristics of the completed building (Art. 2.c, Art. 9)."@en ;
+                          rdfs:label "Certificado de obra terminada"@es ,
+                                     "Completed work certificate"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate
+:EnergyCertificate rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasRating ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :EnergyRating
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasUserRecommendations ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :UserRecommendations
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :issuedBy ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :CompetentTechnician
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :usesProcedure ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :CalculationProcedure
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :issueDate ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :validUntil ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   rdfs:comment "Documentación suscrita por un técnico competente que contiene la calificación de eficiencia energética de un edificio o parte del mismo, sus características energéticas y recomendaciones de mejora (Art. 2.e-g, RD 390/2021)."@es ,
+                                "Documentation signed by a competent technician containing the energy performance rating of a building or part thereof, its energy characteristics and improvement recommendations (Art. 2.e-g, RD 390/2021)."@en ;
+                   rdfs:label "Certificado de eficiencia energética"@es ,
+                              "Energy performance certificate"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyLabel
+:EnergyLabel rdf:type owl:Class ;
+             rdfs:comment "Distinctive mark associated with a registered certificate that publicly attests to the energy rating obtained (Art. 2.ñ, Art. 15)."@en ,
+                          "Distintivo asociado a un certificado registrado que acredita públicamente la calificación energética obtenida (Art. 2.ñ, Art. 15)."@es ;
+             rdfs:label "Energy label"@en ,
+                        "Etiqueta de eficiencia energética"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating
+:EnergyRating rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :co2Emissions ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :primaryEnergyNonRenewable ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :ratingLetter ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              rdfs:comment "Expresión de la eficiencia energética de un edificio mediante indicadores numéricos de consumo y emisiones, resumida en una letra de la escala A-G (Art. 2.a)."@es ,
+                           "Expression of the energy efficiency of a building through numerical consumption and emission indicators, summarised as a letter on the A-G scale (Art. 2.a)."@en ;
+              rdfs:label "Calificación energética"@es ,
+                         "Energy rating"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ExistingBuildingCertificate
+:ExistingBuildingCertificate rdf:type owl:Class ;
+                             rdfs:subClassOf :EnergyCertificate ;
+                             rdfs:comment "Certificado de eficiencia energética de un edificio existente, con una única fase (Art. 2.d, Art. 10)."@es ,
+                                          "Energy performance certificate for an existing building, with a single phase (Art. 2.d, Art. 10)."@en ;
+                             rdfs:label "Certificado de edificio existente"@es ,
+                                        "Existing building certificate"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation
+:ImprovementRecommendation rdf:type owl:Class ;
+                           rdfs:comment "Intervención técnicamente viable para la mejora de los niveles óptimos o rentables de la eficiencia energética, incluyendo estimación de costes y plazos de recuperación (Art. 8.2.f)."@es ,
+                                        "Technically viable intervention for improving optimal or cost-effective energy efficiency levels, including cost estimates and payback periods (Art. 8.2.f)."@en ;
+                           rdfs:label "Improvement recommendation"@en ,
+                                      "Recomendación de mejora"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/LabelScopeValue
+:LabelScopeValue rdf:type owl:Class ;
+                 rdfs:subClassOf xsd:string .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ProcedureTypeValue
+:ProcedureTypeValue rdf:type owl:Class ;
+                    rdfs:subClassOf xsd:string .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ProjectCertificate
+:ProjectCertificate rdf:type owl:Class ;
+                    rdfs:subClassOf :EnergyCertificate ;
+                    rdfs:comment "Certificado de eficiencia energética obtenido a partir de las características especificadas en el proyecto de ejecución (Art. 2.b, Art. 9)."@es ,
+                                 "Energy performance certificate obtained from the characteristics specified in the execution project (Art. 2.b, Art. 9)."@en ;
+                    rdfs:label "Certificado de proyecto"@es ,
+                               "Project certificate"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/RatingLetterValue
+:RatingLetterValue rdf:type owl:Class ;
+                   rdfs:subClassOf xsd:string .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/RecommendationTypeValue
+:RecommendationTypeValue rdf:type owl:Class ;
+                         rdfs:subClassOf xsd:string .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/UserRecommendations
+:UserRecommendations rdf:type owl:Class ;
+                     rdfs:comment "Document with recommendations for the building user/tenant on how to use the building and its systems to achieve optimal energy efficiency (Art. 8.1.f)."@en ,
+                                  "Documento con recomendaciones para el usuario/arrendatario del edificio sobre cómo utilizar el edificio y sus sistemas para lograr la máxima eficiencia energética (Art. 8.1.f)."@es ;
+                     rdfs:label "Recomendaciones de uso para el usuario"@es ,
+                                "User recommendations"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://vocab.linkeddata.es/datosabiertos/kos/edintcee/building-use/BuildingUses
+<http://vocab.linkeddata.es/datosabiertos/kos/edintcee/building-use/BuildingUses> rdf:type owl:NamedIndividual .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/ClimaticZones
+<http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/ClimaticZones> rdf:type owl:NamedIndividual .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/EnergySources
+<http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/EnergySources> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:BuildingTypeValue rdfs:comment "Valores: new, existing."@es ,
+                                "Values: new, existing."@en ;
+                   rdfs:label "Building type value"@en ,
+                              "Valor de tipo de edificio"@es .
+
+
+:LabelScopeValue rdfs:comment "Valores: project, completedWork, existingBuilding."@es ,
+                              "Values: project, completedWork, existingBuilding."@en ;
+                 rdfs:label "Label scope value"@en ,
+                            "Valor de ámbito de etiqueta"@es .
+
+
+:ProcedureTypeValue rdfs:comment "Valores: general, simplified."@es ,
+                                 "Values: general, simplified."@en ;
+                    rdfs:label "Procedure type value"@en ,
+                               "Valor de tipo de procedimiento"@es .
+
+
+:RatingLetterValue rdfs:comment "Possible values: A, B, C, D, E, F, G."@en ,
+                                "Valores posibles: A, B, C, D, E, F, G."@es ;
+                   rdfs:label "Rating letter value"@en ,
+                              "Valor de letra de calificación"@es .
+
+
+:RecommendationTypeValue rdfs:comment "Valores: envelope, installation, automation, combined."@es ,
+                                      "Values: envelope, installation, automation, combined."@en ;
+                         rdfs:label "Recommendation type value"@en ,
+                                    "Valor de tipo de recomendación"@es .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

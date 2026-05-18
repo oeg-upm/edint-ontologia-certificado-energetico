@@ -1,0 +1,7 @@
+# Widoco generated files
+widoco.conf
+widoco.sh
+widoco-manual-edit.txt
+
+# Python
+.venv/
