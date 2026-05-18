@@ -1,0 +1,11 @@
+index-en.html
+index-es.html
+sections/abstract-en.html
+sections/abstract-es.html
+sections/description-en.html
+sections/description-es.html
+sections/introduction-en.html
+sections/introduction-es.html
+sections/references-en.html
+sections/references-es.html
+resources/marked.min.js
