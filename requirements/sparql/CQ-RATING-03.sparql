@@ -1,0 +1,14 @@
+# CQ-RATING-03: ¿Qué versión de la escala de calificación se ha aplicado?
+# Distinguir escala original RD 390/2021 vs recalculada EPBD III
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?cert ?scaleLabel
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:hasRating ?rating .
+    ?rating edintcee:ratingScaleVersion ?scale .
+    ?scale skos:prefLabel ?scaleLabel .
+    FILTER (lang(?scaleLabel) = "es")
+}

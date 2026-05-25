@@ -1,0 +1,11 @@
+# FAC-RATING-01: Una calificación tiene exactamente una letra de calificación (A-G)
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?rating (COUNT(?letter) AS ?letterCount)
+WHERE {
+    ?rating a edintcee:EnergyRating .
+    OPTIONAL { ?rating edintcee:ratingLetter ?letter }
+}
+GROUP BY ?rating
+HAVING (COUNT(?letter) != 1)

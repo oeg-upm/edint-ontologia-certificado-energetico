@@ -1,0 +1,12 @@
+# FAC-CERT-07: Un certificado de obra terminada debe tener un certificado de proyecto predecesor
+# Art. 9 RD 390/2021
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CertificateType/>
+
+SELECT ?cert
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:certificateType edintceekos-ct:CompletedWork .
+    FILTER NOT EXISTS { ?cert edintcee:predecessorCertificate ?predecessor }
+}

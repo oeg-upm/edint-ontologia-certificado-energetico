@@ -1,0 +1,12 @@
+# CQ-PROC-01: ¿Qué procedimiento de cálculo se ha utilizado y de qué tipo (general/simplificado)?
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert ?procName ?procVersion ?procType
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:usesProcedure ?proc .
+    ?proc edintcee:procedureName ?procName ;
+          edintcee:procedureVersion ?procVersion ;
+          edintcee:procedureType ?procType .
+}

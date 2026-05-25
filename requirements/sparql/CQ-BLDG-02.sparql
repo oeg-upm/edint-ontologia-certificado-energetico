@@ -1,0 +1,12 @@
+# CQ-BLDG-02: ¿En qué zona climática se ubica el edificio?
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?cert ?zoneLabel
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:observedClimaticZone ?zone .
+    ?zone skos:prefLabel ?zoneLabel .
+    FILTER (lang(?zoneLabel) = "es")
+}

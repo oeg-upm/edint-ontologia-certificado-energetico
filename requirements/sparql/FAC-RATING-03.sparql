@@ -1,0 +1,12 @@
+# FAC-RATING-03: Una calificación tiene exactamente un valor de energía primaria no renovable y uno de emisiones CO2
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?rating (COUNT(?epNR) AS ?epNRCount) (COUNT(?co2) AS ?co2Count)
+WHERE {
+    ?rating a edintcee:EnergyRating .
+    OPTIONAL { ?rating edintcee:primaryEnergyNonRenewable ?epNR }
+    OPTIONAL { ?rating edintcee:co2Emissions ?co2 }
+}
+GROUP BY ?rating
+HAVING (COUNT(?epNR) != 1 || COUNT(?co2) != 1)

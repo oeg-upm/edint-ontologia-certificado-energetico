@@ -1,0 +1,13 @@
+# FAC-CERT-04: Un certificado tiene exactamente un tipo de certificado (SKOS concept in CertificateType)
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CertificateType/>
+
+SELECT ?cert (COUNT(?type) AS ?typeCount)
+WHERE {
+    ?cert a edintcee:EnergyCertificate .
+    OPTIONAL { ?cert edintcee:certificateType ?type }
+}
+GROUP BY ?cert
+HAVING (COUNT(?type) != 1)

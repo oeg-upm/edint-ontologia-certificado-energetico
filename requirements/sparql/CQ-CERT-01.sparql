@@ -1,0 +1,11 @@
+# CQ-CERT-01: ¿Cuál es la calificación energética de un edificio?
+# Obtiene la letra de calificación para cada certificado
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert ?letter
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:hasRating ?rating .
+    ?rating edintcee:ratingLetter ?letter .
+}

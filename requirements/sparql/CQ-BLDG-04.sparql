@@ -1,0 +1,10 @@
+# CQ-BLDG-04: ¿Cuál es la transmitancia global de la envolvente y el ratio de huecos?
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert ?uValue ?windowRatio
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:globalHeatTransferCoeff ?uValue ;
+          edintcee:windowAreaRatio ?windowRatio .
+}

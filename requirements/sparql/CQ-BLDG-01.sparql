@@ -1,0 +1,12 @@
+# CQ-BLDG-01: ¿Cuál es el uso del edificio certificado?
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?cert ?useLabel
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:observedBuildingUse ?use .
+    ?use skos:prefLabel ?useLabel .
+    FILTER (lang(?useLabel) = "es")
+}

@@ -1,0 +1,11 @@
+# CQ-TECH-01: ¿Qué técnico emitió un certificado y qué titulación tiene?
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert ?techName ?qualification
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:issuedBy ?tech .
+    ?tech edintcee:technicianName ?techName ;
+          edintcee:technicianQualification ?qualification .
+}

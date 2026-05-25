@@ -1,0 +1,14 @@
+# CQ-CERT-02: ¿Qué certificados están caducados o próximos a caducar?
+# Parámetro: ?today se sustituye por la fecha actual; ?threshold por el horizonte (ej. 90 días)
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?cert ?validUntil ?daysRemaining
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:validUntil ?validUntil .
+    BIND (xsd:integer(?validUntil - "2026-05-25"^^xsd:date) AS ?daysRemaining)
+    FILTER (?daysRemaining <= 90)
+}
+ORDER BY ?daysRemaining

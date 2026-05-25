@@ -1,0 +1,11 @@
+# FAC-CERT-03: Un certificado usa exactamente un procedimiento de cálculo
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert (COUNT(?proc) AS ?procCount)
+WHERE {
+    ?cert a edintcee:EnergyCertificate .
+    OPTIONAL { ?cert edintcee:usesProcedure ?proc }
+}
+GROUP BY ?cert
+HAVING (COUNT(?proc) != 1)

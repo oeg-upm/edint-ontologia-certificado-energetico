@@ -1,0 +1,13 @@
+# CQ-CERT-04: ¿Qué certificados de proyecto tienen un certificado de obra terminada asociado?
+# Emparejamiento proyecto→obra terminada vía predecessorCertificate
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CertificateType/>
+
+SELECT ?completedCert ?projectCert
+WHERE {
+    ?completedCert a edintcee:EnergyCertificate ;
+                    edintcee:predecessorCertificate ?projectCert ;
+                    edintcee:certificateType edintceekos-ct:CompletedWork .
+    ?projectCert edintcee:certificateType edintceekos-ct:Project .
+}

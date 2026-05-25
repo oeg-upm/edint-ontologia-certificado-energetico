@@ -1,0 +1,12 @@
+# CQ-USER-01: ¿Se han entregado las recomendaciones de uso al usuario/arrendatario?
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert ?delivered ?recipient ?deliveryDate
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:hasUserRecommendations ?userRec .
+    ?userRec edintcee:userRecommendationsDelivered ?delivered ;
+             edintcee:userRecommendationsRecipient ?recipient .
+    OPTIONAL { ?userRec edintcee:userRecommendationsDeliveryDate ?deliveryDate }
+}

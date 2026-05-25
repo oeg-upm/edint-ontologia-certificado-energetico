@@ -1,0 +1,13 @@
+# CQ-CERT-03: ¿Qué tipo de certificado tiene un edificio (proyecto, obra terminada, existente)?
+# Usa el vocabulario SKOS certificate-type
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?cert ?typeLabel
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:certificateType ?type .
+    ?type skos:prefLabel ?typeLabel .
+    FILTER (lang(?typeLabel) = "es")
+}

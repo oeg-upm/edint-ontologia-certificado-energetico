@@ -1,0 +1,11 @@
+# FAC-CERT-02: Un certificado es emitido por exactamente un técnico competente
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert (COUNT(?tech) AS ?techCount)
+WHERE {
+    ?cert a edintcee:EnergyCertificate .
+    OPTIONAL { ?cert edintcee:issuedBy ?tech }
+}
+GROUP BY ?cert
+HAVING (COUNT(?tech) != 1)

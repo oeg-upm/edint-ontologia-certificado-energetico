@@ -1,0 +1,12 @@
+# FAC-CERT-05: Un certificado tiene exactamente una fecha de emisión y una fecha de validez
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert (COUNT(?issue) AS ?issueCount) (COUNT(?valid) AS ?validCount)
+WHERE {
+    ?cert a edintcee:EnergyCertificate .
+    OPTIONAL { ?cert edintcee:issueDate ?issue }
+    OPTIONAL { ?cert edintcee:validUntil ?valid }
+}
+GROUP BY ?cert
+HAVING (COUNT(?issue) != 1 || COUNT(?valid) != 1)

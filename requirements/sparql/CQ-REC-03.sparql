@@ -1,0 +1,12 @@
+# CQ-REC-03: ¿Qué tipo de recomendación domina (envolvente, instalación, automatización, combinada)?
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?recType (COUNT(?rec) AS ?count)
+WHERE {
+    ?cert a edintcee:EnergyCertificate ;
+          edintcee:hasRecommendation ?rec .
+    ?rec edintcee:recommendationType ?recType .
+}
+GROUP BY ?recType
+ORDER BY DESC(?count)

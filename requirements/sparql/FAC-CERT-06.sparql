@@ -1,0 +1,9 @@
+# FAC-CERT-06: Un certificado tiene al menos un documento de recomendaciones de uso
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert
+WHERE {
+    ?cert a edintcee:EnergyCertificate .
+    FILTER NOT EXISTS { ?cert edintcee:hasUserRecommendations ?userRec }
+}

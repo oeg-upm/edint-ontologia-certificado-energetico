@@ -1,0 +1,34 @@
+# FAC-INV-01: Las propiedades inversas son consistentes con las directas
+# Verifica que hasRating↔ratingOf, issuedBy↔issuedCertificate, etc.
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+
+SELECT ?cert ?property ?value
+WHERE {
+    ?cert a edintcee:EnergyCertificate .
+    {
+        ?cert edintcee:hasRating ?value .
+        FILTER NOT EXISTS { ?value edintcee:ratingOf ?cert }
+        BIND ("hasRating↔ratingOf" AS ?property)
+    } UNION {
+        ?cert edintcee:issuedBy ?value .
+        FILTER NOT EXISTS { ?value edintcee:issuedCertificate ?cert }
+        BIND ("issuedBy↔issuedCertificate" AS ?property)
+    } UNION {
+        ?cert edintcee:hasLabel ?value .
+        FILTER NOT EXISTS { ?value edintcee:labelFor ?cert }
+        BIND ("hasLabel↔labelFor" AS ?property)
+    } UNION {
+        ?cert edintcee:hasRecommendation ?value .
+        FILTER NOT EXISTS { ?value edintcee:recommendationFor ?cert }
+        BIND ("hasRecommendation↔recommendationFor" AS ?property)
+    } UNION {
+        ?cert edintcee:usesProcedure ?value .
+        FILTER NOT EXISTS { ?value edintcee:procedureUsedBy ?cert }
+        BIND ("usesProcedure↔procedureUsedBy" AS ?property)
+    } UNION {
+        ?cert edintcee:predecessorCertificate ?value .
+        FILTER NOT EXISTS { ?value edintcee:successorCertificate ?cert }
+        BIND ("predecessorCertificate↔successorCertificate" AS ?property)
+    }
+}

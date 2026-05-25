@@ -1,0 +1,18 @@
+# CQ-BLDG-03: ¿Qué fuentes de energía usa el edificio para calefacción, refrigeración y ACS?
+
+PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?cert ?heatSourceLabel ?coolSourceLabel ?dhwSourceLabel
+WHERE {
+    ?cert a edintcee:EnergyCertificate .
+    OPTIONAL { ?cert edintcee:heatingEnergySource ?heatSource .
+               ?heatSource skos:prefLabel ?heatSourceLabel .
+               FILTER (lang(?heatSourceLabel) = "es") }
+    OPTIONAL { ?cert edintcee:coolingEnergySource ?coolSource .
+               ?coolSource skos:prefLabel ?coolSourceLabel .
+               FILTER (lang(?coolSourceLabel) = "es") }
+    OPTIONAL { ?cert edintcee:dhwEnergySource ?dhwSource .
+               ?dhwSource skos:prefLabel ?dhwSourceLabel .
+               FILTER (lang(?dhwSourceLabel) = "es") }
+}
