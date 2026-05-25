@@ -1,61 +1,65 @@
-@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms:  <http://purl.org/dc/terms/> .
-@prefix cc:       <http://creativecommons.org/ns#> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CertificateType/> .
 
 # ---------------------------------------------------------------------------
 # CONCEPT SCHEME
 # ---------------------------------------------------------------------------
-edintceekos-ct:CertificateTypes a skos:ConceptScheme ;
-    dcterms:issued "2026-05-18"^^xsd:date ;
-    dcterms:modified "2026-05-18"^^xsd:date ;
+edintkos:CertificateType a skos:ConceptScheme ;
+    dct:issued "2026-05-18"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:comment "This concept scheme belongs to the set of SKOS thesauri used by the Energy Performance Certificate ontology."@en ;
-    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de Certificados de Eficiencia Energética."@es ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
     rdfs:label "Certificate types"@en ;
     rdfs:label "Tipos de certificado"@es ;
-    dcterms:title "Esquema de conceptos agrupando los tipos de certificado de eficiencia energética de edificios"@es ;
-    dcterms:title "Concept scheme grouping energy performance certificate types for buildings"@en ;
-    skos:note "Vocabulario de tipos de certificado derivado del RD 390/2021, Art. 2.b-g, Art. 9 y Art. 10."@es ;
-    skos:note "Vocabulary of certificate types derived from RD 390/2021, Art. 2.b-g, Art. 9 and Art. 10."@en .
+    dct:title "Concept scheme grouping energy performance certificate types for buildings"@en ;
+    dct:title "Esquema de conceptos agrupando los tipos de certificado de eficiencia energética de edificios"@es ;
+    skos:definition "Tipos de certificado de eficiencia energética según el RD 390/2021, Art. 2.b-g, Art. 9 y Art. 10."@es ;
+    skos:definition "Energy performance certificate types per RD 390/2021, Art. 2.b-g, Art. 9 and Art. 10."@en ;
+    skos:hasTopConcept edintceekos-ct:Project , edintceekos-ct:CompletedWork , edintceekos-ct:ExistingBuilding .
 
 # ---------------------------------------------------------------------------
 # PROYECTO (Art. 2.b, Art. 9)
 # ---------------------------------------------------------------------------
 edintceekos-ct:Project a skos:Concept ;
-    skos:inScheme edintceekos-ct:CertificateTypes ;
-    skos:prefLabel "Certificado de proyecto"@es ;
-    skos:prefLabel "Project certificate"@en ;
+    skos:inScheme edintkos:CertificateType ;
+    skos:prefLabel "Certificado de proyecto"@es , "Project certificate"@en ;
     skos:notation "project" ;
     skos:definition "Certificado de eficiencia energética obtenido a partir de las características especificadas en el proyecto de ejecución (Art. 2.b, Art. 9 RD 390/2021)."@es ;
     skos:definition "Energy performance certificate obtained from the characteristics specified in the execution project (Art. 2.b, Art. 9 RD 390/2021)."@en ;
     skos:scopeNote "Primera fase del proceso de certificación de edificios nuevos o de reformas/ampliaciones (Art. 9.1)."@es ;
-    skos:scopeNote "First phase of the certification process for new buildings or renovations/extensions (Art. 9.1)."@en .
+    skos:scopeNote "First phase of the certification process for new buildings or renovations/extensions (Art. 9.1)."@en ;
+    skos:topConceptOf edintkos:CertificateType .
 
 # ---------------------------------------------------------------------------
 # OBRA TERMINADA (Art. 2.c, Art. 9)
 # ---------------------------------------------------------------------------
 edintceekos-ct:CompletedWork a skos:Concept ;
-    skos:inScheme edintceekos-ct:CertificateTypes ;
-    skos:prefLabel "Certificado de obra terminada"@es ;
-    skos:prefLabel "Completed work certificate"@en ;
+    skos:inScheme edintkos:CertificateType ;
+    skos:prefLabel "Certificado de obra terminada"@es , "Completed work certificate"@en ;
     skos:notation "completedWork" ;
     skos:definition "Certificado de eficiencia energética obtenido a partir de las características efectivas del edificio terminado, que permite la comparación con la calificación del certificado de proyecto (Art. 2.c, Art. 9 RD 390/2021)."@es ;
     skos:definition "Energy performance certificate obtained from the effective characteristics of the completed building, enabling comparison with the project certificate rating (Art. 2.c, Art. 9 RD 390/2021)."@en ;
     skos:scopeNote "Segunda fase del proceso de certificación de edificios nuevos o de reformas/ampliaciones (Art. 9.1). Debe emparejarse con un certificado de proyecto predecessor."@es ;
-    skos:scopeNote "Second phase of the certification process for new buildings or renovations/extensions (Art. 9.1). Must be paired with a predecessor project certificate."@en .
+    skos:scopeNote "Second phase of the certification process for new buildings or renovations/extensions (Art. 9.1). Must be paired with a predecessor project certificate."@en ;
+    skos:topConceptOf edintkos:CertificateType .
 
 # ---------------------------------------------------------------------------
 # EDIFICIO EXISTENTE (Art. 2.d, Art. 10)
 # ---------------------------------------------------------------------------
 edintceekos-ct:ExistingBuilding a skos:Concept ;
-    skos:inScheme edintceekos-ct:CertificateTypes ;
-    skos:prefLabel "Certificado de edificio existente"@es ;
-    skos:prefLabel "Existing building certificate"@en ;
+    skos:inScheme edintkos:CertificateType ;
+    skos:prefLabel "Certificado de edificio existente"@es , "Existing building certificate"@en ;
     skos:notation "existingBuilding" ;
     skos:definition "Certificado de eficiencia energética de un edificio existente o parte del mismo, con datos calculados o medidos (Art. 2.d, Art. 10 RD 390/2021)."@es ;
     skos:definition "Energy performance certificate for an existing building or part thereof, with calculated or measured data (Art. 2.d, Art. 10 RD 390/2021)."@en ;
     skos:scopeNote "Única fase del proceso de certificación de edificios existentes (Art. 10). Proceso independiente, sin emparejamiento obligatorio."@es ;
-    skos:scopeNote "Single phase of the certification process for existing buildings (Art. 10). Independent process, no mandatory pairing."@en .
+    skos:scopeNote "Single phase of the certification process for existing buildings (Art. 10). Independent process, no mandatory pairing."@en ;
+    skos:topConceptOf edintkos:CertificateType .

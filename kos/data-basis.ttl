@@ -1,55 +1,59 @@
-@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms:  <http://purl.org/dc/terms/> .
-@prefix cc:       <http://creativecommons.org/ns#> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix edintceekos-db: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/data-basis/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-db: <http://vocab.linkeddata.es/datosabiertos/kos/edint/DataBasis/> .
 
 # ---------------------------------------------------------------------------
 # CONCEPT SCHEME
 # ---------------------------------------------------------------------------
-edintceekos-db:DataBasisTypes a skos:ConceptScheme ;
-    dcterms:issued "2026-05-25"^^xsd:date ;
-    dcterms:modified "2026-05-25"^^xsd:date ;
+edintkos:DataBasis a skos:ConceptScheme ;
+    dct:issued "2026-05-25"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:comment "This concept scheme belongs to the set of SKOS thesauri used by the Energy Performance Certificate ontology."@en ;
-    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de Certificados de Eficiencia Energética."@es ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
     rdfs:label "Data basis types"@en ;
     rdfs:label "Tipos de base de datos"@es ;
-    dcterms:title "Esquema de conceptos agrupando los tipos de base de los indicadores de calificación energética"@es ;
-    dcterms:title "Concept scheme grouping the data-basis types for energy rating indicators"@en ;
-    skos:note "Vocabulario de tipos de base de datos derivado del RD 390/2021, Art. 6.7."@es ;
-    skos:note "Vocabulary of data-basis types derived from RD 390/2021, Art. 6.7."@en .
+    dct:title "Concept scheme grouping data-basis types for energy rating indicators"@en ;
+    dct:title "Esquema de conceptos agrupando los tipos de base de los indicadores de calificación energética"@es ;
+    skos:definition "Tipos de base de los indicadores de calificación energética según el RD 390/2021, Art. 6.7."@es ;
+    skos:definition "Data-basis types for energy rating indicators per RD 390/2021, Art. 6.7."@en ;
+    skos:hasTopConcept edintceekos-db:Measured , edintceekos-db:Calculated , edintceekos-db:Mixed .
 
 # ---------------------------------------------------------------------------
 # MEASURED — Datos medidos
 # ---------------------------------------------------------------------------
 edintceekos-db:Measured a skos:Concept ;
-    skos:inScheme edintceekos-db:DataBasisTypes ;
-    skos:prefLabel "Medidos"@es ;
-    skos:prefLabel "Measured"@en ;
+    skos:inScheme edintkos:DataBasis ;
+    skos:prefLabel "Medidos"@es , "Measured"@en ;
     skos:notation "measured" ;
     skos:definition "Indicadores obtenidos a partir de datos de consumo medidos real del edificio."@es ;
-    skos:definition "Indicators obtained from measured real consumption data of the building."@en .
+    skos:definition "Indicators obtained from measured real consumption data of the building."@en ;
+    skos:topConceptOf edintkos:DataBasis .
 
 # ---------------------------------------------------------------------------
 # CALCULATED — Datos calculados
 # ---------------------------------------------------------------------------
 edintceekos-db:Calculated a skos:Concept ;
-    skos:inScheme edintceekos-db:DataBasisTypes ;
-    skos:prefLabel "Calculados"@es ;
-    skos:prefLabel "Calculated"@en ;
+    skos:inScheme edintkos:DataBasis ;
+    skos:prefLabel "Calculados"@es , "Calculated"@en ;
     skos:notation "calculated" ;
     skos:definition "Indicadores obtenidos mediante cálculo con el procedimiento reconocido."@es ;
-    skos:definition "Indicators obtained by calculation with the recognised procedure."@en .
+    skos:definition "Indicators obtained by calculation with the recognised procedure."@en ;
+    skos:topConceptOf edintkos:DataBasis .
 
 # ---------------------------------------------------------------------------
 # MIXED — Datos mixtos
 # ---------------------------------------------------------------------------
 edintceekos-db:Mixed a skos:Concept ;
-    skos:inScheme edintceekos-db:DataBasisTypes ;
-    skos:prefLabel "Mixtos"@es ;
-    skos:prefLabel "Mixed"@en ;
+    skos:inScheme edintkos:DataBasis ;
+    skos:prefLabel "Mixtos"@es , "Mixed"@en ;
     skos:notation "mixed" ;
     skos:definition "Indicadores obtenidos a partir de una combinación de datos medidos y calculados."@es ;
-    skos:definition "Indicators obtained from a combination of measured and calculated data."@en .
+    skos:definition "Indicators obtained from a combination of measured and calculated data."@en ;
+    skos:topConceptOf edintkos:DataBasis .

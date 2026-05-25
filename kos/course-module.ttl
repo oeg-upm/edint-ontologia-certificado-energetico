@@ -1,66 +1,70 @@
-@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms:  <http://purl.org/dc/terms/> .
-@prefix cc:       <http://creativecommons.org/ns#> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix edintceekos-cm: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/course-module/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-cm: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CourseModule/> .
 
 # ---------------------------------------------------------------------------
 # CONCEPT SCHEME
 # ---------------------------------------------------------------------------
-edintceekos-cm:CourseModules a skos:ConceptScheme ;
-    dcterms:issued "2026-05-25"^^xsd:date ;
-    dcterms:modified "2026-05-25"^^xsd:date ;
+edintkos:CourseModule a skos:ConceptScheme ;
+    dct:issued "2026-05-25"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:comment "This concept scheme belongs to the set of SKOS thesauri used by the Energy Performance Certificate ontology."@en ;
-    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de Certificados de Eficiencia Energética."@es ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
     rdfs:label "Course modules"@en ;
     rdfs:label "Módulos del curso"@es ;
-    dcterms:title "Esquema de conceptos agrupando los módulos del curso de conocimientos básicos, específicos y administrativos"@es ;
-    dcterms:title "Concept scheme grouping the modules of the basic, specific and administrative knowledge course"@en ;
-    skos:note "Vocabulario de módulos del curso derivado del RD 390/2021, Art. 4 bis."@es ;
-    skos:note "Vocabulary of course modules derived from RD 390/2021, Art. 4 bis."@en .
+    dct:title "Concept scheme grouping the modules of the basic, specific and administrative knowledge course"@en ;
+    dct:title "Esquema de conceptos agrupando los módulos del curso de conocimientos básicos, específicos y administrativos"@es ;
+    skos:definition "Módulos del curso de conocimientos según el RD 390/2021, Art. 4 bis."@es ;
+    skos:definition "Knowledge course modules per RD 390/2021, Art. 4 bis."@en ;
+    skos:hasTopConcept edintceekos-cm:None , edintceekos-cm:Module1 , edintceekos-cm:Module2 , edintceekos-cm:Module1And2 .
 
 # ---------------------------------------------------------------------------
 # NONE — Ningún módulo cursado
 # ---------------------------------------------------------------------------
 edintceekos-cm:None a skos:Concept ;
-    skos:inScheme edintceekos-cm:CourseModules ;
-    skos:prefLabel "Ninguno"@es ;
-    skos:prefLabel "None"@en ;
+    skos:inScheme edintkos:CourseModule ;
+    skos:prefLabel "Ninguno"@es , "None"@en ;
     skos:notation "none" ;
     skos:definition "No se ha cursado ningún módulo del curso de conocimientos."@es ;
-    skos:definition "No course module has been completed."@en .
+    skos:definition "No course module has been completed."@en ;
+    skos:topConceptOf edintkos:CourseModule .
 
 # ---------------------------------------------------------------------------
 # MODULE 1 — Módulo 1 (básico y específico)
 # ---------------------------------------------------------------------------
 edintceekos-cm:Module1 a skos:Concept ;
-    skos:inScheme edintceekos-cm:CourseModules ;
-    skos:prefLabel "Módulo 1 (básico y específico)"@es ;
-    skos:prefLabel "Module 1 (basic and specific)"@en ;
+    skos:inScheme edintkos:CourseModule ;
+    skos:prefLabel "Módulo 1 (básico y específico)"@es , "Module 1 (basic and specific)"@en ;
     skos:notation "module1" ;
     skos:definition "Se ha cursado el módulo 1 de conocimientos básicos y específicos."@es ;
-    skos:definition "Module 1 of basic and specific knowledge has been completed."@en .
+    skos:definition "Module 1 of basic and specific knowledge has been completed."@en ;
+    skos:topConceptOf edintkos:CourseModule .
 
 # ---------------------------------------------------------------------------
 # MODULE 2 — Módulo 2 (administrativo)
 # ---------------------------------------------------------------------------
 edintceekos-cm:Module2 a skos:Concept ;
-    skos:inScheme edintceekos-cm:CourseModules ;
-    skos:prefLabel "Módulo 2 (administrativo)"@es ;
-    skos:prefLabel "Module 2 (administrative)"@en ;
+    skos:inScheme edintkos:CourseModule ;
+    skos:prefLabel "Módulo 2 (administrativo)"@es , "Module 2 (administrative)"@en ;
     skos:notation "module2" ;
     skos:definition "Se ha cursado el módulo 2 de conocimientos administrativos."@es ;
-    skos:definition "Module 2 of administrative knowledge has been completed."@en .
+    skos:definition "Module 2 of administrative knowledge has been completed."@en ;
+    skos:topConceptOf edintkos:CourseModule .
 
 # ---------------------------------------------------------------------------
 # MODULE 1 AND 2 — Ambos módulos
 # ---------------------------------------------------------------------------
 edintceekos-cm:Module1And2 a skos:Concept ;
-    skos:inScheme edintceekos-cm:CourseModules ;
-    skos:prefLabel "Módulos 1 y 2 (completo)"@es ;
-    skos:prefLabel "Modules 1 and 2 (complete)"@en ;
+    skos:inScheme edintkos:CourseModule ;
+    skos:prefLabel "Módulos 1 y 2 (completo)"@es , "Modules 1 and 2 (complete)"@en ;
     skos:notation "module1And2" ;
     skos:definition "Se han cursado ambos módulos del curso de conocimientos (básico, específico y administrativo)."@es ;
-    skos:definition "Both modules of the knowledge course have been completed (basic, specific and administrative)."@en .
+    skos:definition "Both modules of the knowledge course have been completed (basic, specific and administrative)."@en ;
+    skos:topConceptOf edintkos:CourseModule .

@@ -1,75 +1,68 @@
-@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms:  <http://purl.org/dc/terms/> .
-@prefix cc:       <http://creativecommons.org/ns#> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edint/ClimaticZone/> .
 
 # ---------------------------------------------------------------------------
 # CONCEPT SCHEME
 # ---------------------------------------------------------------------------
-edintceekos-cz:ClimaticZones a skos:ConceptScheme ;
-    dcterms:issued "2026-05-14"^^xsd:date ;
-    dcterms:modified "2026-05-14"^^xsd:date ;
+edintkos:ClimaticZone a skos:ConceptScheme ;
+    dct:issued "2026-05-14"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:comment "This concept scheme belongs to the set of SKOS thesauri used by the Energy Performance Certificate ontology."@en ;
-    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de Certificados de Eficiencia Energética."@es ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
     rdfs:label "Climatic zones"@en ;
     rdfs:label "Zonas climáticas"@es ;
-    dcterms:title "Esquema de conceptos agrupando zonas climáticas según el Documento Básico HE del Código Técnico de la Edificación"@es ;
-    dcterms:title "Concept scheme grouping climatic zones according to the Basic Document HE of the Technical Building Code"@en ;
-    skos:note "Vocabulario jerárquico de zonas climáticas. Letra: severidad invernal (A-E), número: severidad estival (1-4)."@es ;
-    skos:note "Hierarchical vocabulary of climatic zones. Letter: winter severity (A-E), number: summer severity (1-4)."@en ;
-    skos:hasTopConcept edintceekos-cz:WinterSeverity ;
-    skos:hasTopConcept edintceekos-cz:SummerSeverity .
+    dct:title "Concept scheme grouping climatic zones according to CTE DB-HE"@en ;
+    dct:title "Esquema de conceptos agrupando zonas climáticas según el CTE DB-HE"@es ;
+    skos:definition "Zonas climáticas del Código Técnico de la Edificación, DB-HE. Letra: severidad invernal (A-E), número: severidad estival (1-4)."@es ;
+    skos:definition "Climatic zones from the Technical Building Code, DB-HE. Letter: winter severity (A-E), number: summer severity (1-4)."@en ;
+    skos:hasTopConcept edintceekos-cz:WinterSeverity , edintceekos-cz:SummerSeverity .
 
 # ===========================================================================
 # WINTER SEVERITY
 # ===========================================================================
 
 edintceekos-cz:WinterSeverity a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
-    skos:prefLabel "Severidad invernal"@es ;
-    skos:prefLabel "Winter severity"@en ;
+    skos:inScheme edintkos:ClimaticZone ;
+    skos:prefLabel "Severidad invernal"@es , "Winter severity"@en ;
     skos:definition "Clasificación alfabética de la severidad invernal, de A (más cálido) a E (más frío)."@es ;
     skos:definition "Alphabetic classification of winter severity, from A (mildest) to E (coldest)."@en ;
-    skos:narrower edintceekos-cz:A ;
-    skos:narrower edintceekos-cz:B ;
-    skos:narrower edintceekos-cz:C ;
-    skos:narrower edintceekos-cz:D ;
-    skos:narrower edintceekos-cz:E .
+    skos:narrower edintceekos-cz:A , edintceekos-cz:B , edintceekos-cz:C , edintceekos-cz:D , edintceekos-cz:E ;
+    skos:topConceptOf edintkos:ClimaticZone .
 
 edintceekos-cz:A a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:WinterSeverity ;
-    skos:prefLabel "Invierno A"@es ;
-    skos:prefLabel "Winter A"@en ;
+    skos:prefLabel "Invierno A"@es , "Winter A"@en ;
     skos:definition "Zona con clima invernal más cálido."@es ;
     skos:definition "Zone with the mildest winter climate."@en .
 
 edintceekos-cz:B a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:WinterSeverity ;
-    skos:prefLabel "Invierno B"@es ;
-    skos:prefLabel "Winter B"@en .
+    skos:prefLabel "Invierno B"@es , "Winter B"@en .
 
 edintceekos-cz:C a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:WinterSeverity ;
-    skos:prefLabel "Invierno C"@es ;
-    skos:prefLabel "Winter C"@en .
+    skos:prefLabel "Invierno C"@es , "Winter C"@en .
 
 edintceekos-cz:D a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:WinterSeverity ;
-    skos:prefLabel "Invierno D"@es ;
-    skos:prefLabel "Winter D"@en .
+    skos:prefLabel "Invierno D"@es , "Winter D"@en .
 
 edintceekos-cz:E a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:WinterSeverity ;
-    skos:prefLabel "Invierno E"@es ;
-    skos:prefLabel "Winter E"@en ;
+    skos:prefLabel "Invierno E"@es , "Winter E"@en ;
     skos:definition "Zona con clima invernal más frío."@es ;
     skos:definition "Zone with the coldest winter climate."@en .
 
@@ -78,105 +71,98 @@ edintceekos-cz:E a skos:Concept ;
 # ===========================================================================
 
 edintceekos-cz:SummerSeverity a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
-    skos:prefLabel "Severidad estival"@es ;
-    skos:prefLabel "Summer severity"@en ;
+    skos:inScheme edintkos:ClimaticZone ;
+    skos:prefLabel "Severidad estival"@es , "Summer severity"@en ;
     skos:definition "Clasificación numérica de la severidad estival, de 1 (más suave) a 4 (más cálido)."@es ;
     skos:definition "Numeric classification of summer severity, from 1 (mildest) to 4 (hottest)."@en ;
-    skos:narrower edintceekos-cz:S1 ;
-    skos:narrower edintceekos-cz:S2 ;
-    skos:narrower edintceekos-cz:S3 ;
-    skos:narrower edintceekos-cz:S4 .
+    skos:narrower edintceekos-cz:S1 , edintceekos-cz:S2 , edintceekos-cz:S3 , edintceekos-cz:S4 ;
+    skos:topConceptOf edintkos:ClimaticZone .
 
 edintceekos-cz:S1 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:SummerSeverity ;
-    skos:prefLabel "Verano 1"@es ;
-    skos:prefLabel "Summer 1"@en .
+    skos:prefLabel "Verano 1"@es , "Summer 1"@en .
 
 edintceekos-cz:S2 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:SummerSeverity ;
-    skos:prefLabel "Verano 2"@es ;
-    skos:prefLabel "Summer 2"@en .
+    skos:prefLabel "Verano 2"@es , "Summer 2"@en .
 
 edintceekos-cz:S3 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:SummerSeverity ;
-    skos:prefLabel "Verano 3"@es ;
-    skos:prefLabel "Summer 3"@en .
+    skos:prefLabel "Verano 3"@es , "Summer 3"@en .
 
 edintceekos-cz:S4 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:broader edintceekos-cz:SummerSeverity ;
-    skos:prefLabel "Verano 4"@es ;
-    skos:prefLabel "Summer 4"@en .
+    skos:prefLabel "Verano 4"@es , "Summer 4"@en .
 
 # ===========================================================================
 # COMBINED ZONES
 # ===========================================================================
 
 edintceekos-cz:A3 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "A3"@es ;
     skos:definition "Canarias, costa sur peninsular."@es .
 
 edintceekos-cz:A4 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "A4"@es ;
     skos:definition "Canarias."@es .
 
 edintceekos-cz:B3 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "B3"@es ;
     skos:definition "Levante, Baleares."@es .
 
 edintceekos-cz:B4 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "B4"@es ;
     skos:definition "Costa levante y sur."@es .
 
 edintceekos-cz:C1 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "C1"@es ;
     skos:definition "Costa cantábrica, Galicia."@es .
 
 edintceekos-cz:C2 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "C2"@es ;
     skos:definition "Interior peninsular suave."@es .
 
 edintceekos-cz:C3 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "C3"@es ;
     skos:definition "Interior peninsular, levante interior."@es .
 
 edintceekos-cz:C4 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "C4"@es ;
     skos:definition "Valle del Guadalquivir."@es .
 
 edintceekos-cz:D1 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "D1"@es ;
     skos:definition "Interior norte."@es .
 
 edintceekos-cz:D2 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "D2"@es ;
     skos:definition "Interior peninsular."@es .
 
 edintceekos-cz:D3 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "D3"@es ;
     skos:definition "Madrid, interior peninsular."@es .
 
 edintceekos-cz:E1 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "E1"@es ;
     skos:definition "Zonas de montaña suaves."@es .
 
 edintceekos-cz:E2 a skos:Concept ;
-    skos:inScheme edintceekos-cz:ClimaticZones ;
+    skos:inScheme edintkos:ClimaticZone ;
     skos:prefLabel "E2"@es ;
     skos:definition "Pirineos, interior frío."@es .

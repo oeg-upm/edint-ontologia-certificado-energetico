@@ -6,18 +6,19 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix edintceekos-bu: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/building-use/> .
-@prefix edintceekos-es: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/> .
-@prefix edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/> .
-@prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-scale-version/> .
-@prefix edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/> .
-@prefix edintceekos-rl: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-letter/> .
-@prefix edintceekos-rt: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/recommendation-type/> .
-@prefix edintceekos-pt: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/procedure-type/> .
-@prefix edintceekos-rcp: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/recipient-type/> .
-@prefix edintceekos-db: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/data-basis/> .
-@prefix edintceekos-ap: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/access-path/> .
-@prefix edintceekos-cm: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/course-module/> .
+@prefix edintceekos-bu: <http://vocab.linkeddata.es/datosabiertos/kos/edint/BuildingUse/> .
+@prefix edintceekos-es: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnergySource/> .
+@prefix edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edint/ClimaticZone/> .
+@prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingScaleVersion/> .
+@prefix edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CertificateType/> .
+@prefix edintceekos-rl: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingLetter/> .
+@prefix edintceekos-rt: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RecommendationType/> .
+@prefix edintceekos-pt: <http://vocab.linkeddata.es/datosabiertos/kos/edint/ProcedureType/> .
+@prefix edintceekos-rcp: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RecipientType/> .
+@prefix edintceekos-db: <http://vocab.linkeddata.es/datosabiertos/kos/edint/DataBasis/> .
+@prefix edintceekos-ap: <http://vocab.linkeddata.es/datosabiertos/kos/edint/AccessPath/> .
+@prefix edintceekos-cm: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CourseModule/> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
 
 # =============================================================================
 # ONTOLOGY METADATA
@@ -238,7 +239,7 @@ edintcee:certificateType a owl:ObjectProperty , owl:FunctionalProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-ct:CertificateTypes
+              owl:hasValue edintkos:CertificateType
             ]
         )
     ] ;
@@ -257,7 +258,7 @@ edintcee:observedBuildingUse a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-bu:BuildingUses
+              owl:hasValue edintkos:BuildingUse
             ]
         )
     ] ;
@@ -274,7 +275,7 @@ edintcee:observedClimaticZone a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-cz:ClimaticZones
+              owl:hasValue edintkos:ClimaticZone
             ]
         )
     ] ;
@@ -291,7 +292,7 @@ edintcee:heatingEnergySource a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-es:EnergySources
+              owl:hasValue edintkos:EnergySource
             ]
         )
     ] ;
@@ -308,7 +309,7 @@ edintcee:coolingEnergySource a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-es:EnergySources
+              owl:hasValue edintkos:EnergySource
             ]
         )
     ] ;
@@ -325,7 +326,7 @@ edintcee:dhwEnergySource a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-es:EnergySources
+              owl:hasValue edintkos:EnergySource
             ]
         )
     ] ;
@@ -342,7 +343,7 @@ edintcee:ventilationEnergySource a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-es:EnergySources
+              owl:hasValue edintkos:EnergySource
             ]
         )
     ] ;
@@ -359,7 +360,7 @@ edintcee:renewableEnergySource a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-es:EnergySources
+              owl:hasValue edintkos:EnergySource
             ]
         )
     ] ;
@@ -378,7 +379,7 @@ edintcee:ratingScaleVersion a owl:ObjectProperty , owl:FunctionalProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-rsv:RatingScaleVersions
+              owl:hasValue edintkos:RatingScaleVersion
             ]
         )
     ] ;
@@ -871,7 +872,7 @@ edintcee:ratingLetter a owl:ObjectProperty , owl:FunctionalProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-rl:RatingLetters
+              owl:hasValue edintkos:RatingLetter
             ]
         )
     ] ;
@@ -992,7 +993,7 @@ edintcee:dataBasis a owl:ObjectProperty , owl:FunctionalProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-db:DataBasisTypes
+              owl:hasValue edintkos:DataBasis
             ]
         )
     ] ;
@@ -1013,7 +1014,7 @@ edintcee:recommendationType a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-rt:RecommendationTypes
+              owl:hasValue edintkos:RecommendationType
             ]
         )
     ] ;
@@ -1068,7 +1069,7 @@ edintcee:improvedRatingLetter a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-rl:RatingLetters
+              owl:hasValue edintkos:RatingLetter
             ]
         )
     ] ;
@@ -1171,7 +1172,7 @@ edintcee:technicianAccessPath a owl:ObjectProperty , owl:FunctionalProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-ap:AccessPaths
+              owl:hasValue edintkos:AccessPath
             ]
         )
     ] ;
@@ -1188,7 +1189,7 @@ edintcee:technicianCourseModules a owl:ObjectProperty , owl:FunctionalProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-cm:CourseModules
+              owl:hasValue edintkos:CourseModule
             ]
         )
     ] ;
@@ -1217,7 +1218,7 @@ edintcee:labelRatingLetter a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-rl:RatingLetters
+              owl:hasValue edintkos:RatingLetter
             ]
         )
     ] ;
@@ -1252,7 +1253,7 @@ edintcee:procedureType a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-pt:ProcedureTypes
+              owl:hasValue edintkos:ProcedureType
             ]
         )
     ] ;
@@ -1289,7 +1290,7 @@ edintcee:userRecommendationsRecipient a owl:ObjectProperty ;
             skos:Concept
             [ a owl:Restriction ;
               owl:onProperty skos:inScheme ;
-              owl:hasValue edintceekos-rcp:RecipientTypes
+              owl:hasValue edintkos:RecipientType
             ]
         )
     ] ;

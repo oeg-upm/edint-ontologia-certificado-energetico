@@ -1,44 +1,48 @@
-@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms:  <http://purl.org/dc/terms/> .
-@prefix cc:       <http://creativecommons.org/ns#> .
-@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-scale-version/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingScaleVersion/> .
 
 # ---------------------------------------------------------------------------
 # CONCEPT SCHEME
 # ---------------------------------------------------------------------------
-edintceekos-rsv:RatingScaleVersions a skos:ConceptScheme ;
-    dcterms:issued "2026-05-18"^^xsd:date ;
-    dcterms:modified "2026-05-18"^^xsd:date ;
+edintkos:RatingScaleVersion a skos:ConceptScheme ;
+    dct:issued "2026-05-18"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
-    rdfs:comment "This concept scheme belongs to the set of SKOS thesauri used by the Energy Performance Certificate ontology."@en ;
-    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de Certificados de Eficiencia Energética."@es ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
     rdfs:label "Rating scale versions"@en ;
     rdfs:label "Versiones de escala de calificación"@es ;
-    dcterms:title "Esquema de conceptos agrupando las versiones de la escala de calificación energética de edificios"@es ;
-    dcterms:title "Concept scheme grouping energy rating scale versions for buildings"@en ;
-    skos:note "Vocabulario de versiones de escala de calificación energética derivado del RD 390/2021 y la Directiva (UE) 2024/1275 (EPBD III)."@es ;
-    skos:note "Vocabulary of energy rating scale versions derived from RD 390/2021 and Directive (EU) 2024/1275 (EPBD III)."@en .
+    dct:title "Concept scheme grouping energy rating scale versions for buildings"@en ;
+    dct:title "Esquema de conceptos agrupando las versiones de la escala de calificación energética de edificios"@es ;
+    skos:definition "Versiones de la escala de calificación energética derivadas del RD 390/2021 y la Directiva (UE) 2024/1275 (EPBD III)."@es ;
+    skos:definition "Energy rating scale versions derived from RD 390/2021 and Directive (EU) 2024/1275 (EPBD III)."@en ;
+    skos:hasTopConcept edintceekos-rsv:RD390_2021 , edintceekos-rsv:EPBD3_RECALCULATED .
 
 # ---------------------------------------------------------------------------
 # ESCALA ORIGINAL RD 390/2021
 # ---------------------------------------------------------------------------
 edintceekos-rsv:RD390_2021 a skos:Concept ;
-    skos:inScheme edintceekos-rsv:RatingScaleVersions ;
-    skos:prefLabel "Escala RD 390/2021"@es ;
-    skos:prefLabel "RD 390/2021 scale"@en ;
+    skos:inScheme edintkos:RatingScaleVersion ;
+    skos:prefLabel "Escala RD 390/2021"@es , "RD 390/2021 scale"@en ;
     skos:notation "RD390-2021" ;
     skos:definition "Escala original del RD 390/2021 con umbrales fijos de energía primaria no renovable y emisiones CO2 por tipo de edificio y zona climática."@es ;
-    skos:definition "Original scale from RD 390/2021 with fixed thresholds for non-renewable primary energy and CO2 emissions per building type and climatic zone."@en .
+    skos:definition "Original scale from RD 390/2021 with fixed thresholds for non-renewable primary energy and CO2 emissions per building type and climatic zone."@en ;
+    skos:topConceptOf edintkos:RatingScaleVersion .
 
 # ---------------------------------------------------------------------------
 # ESCALA RECALCULADA EPBD III
 # ---------------------------------------------------------------------------
 edintceekos-rsv:EPBD3_RECALCULATED a skos:Concept ;
-    skos:inScheme edintceekos-rsv:RatingScaleVersions ;
-    skos:prefLabel "Escala recalculada EPBD III"@es ;
-    skos:prefLabel "EPBD III recalculated scale"@en ;
+    skos:inScheme edintkos:RatingScaleVersion ;
+    skos:prefLabel "Escala recalculada EPBD III"@es , "EPBD III recalculated scale"@en ;
     skos:notation "EPBD3-recalculated" ;
     skos:definition "Escala recalculada conforme a la Directiva (UE) 2024/1275 (EPBD III), donde la clase A corresponde a edificios de emisión cero (ZEB) y las clases se distribuyen por percentiles del parque inmobiliario nacional."@es ;
-    skos:definition "Scale recalculated per Directive (EU) 2024/1275 (EPBD III), where class A corresponds to zero-emission buildings (ZEB) and classes are distributed by percentiles of the national building stock."@en .
+    skos:definition "Scale recalculated per Directive (EU) 2024/1275 (EPBD III), where class A corresponds to zero-emission buildings (ZEB) and classes are distributed by percentiles of the national building stock."@en ;
+    skos:topConceptOf edintkos:RatingScaleVersion .
