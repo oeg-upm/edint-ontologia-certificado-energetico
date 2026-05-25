@@ -23,8 +23,6 @@
     dcterms:title "Energy Performance Certificate Ontology for Buildings"@en ;
     dcterms:description "Ontología que modela los certificados de eficiencia energética de edificios según el Real Decreto 390/2021. La clase raíz es EnergyCertificate; el edificio es una entidad externa que apunta al certificado mediante una propiedad definida en su propia ontología."@es ;
     dcterms:description "An ontology modelling energy performance certificates for buildings according to Spanish Royal Decree 390/2021. The root class is EnergyCertificate; the building is an external entity that points to the certificate via a property defined in its own ontology."@en ;
-    dcterms:abstract "Ontología centrada en el certificado de eficiencia energética como unidad documental, incluyendo calificación energética, etiqueta, técnico competente, recomendaciones de mejora, procedimiento de cálculo y recomendaciones de uso para el usuario."@es ;
-    dcterms:abstract "Ontology focused on the energy performance certificate as a documentary unit, including energy rating, label, competent technician, improvement recommendations, calculation procedure and user recommendations."@en ;
     dcterms:issued "2026-05-14"^^xsd:date ;
     dcterms:created "2026-05-14"^^xsd:date ;
     dcterms:modified "2026-05-14"^^xsd:date ;
