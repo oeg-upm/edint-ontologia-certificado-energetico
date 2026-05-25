@@ -1,0 +1,156 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-bu: <http://vocab.linkeddata.es/datosabiertos/kos/edint/BuildingUse/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintkos:BuildingUse a skos:ConceptScheme ;
+    dct:issued "2026-05-14"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Building uses"@en ;
+    rdfs:label "Usos de edificio"@es ;
+    dct:title "Concept scheme grouping building use types according to RD 390/2021"@en ;
+    dct:title "Esquema de conceptos agrupando los tipos de uso de edificio según el RD 390/2021"@es ;
+    skos:definition "Usos de edificio según el RD 390/2021, Art. 3.1.e."@es ;
+    skos:definition "Building uses per RD 390/2021, Art. 3.1.e."@en ;
+    skos:hasTopConcept edintceekos-bu:Residential , edintceekos-bu:Administrative , edintceekos-bu:Healthcare , edintceekos-bu:Commercial , edintceekos-bu:Educational , edintceekos-bu:Cultural , edintceekos-bu:Recreational , edintceekos-bu:Restaurant , edintceekos-bu:Transport , edintceekos-bu:Sports , edintceekos-bu:Worship .
+
+# ---------------------------------------------------------------------------
+# RESIDENCIAL
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Residential a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Residencial"@es , "Residential"@en ;
+    skos:definition "Vivienda o edificio de uso residencial privado."@es ;
+    skos:definition "Dwelling or private residential building."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+edintceekos-bu:PublicResidential a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:broader edintceekos-bu:Residential ;
+    skos:prefLabel "Residencial público"@es , "Public residential"@en ;
+    skos:altLabel "Hotelero"@es , "Hospitality"@en ;
+    skos:definition "Hoteles, hostales, residencias y similares."@es ;
+    skos:definition "Hotels, hostels, residences and similar establishments."@en .
+
+# ---------------------------------------------------------------------------
+# ADMINISTRATIVO
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Administrative a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Administrativo"@es , "Administrative"@en ;
+    skos:definition "Edificios de uso administrativo o de oficinas."@es ;
+    skos:definition "Administrative or office buildings."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# SANITARIO
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Healthcare a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Sanitario"@es , "Healthcare"@en ;
+    skos:definition "Centros sanitarios, hospitales, consultorios."@es ;
+    skos:definition "Healthcare centres, hospitals, clinics."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# COMERCIAL
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Commercial a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Comercial"@es , "Commercial"@en ;
+    skos:definition "Edificios o locales destinados a actividad comercial."@es ;
+    skos:definition "Buildings or premises intended for commercial activity."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# DOCENTE
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Educational a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Docente"@es , "Educational"@en ;
+    skos:definition "Centros educativos, escuelas, universidades."@es ;
+    skos:definition "Educational centres, schools, universities."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# CULTURAL
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Cultural a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Cultural"@es , "Cultural"@en ;
+    skos:definition "Museos, bibliotecas, salas de exposiciones."@es ;
+    skos:definition "Museums, libraries, exhibition halls."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# RECREATIVO
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Recreational a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Recreativo"@es , "Recreational"@en ;
+    skos:definition "Actividades recreativas, de ocio y entretenimiento."@es ;
+    skos:definition "Recreational, leisure and entertainment activities."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# RESTAURACIÓN
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Restaurant a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Restauración"@es , "Restaurant / Catering"@en ;
+    skos:altLabel "Hostelería"@es ;
+    skos:definition "Restaurantes, cafeterías, bares y servicios de restauración."@es ;
+    skos:definition "Restaurants, cafeterias, bars and catering services."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# TRANSPORTE
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Transport a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Transporte"@es , "Transport"@en ;
+    skos:definition "Estaciones, terminales y edificios asociados al transporte de personas."@es ;
+    skos:definition "Stations, terminals and buildings associated with passenger transport."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# DEPORTIVO
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Sports a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Deportivo"@es , "Sports"@en ;
+    skos:definition "Instalaciones deportivas, pabellones, gimnasios."@es ;
+    skos:definition "Sports facilities, pavilions, gyms."@en ;
+    skos:topConceptOf edintkos:BuildingUse .
+
+# ---------------------------------------------------------------------------
+# CULTO
+# ---------------------------------------------------------------------------
+
+edintceekos-bu:Worship a skos:Concept ;
+    skos:inScheme edintkos:BuildingUse ;
+    skos:prefLabel "Lugares de culto"@es , "Places of worship"@en ;
+    skos:definition "Iglesias, mezquitas, sinagogas y otros lugares de culto."@es ;
+    skos:definition "Churches, mosques, synagogues and other places of worship."@en ;
+    skos:topConceptOf edintkos:BuildingUse .

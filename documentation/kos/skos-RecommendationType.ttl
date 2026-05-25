@@ -1,0 +1,70 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-rt: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RecommendationType/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintkos:RecommendationType a skos:ConceptScheme ;
+    dct:issued "2026-05-25"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Recommendation types"@en ;
+    rdfs:label "Tipos de recomendación"@es ;
+    dct:title "Concept scheme grouping energy improvement recommendation types"@en ;
+    dct:title "Esquema de conceptos agrupando los tipos de recomendación de mejora energética"@es ;
+    skos:definition "Tipos de recomendación de mejora energética según el RD 390/2021, Art. 8.2.f."@es ;
+    skos:definition "Energy improvement recommendation types per RD 390/2021, Art. 8.2.f."@en ;
+    skos:hasTopConcept edintceekos-rt:Envelope , edintceekos-rt:Installation , edintceekos-rt:Automation , edintceekos-rt:Combined .
+
+# ---------------------------------------------------------------------------
+# ENVELOPE — Intervención sobre la envolvente térmica
+# ---------------------------------------------------------------------------
+edintceekos-rt:Envelope a skos:Concept ;
+    skos:inScheme edintkos:RecommendationType ;
+    skos:prefLabel "Envolvente"@es , "Envelope"@en ;
+    skos:notation "envelope" ;
+    skos:definition "Intervención sobre la envolvente térmica del edificio (aislamiento, carpintería, acristalamiento, puentes térmicos)."@es ;
+    skos:definition "Intervention on the thermal envelope of the building (insulation, joinery, glazing, thermal bridges)."@en ;
+    skos:topConceptOf edintkos:RecommendationType .
+
+# ---------------------------------------------------------------------------
+# INSTALLATION — Intervención sobre las instalaciones térmicas
+# ---------------------------------------------------------------------------
+edintceekos-rt:Installation a skos:Concept ;
+    skos:inScheme edintkos:RecommendationType ;
+    skos:prefLabel "Instalación"@es , "Installation"@en ;
+    skos:notation "installation" ;
+    skos:definition "Intervención sobre las instalaciones térmicas (calefacción, refrigeración, ACS, ventilación)."@es ;
+    skos:definition "Intervention on thermal installations (heating, cooling, DHW, ventilation)."@en ;
+    skos:topConceptOf edintkos:RecommendationType .
+
+# ---------------------------------------------------------------------------
+# AUTOMATION — Intervención de automatización y control
+# ---------------------------------------------------------------------------
+edintceekos-rt:Automation a skos:Concept ;
+    skos:inScheme edintkos:RecommendationType ;
+    skos:prefLabel "Automatización"@es , "Automation"@en ;
+    skos:notation "automation" ;
+    skos:definition "Intervención de automatización y control (sistemas BMS, termostatos programables, regulación)."@es ;
+    skos:definition "Automation and control intervention (BMS systems, programmable thermostats, regulation)."@en ;
+    skos:topConceptOf edintkos:RecommendationType .
+
+# ---------------------------------------------------------------------------
+# COMBINED — Intervención combinada
+# ---------------------------------------------------------------------------
+edintceekos-rt:Combined a skos:Concept ;
+    skos:inScheme edintkos:RecommendationType ;
+    skos:prefLabel "Combinada"@es , "Combined"@en ;
+    skos:notation "combined" ;
+    skos:definition "Intervención combinada que afecta a más de un ámbito (envolvente + instalación, etc.)."@es ;
+    skos:definition "Combined intervention affecting more than one scope (envelope + installation, etc.)."@en ;
+    skos:topConceptOf edintkos:RecommendationType .

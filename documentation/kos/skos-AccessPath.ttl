@@ -1,0 +1,81 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-ap: <http://vocab.linkeddata.es/datosabiertos/kos/edint/AccessPath/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintkos:AccessPath a skos:ConceptScheme ;
+    dct:issued "2026-05-25"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Access paths"@en ;
+    rdfs:label "Vías de acceso"@es ;
+    dct:title "Concept scheme grouping access paths to the competent technician activity"@en ;
+    dct:title "Esquema de conceptos agrupando las vías de acceso a la actividad de técnico competente"@es ;
+    skos:definition "Vías de acceso a la actividad de técnico competente según el RD 390/2021, Art. 4 bis."@es ;
+    skos:definition "Access paths to the competent technician activity per RD 390/2021, Art. 4 bis."@en ;
+    skos:hasTopConcept edintceekos-ap:ProjectCertification , edintceekos-ap:UniversityTitleB , edintceekos-ap:UniversityTitleC , edintceekos-ap:VocationalTraining , edintceekos-ap:CompetenceStandard .
+
+# ---------------------------------------------------------------------------
+# PROJECT CERTIFICATION — Letra a): certificación de proyecto
+# ---------------------------------------------------------------------------
+edintceekos-ap:ProjectCertification a skos:Concept ;
+    skos:inScheme edintkos:AccessPath ;
+    skos:prefLabel "Certificación de proyecto"@es , "Project certification"@en ;
+    skos:notation "projectCertification" ;
+    skos:definition "Vía de acceso mediante la habilitación para firmar certificados de proyecto de edificios nuevos o de reforma."@es ;
+    skos:definition "Access path via qualification to sign project certificates for new or renovated buildings."@en ;
+    skos:topConceptOf edintkos:AccessPath .
+
+# ---------------------------------------------------------------------------
+# UNIVERSITY TITLE (b) — Letra b): título universitario habilitante
+# ---------------------------------------------------------------------------
+edintceekos-ap:UniversityTitleB a skos:Concept ;
+    skos:inScheme edintkos:AccessPath ;
+    skos:prefLabel "Título universitario (letra b)"@es , "University title (b)"@en ;
+    skos:notation "universityTitle_b" ;
+    skos:definition "Vía de acceso mediante título universitario habilitante según Art. 4 bis.b."@es ;
+    skos:definition "Access path via enabling university title per Art. 4 bis.b."@en ;
+    skos:topConceptOf edintkos:AccessPath .
+
+# ---------------------------------------------------------------------------
+# UNIVERSITY TITLE (c) — Letra c): título universitario + curso
+# ---------------------------------------------------------------------------
+edintceekos-ap:UniversityTitleC a skos:Concept ;
+    skos:inScheme edintkos:AccessPath ;
+    skos:prefLabel "Título universitario + curso (letra c)"@es , "University title + course (c)"@en ;
+    skos:notation "universityTitle_c" ;
+    skos:definition "Vía de acceso mediante título universitario más curso de conocimientos básicos, específicos y administrativos, según Art. 4 bis.c."@es ;
+    skos:definition "Access path via university title plus basic, specific and administrative knowledge course, per Art. 4 bis.c."@en ;
+    skos:topConceptOf edintkos:AccessPath .
+
+# ---------------------------------------------------------------------------
+# VOCATIONAL TRAINING — Formación profesional
+# ---------------------------------------------------------------------------
+edintceekos-ap:VocationalTraining a skos:Concept ;
+    skos:inScheme edintkos:AccessPath ;
+    skos:prefLabel "Formación profesional"@es , "Vocational training"@en ;
+    skos:notation "vocationalTraining" ;
+    skos:definition "Vía de acceso mediante formación profesional del área de edificación, según Art. 4 bis.d."@es ;
+    skos:definition "Access path via vocational training in the building area, per Art. 4 bis.d."@en ;
+    skos:topConceptOf edintkos:AccessPath .
+
+# ---------------------------------------------------------------------------
+# COMPETENCE STANDARD — Certificado de profesionalidad
+# ---------------------------------------------------------------------------
+edintceekos-ap:CompetenceStandard a skos:Concept ;
+    skos:inScheme edintkos:AccessPath ;
+    skos:prefLabel "Certificado de profesionalidad"@es , "Competence standard"@en ;
+    skos:notation "competenceStandard" ;
+    skos:definition "Vía de acceso mediante certificado de profesionalidad, según Art. 4 bis.e."@es ;
+    skos:definition "Access path via certificate of professional competence, per Art. 4 bis.e."@en ;
+    skos:topConceptOf edintkos:AccessPath .

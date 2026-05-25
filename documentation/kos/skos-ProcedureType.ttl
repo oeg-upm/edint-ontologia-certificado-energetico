@@ -1,0 +1,48 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-pt: <http://vocab.linkeddata.es/datosabiertos/kos/edint/ProcedureType/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintkos:ProcedureType a skos:ConceptScheme ;
+    dct:issued "2026-05-25"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Procedure types"@en ;
+    rdfs:label "Tipos de procedimiento"@es ;
+    dct:title "Concept scheme grouping recognised calculation procedure types"@en ;
+    dct:title "Esquema de conceptos agrupando los tipos de procedimiento de cálculo reconocido"@es ;
+    skos:definition "Tipos de procedimiento de cálculo reconocido según el RD 390/2021, Art. 4.2.a y Art. 5."@es ;
+    skos:definition "Recognised calculation procedure types per RD 390/2021, Art. 4.2.a and Art. 5."@en ;
+    skos:hasTopConcept edintceekos-pt:General , edintceekos-pt:Simplified .
+
+# ---------------------------------------------------------------------------
+# GENERAL — Procedimiento general
+# ---------------------------------------------------------------------------
+edintceekos-pt:General a skos:Concept ;
+    skos:inScheme edintkos:ProcedureType ;
+    skos:prefLabel "General"@es , "General"@en ;
+    skos:notation "general" ;
+    skos:definition "Procedimiento general de cálculo de la calificación energética, aplicable a cualquier tipo de edificio."@es ;
+    skos:definition "General procedure for calculating the energy rating, applicable to any building type."@en ;
+    skos:topConceptOf edintkos:ProcedureType .
+
+# ---------------------------------------------------------------------------
+# SIMPLIFIED — Procedimiento simplificado
+# ---------------------------------------------------------------------------
+edintceekos-pt:Simplified a skos:Concept ;
+    skos:inScheme edintkos:ProcedureType ;
+    skos:prefLabel "Simplificado"@es , "Simplified"@en ;
+    skos:notation "simplified" ;
+    skos:definition "Procedimiento simplificado de cálculo, aplicable a determinados tipos de edificio según los criterios del RD 390/2021."@es ;
+    skos:definition "Simplified calculation procedure, applicable to certain building types according to RD 390/2021 criteria."@en ;
+    skos:topConceptOf edintkos:ProcedureType .

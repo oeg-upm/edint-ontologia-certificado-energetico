@@ -1,0 +1,59 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-rcp: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RecipientType/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintkos:RecipientType a skos:ConceptScheme ;
+    dct:issued "2026-05-25"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Recipient types"@en ;
+    rdfs:label "Tipos de destinatario"@es ;
+    dct:title "Concept scheme grouping user-recommendation recipient types"@en ;
+    dct:title "Esquema de conceptos agrupando los tipos de destinatario de las recomendaciones de uso"@es ;
+    skos:definition "Tipos de destinatario de las recomendaciones de uso según el RD 390/2021, Art. 8.1.f y Art. 10.5."@es ;
+    skos:definition "User-recommendation recipient types per RD 390/2021, Art. 8.1.f and Art. 10.5."@en ;
+    skos:hasTopConcept edintceekos-rcp:Owner , edintceekos-rcp:Tenant , edintceekos-rcp:Both .
+
+# ---------------------------------------------------------------------------
+# OWNER — Propietario
+# ---------------------------------------------------------------------------
+edintceekos-rcp:Owner a skos:Concept ;
+    skos:inScheme edintkos:RecipientType ;
+    skos:prefLabel "Propietario"@es , "Owner"@en ;
+    skos:notation "owner" ;
+    skos:definition "Las recomendaciones de uso se entregan al propietario del edificio o parte del mismo."@es ;
+    skos:definition "User recommendations are delivered to the owner of the building or part thereof."@en ;
+    skos:topConceptOf edintkos:RecipientType .
+
+# ---------------------------------------------------------------------------
+# TENANT — Arrendatario
+# ---------------------------------------------------------------------------
+edintceekos-rcp:Tenant a skos:Concept ;
+    skos:inScheme edintkos:RecipientType ;
+    skos:prefLabel "Arrendatario"@es , "Tenant"@en ;
+    skos:notation "tenant" ;
+    skos:definition "Las recomendaciones de uso se entregan al arrendatario u ocupante del edificio."@es ;
+    skos:definition "User recommendations are delivered to the tenant or occupant of the building."@en ;
+    skos:topConceptOf edintkos:RecipientType .
+
+# ---------------------------------------------------------------------------
+# BOTH — Ambos
+# ---------------------------------------------------------------------------
+edintceekos-rcp:Both a skos:Concept ;
+    skos:inScheme edintkos:RecipientType ;
+    skos:prefLabel "Ambos (propietario y arrendatario)"@es , "Both (owner and tenant)"@en ;
+    skos:notation "both" ;
+    skos:definition "Las recomendaciones de uso se entregan tanto al propietario como al arrendatario."@es ;
+    skos:definition "User recommendations are delivered to both the owner and the tenant."@en ;
+    skos:topConceptOf edintkos:RecipientType .

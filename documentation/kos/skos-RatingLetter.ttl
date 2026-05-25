@@ -1,0 +1,93 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintceekos-rl: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingLetter/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintkos:RatingLetter a skos:ConceptScheme ;
+    dct:issued "2026-05-25"^^xsd:date ;
+    dct:modified "2026-05-25"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Rating letters"@en ;
+    rdfs:label "Letras de calificación"@es ;
+    dct:title "Concept scheme grouping energy rating scale letters A-G"@en ;
+    dct:title "Esquema de conceptos agrupando las letras de la escala de calificación energética A-G"@es ;
+    skos:definition "Letras de la escala de calificación energética de edificios según el RD 390/2021, Art. 2.a."@es ;
+    skos:definition "Energy rating scale letters for buildings per RD 390/2021, Art. 2.a."@en ;
+    skos:hasTopConcept edintceekos-rl:A , edintceekos-rl:B , edintceekos-rl:C , edintceekos-rl:D , edintceekos-rl:E , edintceekos-rl:F , edintceekos-rl:G .
+
+# ---------------------------------------------------------------------------
+# A — Most efficient
+# ---------------------------------------------------------------------------
+edintceekos-rl:A a skos:Concept ;
+    skos:inScheme edintkos:RatingLetter ;
+    skos:prefLabel "A"@es , "A"@en ;
+    skos:notation "A" ;
+    skos:definition "Edificio de eficiencia energética más alta en la escala A-G."@es ;
+    skos:definition "Building with the highest energy efficiency on the A-G scale."@en ;
+    skos:topConceptOf edintkos:RatingLetter .
+
+# ---------------------------------------------------------------------------
+# B
+# ---------------------------------------------------------------------------
+edintceekos-rl:B a skos:Concept ;
+    skos:inScheme edintkos:RatingLetter ;
+    skos:prefLabel "B"@es , "B"@en ;
+    skos:notation "B" ;
+    skos:topConceptOf edintkos:RatingLetter .
+
+# ---------------------------------------------------------------------------
+# C
+# ---------------------------------------------------------------------------
+edintceekos-rl:C a skos:Concept ;
+    skos:inScheme edintkos:RatingLetter ;
+    skos:prefLabel "C"@es , "C"@en ;
+    skos:notation "C" ;
+    skos:topConceptOf edintkos:RatingLetter .
+
+# ---------------------------------------------------------------------------
+# D
+# ---------------------------------------------------------------------------
+edintceekos-rl:D a skos:Concept ;
+    skos:inScheme edintkos:RatingLetter ;
+    skos:prefLabel "D"@es , "D"@en ;
+    skos:notation "D" ;
+    skos:topConceptOf edintkos:RatingLetter .
+
+# ---------------------------------------------------------------------------
+# E
+# ---------------------------------------------------------------------------
+edintceekos-rl:E a skos:Concept ;
+    skos:inScheme edintkos:RatingLetter ;
+    skos:prefLabel "E"@es , "E"@en ;
+    skos:notation "E" ;
+    skos:topConceptOf edintkos:RatingLetter .
+
+# ---------------------------------------------------------------------------
+# F
+# ---------------------------------------------------------------------------
+edintceekos-rl:F a skos:Concept ;
+    skos:inScheme edintkos:RatingLetter ;
+    skos:prefLabel "F"@es , "F"@en ;
+    skos:notation "F" ;
+    skos:topConceptOf edintkos:RatingLetter .
+
+# ---------------------------------------------------------------------------
+# G — Least efficient
+# ---------------------------------------------------------------------------
+edintceekos-rl:G a skos:Concept ;
+    skos:inScheme edintkos:RatingLetter ;
+    skos:prefLabel "G"@es , "G"@en ;
+    skos:notation "G" ;
+    skos:definition "Edificio de eficiencia energética más baja en la escala A-G."@es ;
+    skos:definition "Building with the lowest energy efficiency on the A-G scale."@en ;
+    skos:topConceptOf edintkos:RatingLetter .
