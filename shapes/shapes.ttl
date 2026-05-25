@@ -1,0 +1,386 @@
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/> .
+@prefix edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/> .
+@prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-scale-version/> .
+@prefix edintcee-shapes: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/shapes/> .
+
+# ============================================================================
+# SHACL Shapes — Energy Performance Certificate Ontology (edintcee)
+# ============================================================================
+#
+# These shapes validate constraints derived from RD 390/2021 that go beyond
+# the OWL restrictions already present in the ontology.
+#
+# Approach (Option 3): only validate certificate PAIRS when a
+# predecessorCertificate relationship exists. No observedBuildingType needed.
+#
+# ============================================================================
+
+# ---------------------------------------------------------------------------
+# 1. EnergyCertificate — core mandatory properties
+# ---------------------------------------------------------------------------
+edintcee-shapes:EnergyCertificateShape a sh:NodeShape ;
+    rdfs:label "Shape de Certificado de eficiencia energética"@es ;
+    rdfs:label "Energy certificate shape"@en ;
+    sh:targetClass edintcee:EnergyCertificate ;
+    sh:nodeKind sh:IRI ;
+
+    # certificateType is mandatory (Art. 2.b-g, Art. 15.2)
+    sh:property [
+        sh:path edintcee:certificateType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class skos:Concept ;
+        sh:message "Un certificado debe tener exactamente un certificateType (Art. 2.b-g, Art. 15.2 RD 390/2021)."@es ;
+        sh:message "A certificate must have exactly one certificateType (Art. 2.b-g, Art. 15.2 RD 390/2021)."@en ;
+    ] ;
+
+    # issueDate is mandatory
+    sh:property [
+        sh:path edintcee:issueDate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+        sh:message "Un certificado debe tener exactamente una fecha de emisión."@es ;
+        sh:message "A certificate must have exactly one issue date."@en ;
+    ] ;
+
+    # validUntil is mandatory
+    sh:property [
+        sh:path edintcee:validUntil ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+        sh:message "Un certificado debe tener exactamente una fecha de caducidad."@es ;
+        sh:message "A certificate must have exactly one valid-until date."@en ;
+    ] ;
+
+    # hasRating is mandatory
+    sh:property [
+        sh:path edintcee:hasRating ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class edintcee:EnergyRating ;
+        sh:message "Un certificado debe tener exactamente una calificación energética."@es ;
+        sh:message "A certificate must have exactly one energy rating."@en ;
+    ] ;
+
+    # issuedBy is mandatory
+    sh:property [
+        sh:path edintcee:issuedBy ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class edintcee:CompetentTechnician ;
+        sh:message "Un certificado debe estar emitido por exactamente un técnico competente."@es ;
+        sh:message "A certificate must be issued by exactly one competent technician."@en ;
+    ] ;
+
+    # usesProcedure is mandatory
+    sh:property [
+        sh:path edintcee:usesProcedure ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class edintcee:CalculationProcedure ;
+        sh:message "Un certificado debe usar exactamente un procedimiento de cálculo."@es ;
+        sh:message "A certificate must use exactly one calculation procedure."@en ;
+    ] ;
+
+    # hasUserRecommendations is mandatory (min 1)
+    sh:property [
+        sh:path edintcee:hasUserRecommendations ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class edintcee:UserRecommendations ;
+        sh:message "Un certificado debe tener al menos un documento de recomendaciones de uso (Art. 8.1.f)."@es ;
+        sh:message "A certificate must have at least one user recommendations document (Art. 8.1.f)."@en ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# 2. CompletedWork must have predecessorCertificate (Art. 9.1)
+#    Uses sh:target with SPARQL to select only CompletedWork certificates.
+# ---------------------------------------------------------------------------
+edintcee-shapes:CompletedWorkPredecessorShape a sh:NodeShape ;
+    rdfs:label "Certificado de obra terminada con predecesor obligatorio"@es ;
+    rdfs:label "Completed work certificate must have predecessor"@en ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+            PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
+            SELECT ?this
+            WHERE {
+                ?this a edintcee:EnergyCertificate ;
+                      edintcee:certificateType edintceekos-ct:CompletedWork .
+            }
+        """
+    ] ;
+    sh:nodeKind sh:IRI ;
+    sh:property [
+        sh:path edintcee:predecessorCertificate ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class edintcee:EnergyCertificate ;
+        sh:message "Un certificado de obra terminada debe tener un certificado predecesor (Art. 9.1 RD 390/2021)."@es ;
+        sh:message "A completed work certificate must have a predecessor certificate (Art. 9.1 RD 390/2021)."@en ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# 3. Predecessor of CompletedWork must be Project (Art. 9.1) — SPARQL
+# ---------------------------------------------------------------------------
+edintcee-shapes:CompletedWorkPredecessorTypeShape a sh:NodeShape ;
+    rdfs:label "Predecesor de obra terminada debe ser de proyecto"@es ;
+    rdfs:label "Completed work predecessor must be project type"@en ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+            PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
+            SELECT ?this
+            WHERE {
+                ?this a edintcee:EnergyCertificate ;
+                      edintcee:certificateType edintceekos-ct:CompletedWork .
+            }
+        """
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "El certificado predecesor de un certificado de obra terminada debe ser de tipo proyecto (Art. 9.1 RD 390/2021)."@es ;
+        sh:message "The predecessor certificate of a completed work certificate must be of project type (Art. 9.1 RD 390/2021)."@en ;
+        sh:select """
+            PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+            PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
+            SELECT $this ?pred
+            WHERE {
+                $this edintcee:predecessorCertificate ?pred .
+                FILTER NOT EXISTS { ?pred edintcee:certificateType edintceekos-ct:Project }
+            }
+        """ ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# 4. Rating downgrade requires justification (Art. 9.5) — SPARQL
+# ---------------------------------------------------------------------------
+edintcee-shapes:RatingDowngradeJustificationShape a sh:NodeShape ;
+    rdfs:label "Degradación de calificación requiere justificación"@es ;
+    rdfs:label "Rating downgrade requires justification"@en ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+            PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
+            SELECT ?this
+            WHERE {
+                ?this a edintcee:EnergyCertificate ;
+                      edintcee:certificateType edintceekos-ct:CompletedWork .
+            }
+        """
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Si la calificación del certificado de obra terminada es peor que la del proyecto, debe incluirse justificación (Art. 9.5 RD 390/2021)."@es ;
+        sh:message "If the completed work certificate rating is worse than the project one, a justification is required (Art. 9.5 RD 390/2021)."@en ;
+        sh:select """
+            PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+            PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
+            SELECT $this ?pred
+            WHERE {
+                $this edintcee:predecessorCertificate ?pred .
+                $this edintcee:hasRating ?thisRating .
+                ?thisRating edintcee:primaryEnergyNonRenewable ?thisPE .
+                ?pred edintcee:hasRating ?predRating .
+                ?predRating edintcee:primaryEnergyNonRenewable ?predPE .
+                FILTER (?thisPE > ?predPE)
+                FILTER NOT EXISTS { $this edintcee:noImprovementJustification ?just }
+            }
+        """ ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# 5. ExistingBuilding must not have Project predecessor — SPARQL (Art. 10)
+# ---------------------------------------------------------------------------
+edintcee-shapes:ExistingBuildingNoProjectPredecessorShape a sh:NodeShape ;
+    rdfs:label "Certificado de edificio existente sin predecesor de proyecto"@es ;
+    rdfs:label "Existing building certificate must not have project predecessor"@en ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:select """
+            PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+            PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
+            SELECT ?this
+            WHERE {
+                ?this a edintcee:EnergyCertificate ;
+                      edintcee:certificateType edintceekos-ct:ExistingBuilding .
+            }
+        """
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Un certificado de edificio existente no debe tener un predecesor de tipo proyecto (Art. 10 RD 390/2021)."@es ;
+        sh:message "An existing building certificate must not have a project-type predecessor (Art. 10 RD 390/2021)."@en ;
+        sh:select """
+            PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+            PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
+            SELECT $this ?pred
+            WHERE {
+                $this edintcee:predecessorCertificate ?pred .
+                ?pred edintcee:certificateType edintceekos-ct:Project .
+            }
+        """ ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# 6. EnergyRating — mandatory properties
+# ---------------------------------------------------------------------------
+edintcee-shapes:EnergyRatingShape a sh:NodeShape ;
+    rdfs:label "Shape de Calificación energética"@es ;
+    rdfs:label "Energy rating shape"@en ;
+    sh:targetClass edintcee:EnergyRating ;
+    sh:nodeKind sh:IRI ;
+
+    sh:property [
+        sh:path edintcee:ratingLetter ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:pattern "^[A-G]$" ;
+        sh:flags "i" ;
+        sh:message "La calificación debe ser una letra de A a G."@es ;
+        sh:message "The rating must be a letter from A to G."@en ;
+    ] ;
+
+    sh:property [
+        sh:path edintcee:ratingScaleVersion ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class skos:Concept ;
+        sh:message "La calificación debe tener exactamente una versión de escala (Art. 5.1 RD 390/2021)."@es ;
+        sh:message "The rating must have exactly one rating scale version (Art. 5.1 RD 390/2021)."@en ;
+    ] ;
+
+    sh:property [
+        sh:path edintcee:primaryEnergyNonRenewable ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:message "La calificación debe tener un valor de energía primaria no renovable."@es ;
+        sh:message "The rating must have a non-renewable primary energy value."@en ;
+    ] ;
+
+    sh:property [
+        sh:path edintcee:co2Emissions ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:message "La calificación debe tener un valor de emisiones de CO2."@es ;
+        sh:message "The rating must have a CO2 emissions value."@en ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# 7. Certificate validity: max 10 years, 5 if ratingLetter = G (Art. 13.1)
+#    NOTE: Date arithmetic is not portable across SPARQL engines.
+#    This shape is simplified to a structural check; full date-range
+#    validation should be done in application logic or with a
+#    SHACL-SPARQL engine that supports xsd:date arithmetic.
+# ---------------------------------------------------------------------------
+edintcee-shapes:CertificateValidityShape a sh:NodeShape ;
+    rdfs:label "Validez máxima del certificado"@es ;
+    rdfs:label "Certificate maximum validity"@en ;
+    sh:targetClass edintcee:EnergyCertificate ;
+    sh:property [
+        sh:path edintcee:validUntil ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+        sh:message "El certificado debe tener fecha de caducidad (Art. 13 RD 390/2021)."@es ;
+        sh:message "The certificate must have a valid-until date (Art. 13 RD 390/2021)."@en ;
+    ] ;
+    sh:property [
+        sh:path edintcee:issueDate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+        sh:lessThan edintcee:validUntil ;
+        sh:message "La fecha de emisión debe ser anterior a la fecha de caducidad (Art. 13 RD 390/2021)."@es ;
+        sh:message "The issue date must be before the valid-until date (Art. 13 RD 390/2021)."@en ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# 8. CompetentTechnician — core mandatory properties
+# ---------------------------------------------------------------------------
+edintcee-shapes:CompetentTechnicianShape a sh:NodeShape ;
+    rdfs:label "Shape de Técnico competente"@es ;
+    rdfs:label "Competent technician shape"@en ;
+    sh:targetClass edintcee:CompetentTechnician ;
+    sh:nodeKind sh:IRI ;
+
+    sh:property [
+        sh:path edintcee:technicianName ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:message "Un técnico competente debe tener nombre (Anexo IV RD 390/2021)."@es ;
+        sh:message "A competent technician must have a name (Annex IV RD 390/2021)."@en ;
+    ] ;
+
+    sh:property [
+        sh:path edintcee:technicianNIF ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:message "Un técnico competente debe tener NIF/NIE."@es ;
+        sh:message "A competent technician must have a NIF/NIE."@en ;
+    ] ;
+
+    sh:property [
+        sh:path edintcee:technicianQualification ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:message "Un técnico competente debe tener titulación habilitante (Art. 4 bis RD 390/2021)."@es ;
+        sh:message "A competent technician must have an enabling qualification (Art. 4 bis RD 390/2021)."@en ;
+    ] .
+
+# ---------------------------------------------------------------------------
+# 9. CalculationProcedure — core mandatory properties
+# ---------------------------------------------------------------------------
+edintcee-shapes:CalculationProcedureShape a sh:NodeShape ;
+    rdfs:label "Shape de Procedimiento de cálculo"@es ;
+    rdfs:label "Calculation procedure shape"@en ;
+    sh:targetClass edintcee:CalculationProcedure ;
+    sh:nodeKind sh:IRI ;
+
+    sh:property [
+        sh:path edintcee:procedureName ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:message "Un procedimiento de cálculo debe tener nombre (Art. 4.2.a RD 390/2021)."@es ;
+        sh:message "A calculation procedure must have a name (Art. 4.2.a RD 390/2021)."@en ;
+    ] ;
+
+    sh:property [
+        sh:path edintcee:procedureVersion ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:message "Un procedimiento de cálculo debe tener versión."@es ;
+        sh:message "A calculation procedure must have a version."@en ;
+    ] ;
+
+    sh:property [
+        sh:path edintcee:procedureType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:in ( "general" "simplified" ) ;
+        sh:message "El tipo de procedimiento debe ser 'general' o 'simplified' (Art. 4.2.a RD 390/2021)."@es ;
+        sh:message "The procedure type must be 'general' or 'simplified' (Art. 4.2.a RD 390/2021)."@en ;
+    ] .
