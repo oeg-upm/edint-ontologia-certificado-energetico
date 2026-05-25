@@ -10,3 +10,92 @@ Figure 1. Conceptual model of the ontology</figcaption></center></p>
 
 <p>The building itself is modelled as an external entity that references the certificate through a property defined in its own ontology (e.g., BOT, schema.org). This separation allows the certificate ontology to remain focused on the documentary unit while enabling integration with building databases.</p>
 </span>
+
+<pre><textarea style="resize:none" readonly id="code2" name="code" rows="55" cols="100">
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix edintcee: &lt;http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/&gt; .
+@prefix edintceekos-bu: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/BuildingUse/&gt; .
+@prefix edintceekos-es: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/EnergySource/&gt; .
+@prefix edintceekos-cz: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/ClimaticZone/&gt; .
+@prefix edintceekos-ct: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/CertificateType/&gt; .
+@prefix edintceekos-rl: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingLetter/&gt; .
+@prefix edintceekos-pt: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/ProcedureType/&gt; .
+@prefix edintceekos-rt: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RecommendationType/&gt; .
+@prefix edintceekos-db: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/DataBasis/&gt; .
+@prefix edintceekos-rcp: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RecipientType/&gt; .
+@prefix edintceekos-rsv: &lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingScaleVersion/&gt; .
+@prefix ex: &lt;http://ejemplo.org/cee/&gt; .
+
+# --- Calculation procedure ---
+ex:proc_CEP a edintcee:CalculationProcedure ;
+    edintcee:procedureName "CEP" ;
+    edintcee:procedureVersion "7.0" ;
+    edintcee:procedureType edintceekos-pt:General .
+
+# --- Competent technician ---
+ex:tech_mlopez a edintcee:CompetentTechnician ;
+    edintcee:technicianName "María López García" ;
+    edintcee:technicianNIF "23456789B" ;
+    edintcee:technicianQualification "Arquitecta" ;
+    edintcee:technicianRegistrationCCAA "Comunidad de Madrid" ;
+    edintcee:technicianPublicAuthorization "true"^^xsd:boolean .
+
+# --- User recommendations ---
+ex:userrec_2024_M12345 a edintcee:UserRecommendations ;
+    edintcee:userRecommendationsDelivered "true"^^xsd:boolean ;
+    edintcee:userRecommendationsDeliveryDate "2024-05-20"^^xsd:date ;
+    edintcee:userRecommendationsRecipient edintceekos-rcp:Owner .
+
+# --- Energy certificate ---
+ex:cert_2024_M12345 a edintcee:EnergyCertificate ;
+    edintcee:hasRating              ex:rating_2024_M12345 ;
+    edintcee:issuedBy               ex:tech_mlopez ;
+    edintcee:hasLabel               ex:label_2024_M12345 ;
+    edintcee:usesProcedure          ex:proc_CEP ;
+    edintcee:hasUserRecommendations ex:userrec_2024_M12345 ;
+    edintcee:certificateType        edintceekos-ct:ExistingBuilding ;
+    edintcee:certificateNumber      "M-2024-012345" ;
+    edintcee:issueDate              "2024-05-20"^^xsd:date ;
+    edintcee:visitDate              "2024-05-15"^^xsd:date ;
+    edintcee:registrationDate       "2024-05-28"^^xsd:date ;
+    edintcee:validUntil             "2034-05-20"^^xsd:date ;
+    edintcee:observedCadastralRef       "2807901VK4717F0001WX" ;
+    edintcee:observedAddress            "Calle Mayor 10" ;
+    edintcee:observedMunicipality       "Madrid" ;
+    edintcee:observedProvince           "Madrid" ;
+    edintcee:observedUsefulSurface      "4820.0"^^xsd:decimal ;
+    edintcee:observedConstructionYear   "2005"^^xsd:gYear ;
+    edintcee:observedBuildingUse        edintceekos-bu:Residential ;
+    edintcee:observedClimaticZone       edintceekos-cz:D3 ;
+    edintcee:hasRecommendation          ex:rec_2024_M12345_1 .
+
+# --- Energy rating ---
+ex:rating_2024_M12345 a edintcee:EnergyRating ;
+    edintcee:ratingLetter              edintceekos-rl:D ;
+    edintcee:ratingScaleVersion        edintceekos-rsv:RD390_2021 ;
+    edintcee:primaryEnergyTotal        "152.4"^^xsd:decimal ;
+    edintcee:primaryEnergyNonRenewable "112.8"^^xsd:decimal ;
+    edintcee:co2Emissions              "34.2"^^xsd:decimal ;
+    edintcee:dataBasis                  edintceekos-db:Calculated .
+
+# --- Energy label ---
+ex:label_2024_M12345 a edintcee:EnergyLabel ;
+    edintcee:labelRatingLetter edintceekos-rl:D .
+
+# --- Improvement recommendation ---
+ex:rec_2024_M12345_1 a edintcee:ImprovementRecommendation ;
+    edintcee:recommendationType        edintceekos-rt:Installation ;
+    edintcee:recommendationDescription "Replace individual boilers with centralized aerothermal heat pump system." ;
+    edintcee:estimatedSavingPct        "38.0"^^xsd:decimal ;
+    edintcee:improvedRatingLetter      edintceekos-rl:B ;
+    edintcee:priority                  1 .
+</textarea></pre>
+<script>
+    var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
+        mode: "text/turtle",
+        matchBrackets: true
+    });
+</script>
+<span class="markdown">
+The example above shows a portion of the RDF knowledge graph for an existing building energy certificate. The <strong>certificate</strong> (type <code>ExistingBuilding</code> per SKOS) is issued by a <strong>competent technician</strong> and contains an <strong>energy rating</strong> (letter D, scale version RD 390/2021, calculated basis) and an <strong>energy label</strong> (letter D). Building data includes residential use, climatic zone D3 and useful surface. Classifications (certificate type, building use, climatic zone, rating letter, procedure type, data basis, recommendation type, recipient) are represented via SKOS concepts from the schemes available in <code>kos/</code>. The <strong>improvement recommendation</strong> (installation type) estimates an improvement to letter B with 38% savings.
+</span>
