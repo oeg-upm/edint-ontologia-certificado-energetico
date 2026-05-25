@@ -4,11 +4,12 @@
 
 PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
-PREFIX edintceekos-bu: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/building-use/>
-PREFIX edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/>
-PREFIX edintceekos-es: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/energy-source/>
-PREFIX edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-scale-version/>
+PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CertificateType/>
+PREFIX edintceekos-bu: <http://vocab.linkeddata.es/datosabiertos/kos/edint/BuildingUse/>
+PREFIX edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edint/ClimaticZone/>
+PREFIX edintceekos-es: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnergySource/>
+PREFIX edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingScaleVersion/>
+PREFIX edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/>
 
 SELECT ?cert ?property ?value ?actualScheme
 WHERE {
@@ -17,21 +18,21 @@ WHERE {
         ?cert edintcee:certificateType ?value .
         BIND ("certificateType" AS ?property)
         OPTIONAL { ?value skos:inScheme ?actualScheme }
-        FILTER (?actualScheme != edintceekos-ct:CertificateTypes)
+        FILTER (?actualScheme != edintkos:CertificateType)
     } UNION {
         ?cert edintcee:observedBuildingUse ?value .
         BIND ("observedBuildingUse" AS ?property)
         OPTIONAL { ?value skos:inScheme ?actualScheme }
-        FILTER (?actualScheme != edintceekos-bu:BuildingUses)
+        FILTER (?actualScheme != edintkos:BuildingUse)
     } UNION {
         ?cert edintcee:observedClimaticZone ?value .
         BIND ("observedClimaticZone" AS ?property)
         OPTIONAL { ?value skos:inScheme ?actualScheme }
-        FILTER (?actualScheme != edintceekos-cz:ClimaticZones)
+        FILTER (?actualScheme != edintkos:ClimaticZone)
     } UNION {
         ?cert edintcee:heatingEnergySource ?value .
         BIND ("heatingEnergySource" AS ?property)
         OPTIONAL { ?value skos:inScheme ?actualScheme }
-        FILTER (?actualScheme != edintceekos-es:EnergySources)
+        FILTER (?actualScheme != edintkos:EnergySource)
     }
 }

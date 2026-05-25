@@ -1,4 +1,4 @@
-# FAC-RATING-02: Una calificación tiene exactamente una versión de escala (SKOS concept en RatingScaleVersions)
+# FAC-RATING-02: Una calificación tiene exactamente una versión de escala (SKOS concept in RatingScaleVersion)
 
 PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
 
