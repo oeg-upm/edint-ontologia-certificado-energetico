@@ -1,5 +1,12 @@
-<h2 id="desc" class="list">certificado-energetico: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+<h2 id="desc" class="list">Certificado de Eficiencia Energ&eacute;tica: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+<span class="markdown"><p>En la Figura 1 se muestra el modelo conceptual de la ontología con sus clases y relaciones (propiedades de objeto).</p></span>
+<p><center><img src="images/diagrama-conceptual.png" style="width:100%;"/><figcaption>
+Figura 1. Modelo conceptual de la ontología</figcaption></center></p>
+<span class="markdown"><p>La ontología modela el <a href="#EnergyCertificate">certificado de eficiencia energética</a> como la unidad documental central, según el Real Decreto 390/2021. El certificado está vinculado a una <a href="#EnergyRating">calificación energética</a> (que incluye la letra de calificación global en la escala A-G y los indicadores numéricos de consumo de energía primaria y emisiones de CO₂), una <a href="#EnergyLabel">etiqueta energética</a> (la representación visual), un <a href="#CompetentTechnician">técnico competente</a> (que firma el certificado), una o más <a href="#ImprovementRecommendation">recomendaciones de mejora</a> (intervenciones técnicas para el propietario del edificio), y <a href="#UserRecommendations">recomendaciones de uso</a> (recomendaciones de comportamiento u operativas para el ocupante del edificio).</p>
 
-<span class="markdown">Descripci&oacute;n completa de la ontolog&iacute;a: en caso de ser posible, a&ntilde;adir un diagrama explicando c&oacute;omo las clases est&aacute;n relacionadas, ejemplos de uso, etc.
+<p>El <a href="#CalculationProcedure">procedimiento de cálculo</a> registra si la calificación se obtuvo mediante el procedimiento general o simplificado, y si los datos son calculados, medidos o mixtos. Las características del edificio (uso, zona climática, fuentes de energía para cada sistema técnico) se registran como propiedades de dato o de objeto que enlazan con esquemas de conceptos SKOS.</p>
 
+<p>Los vocabularios controlados (tipo de certificado, uso de edificio, zona climática, fuente de energía, letra de calificación, versión de escala, tipo de recomendación, tipo de procedimiento, base de datos, tipo de destinatario, vía de acceso y módulo del curso) se representan mediante propiedades de objeto que apuntan a conceptos SKOS, organizados en esquemas de conceptos independientes disponibles en la carpeta <code>kos/</code>.</p>
+
+<p>El edificio se modela como una entidad externa que referencia al certificado mediante una propiedad definida en su propia ontología (e.g., BOT, schema.org). Esta separación permite que la ontología del certificado se mantenga centrada en la unidad documental mientras permite la integración con bases de datos de edificios.</p>
 </span>

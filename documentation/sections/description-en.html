@@ -1,5 +1,12 @@
-<h2 id="desc" class="list">certificado-energetico: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="desc" class="list">Energy Performance Certificate: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown"><p>Figure 1 shows the conceptual model of the ontology with its classes and relationships (object properties).</p></span>
+<p><center><img src="images/diagrama-conceptual.png" style="width:100%;"/><figcaption>
+Figure 1. Conceptual model of the ontology</figcaption></center></p>
+<span class="markdown"><p>The ontology models the <a href="#EnergyCertificate">energy performance certificate</a> as the central documentary unit, according to Spanish Royal Decree 390/2021. The certificate is linked to an <a href="#EnergyRating">energy rating</a> (which includes the global rating letter on the A-G scale and numerical indicators of primary energy consumption and CO₂ emissions), an <a href="#EnergyLabel">energy label</a> (the visual representation), a <a href="#CompetentTechnician">competent technician</a> (who signs the certificate), one or more <a href="#ImprovementRecommendation">improvement recommendations</a> (technical interventions for the building owner), and <a href="#UserRecommendations">user recommendations</a> (behavioural or operational recommendations for the building occupant).</p>
 
-<span class="markdown">This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.
+<p>The <a href="#CalculationProcedure">calculation procedure</a> records whether the rating was obtained using the general or simplified procedure, and whether the data is calculated, measured, or mixed. Building characteristics (use, climatic zone, energy sources for each technical system) are recorded as datatype or object properties linking to SKOS concept schemes.</p>
 
+<p>Controlled vocabularies (certificate type, building use, climatic zone, energy source, rating letter, rating scale version, recommendation type, procedure type, data basis, recipient type, access path, and course module) are represented via object properties pointing to SKOS concepts, organized in independent concept schemes available in the <code>kos/</code> folder.</p>
+
+<p>The building itself is modelled as an external entity that references the certificate through a property defined in its own ontology (e.g., BOT, schema.org). This separation allows the certificate ontology to remain focused on the documentary unit while enabling integration with building databases.</p>
 </span>
