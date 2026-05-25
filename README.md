@@ -14,7 +14,7 @@ El prefijo de esta ontología es `edintcee`. Se publica en el espacio de nombres
 
 # Modelo conceptual (Ontology conceptualization)
 
-![Diagrama del modelo conceptual](diagrams/diagrama.png)
+![Diagrama del modelo conceptual](diagrams/edint-ontologia-certificado-energetico.drawio.png)
 
 # Estructura del repositorio (Repository structure)
 
