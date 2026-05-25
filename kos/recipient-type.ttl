@@ -1,0 +1,55 @@
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix edintceekos-rcp: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/recipient-type/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintceekos-rcp:RecipientTypes a skos:ConceptScheme ;
+    dcterms:issued "2026-05-25"^^xsd:date ;
+    dcterms:modified "2026-05-25"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of SKOS thesauri used by the Energy Performance Certificate ontology."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de Certificados de Eficiencia Energética."@es ;
+    rdfs:label "Recipient types"@en ;
+    rdfs:label "Tipos de destinatario"@es ;
+    dcterms:title "Esquema de conceptos agrupando los tipos de destinatario de las recomendaciones de uso"@es ;
+    dcterms:title "Concept scheme grouping user-recommendation recipient types"@en ;
+    skos:note "Vocabulario de tipos de destinatario derivado del RD 390/2021, Art. 8.1.f y Art. 10.5."@es ;
+    skos:note "Vocabulary of recipient types derived from RD 390/2021, Art. 8.1.f and Art. 10.5."@en .
+
+# ---------------------------------------------------------------------------
+# OWNER — Propietario
+# ---------------------------------------------------------------------------
+edintceekos-rcp:Owner a skos:Concept ;
+    skos:inScheme edintceekos-rcp:RecipientTypes ;
+    skos:prefLabel "Propietario"@es ;
+    skos:prefLabel "Owner"@en ;
+    skos:notation "owner" ;
+    skos:definition "Las recomendaciones de uso se entregan al propietario del edificio o parte del mismo."@es ;
+    skos:definition "User recommendations are delivered to the owner of the building or part thereof."@en .
+
+# ---------------------------------------------------------------------------
+# TENANT — Arrendatario
+# ---------------------------------------------------------------------------
+edintceekos-rcp:Tenant a skos:Concept ;
+    skos:inScheme edintceekos-rcp:RecipientTypes ;
+    skos:prefLabel "Arrendatario"@es ;
+    skos:prefLabel "Tenant"@en ;
+    skos:notation "tenant" ;
+    skos:definition "Las recomendaciones de uso se entregan al arrendatario u ocupante del edificio."@es ;
+    skos:definition "User recommendations are delivered to the tenant or occupant of the building."@en .
+
+# ---------------------------------------------------------------------------
+# BOTH — Ambos
+# ---------------------------------------------------------------------------
+edintceekos-rcp:Both a skos:Concept ;
+    skos:inScheme edintceekos-rcp:RecipientTypes ;
+    skos:prefLabel "Ambos (propietario y arrendatario)"@es ;
+    skos:prefLabel "Both (owner and tenant)"@en ;
+    skos:notation "both" ;
+    skos:definition "Las recomendaciones de uso se entregan tanto al propietario como al arrendatario."@es ;
+    skos:definition "User recommendations are delivered to both the owner and the tenant."@en .

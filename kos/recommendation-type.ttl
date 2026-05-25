@@ -1,0 +1,66 @@
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix cc:       <http://creativecommons.org/ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix edintceekos-rt: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/recommendation-type/> .
+
+# ---------------------------------------------------------------------------
+# CONCEPT SCHEME
+# ---------------------------------------------------------------------------
+edintceekos-rt:RecommendationTypes a skos:ConceptScheme ;
+    dcterms:issued "2026-05-25"^^xsd:date ;
+    dcterms:modified "2026-05-25"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of SKOS thesauri used by the Energy Performance Certificate ontology."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por la ontología de Certificados de Eficiencia Energética."@es ;
+    rdfs:label "Recommendation types"@en ;
+    rdfs:label "Tipos de recomendación"@es ;
+    dcterms:title "Esquema de conceptos agrupando los tipos de recomendación de mejora energética"@es ;
+    dcterms:title "Concept scheme grouping energy improvement recommendation types"@en ;
+    skos:note "Vocabulario de tipos de recomendación derivado del RD 390/2021, Art. 8.2.f."@es ;
+    skos:note "Vocabulary of recommendation types derived from RD 390/2021, Art. 8.2.f."@en .
+
+# ---------------------------------------------------------------------------
+# ENVELOPE — Intervención sobre la envolvente térmica
+# ---------------------------------------------------------------------------
+edintceekos-rt:Envelope a skos:Concept ;
+    skos:inScheme edintceekos-rt:RecommendationTypes ;
+    skos:prefLabel "Envolvente"@es ;
+    skos:prefLabel "Envelope"@en ;
+    skos:notation "envelope" ;
+    skos:definition "Intervención sobre la envolvente térmica del edificio (aislamiento, carpintería, acristalamiento, puentes térmicos)."@es ;
+    skos:definition "Intervention on the thermal envelope of the building (insulation, joinery, glazing, thermal bridges)."@en .
+
+# ---------------------------------------------------------------------------
+# INSTALLATION — Intervención sobre las instalaciones térmicas
+# ---------------------------------------------------------------------------
+edintceekos-rt:Installation a skos:Concept ;
+    skos:inScheme edintceekos-rt:RecommendationTypes ;
+    skos:prefLabel "Instalación"@es ;
+    skos:prefLabel "Installation"@en ;
+    skos:notation "installation" ;
+    skos:definition "Intervención sobre las instalaciones térmicas (calefacción, refrigeración, ACS, ventilación)."@es ;
+    skos:definition "Intervention on thermal installations (heating, cooling, DHW, ventilation)."@en .
+
+# ---------------------------------------------------------------------------
+# AUTOMATION — Intervención de automatización y control
+# ---------------------------------------------------------------------------
+edintceekos-rt:Automation a skos:Concept ;
+    skos:inScheme edintceekos-rt:RecommendationTypes ;
+    skos:prefLabel "Automatización"@es ;
+    skos:prefLabel "Automation"@en ;
+    skos:notation "automation" ;
+    skos:definition "Intervención de automatización y control (sistemas BMS, termostatos programables, regulación)."@es ;
+    skos:definition "Automation and control intervention (BMS systems, programmable thermostats, regulation)."@en .
+
+# ---------------------------------------------------------------------------
+# COMBINED — Intervención combinada
+# ---------------------------------------------------------------------------
+edintceekos-rt:Combined a skos:Concept ;
+    skos:inScheme edintceekos-rt:RecommendationTypes ;
+    skos:prefLabel "Combinada"@es ;
+    skos:prefLabel "Combined"@en ;
+    skos:notation "combined" ;
+    skos:definition "Intervención combinada que afecta a más de un ámbito (envolvente + instalación, etc.)."@es ;
+    skos:definition "Combined intervention affecting more than one scope (envelope + installation, etc.)."@en .

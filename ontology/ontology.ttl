@@ -11,6 +11,13 @@
 @prefix edintceekos-cz: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/climatic-zone/> .
 @prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-scale-version/> .
 @prefix edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/> .
+@prefix edintceekos-rl: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-letter/> .
+@prefix edintceekos-rt: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/recommendation-type/> .
+@prefix edintceekos-pt: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/procedure-type/> .
+@prefix edintceekos-rcp: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/recipient-type/> .
+@prefix edintceekos-db: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/data-basis/> .
+@prefix edintceekos-ap: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/access-path/> .
+@prefix edintceekos-cm: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/course-module/> .
 
 # =============================================================================
 # ONTOLOGY METADATA
@@ -98,7 +105,8 @@ edintcee:EnergyRating a owl:Class ;
     rdfs:subClassOf [
         a owl:Restriction ;
         owl:onProperty edintcee:ratingLetter ;
-        owl:cardinality "1"^^xsd:nonNegativeInteger
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass skos:Concept
     ] , [
         a owl:Restriction ;
         owl:onProperty edintcee:ratingScaleVersion ;
@@ -146,26 +154,7 @@ edintcee:UserRecommendations a owl:Class ;
 
 # --- Datatype enumerations ---
 
-edintcee:RatingLetterValue a rdfs:Datatype ;
-    rdfs:subClassOf xsd:string ;
-    rdfs:label "Valor de letra de calificación"@es ;
-    rdfs:label "Rating letter value"@en ;
-    rdfs:comment "Valores posibles: A, B, C, D, E, F, G."@es ;
-    rdfs:comment "Possible values: A, B, C, D, E, F, G."@en .
 
-edintcee:RecommendationTypeValue a rdfs:Datatype ;
-    rdfs:subClassOf xsd:string ;
-    rdfs:label "Valor de tipo de recomendación"@es ;
-    rdfs:label "Recommendation type value"@en ;
-    rdfs:comment "Valores: envelope, installation, automation, combined."@es ;
-    rdfs:comment "Values: envelope, installation, automation, combined."@en .
-
-edintcee:ProcedureTypeValue a rdfs:Datatype ;
-    rdfs:subClassOf xsd:string ;
-    rdfs:label "Valor de tipo de procedimiento"@es ;
-    rdfs:label "Procedure type value"@en ;
-    rdfs:comment "Valores: general, simplified."@es ;
-    rdfs:comment "Values: general, simplified."@en .
 
 
 
@@ -872,13 +861,22 @@ edintcee:lightingEfficiency a owl:DatatypeProperty ;
 # DATATYPE PROPERTIES — EnergyRating
 # =============================================================================
 
-edintcee:ratingLetter a owl:DatatypeProperty , owl:FunctionalProperty ;
+edintcee:ratingLetter a owl:ObjectProperty , owl:FunctionalProperty ;
     rdfs:label "letra de calificación"@es ;
     rdfs:label "rating letter"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range edintcee:RatingLetterValue ;
-    rdfs:comment "Letra de la calificación global de eficiencia energética en la escala A-G."@es ;
-    rdfs:comment "Global energy efficiency rating letter on the A-G scale."@en .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-rl:RatingLetters
+            ]
+        )
+    ] ;
+    rdfs:comment "Letra de la calificación global de eficiencia energética en la escala A-G, según el vocabulario controlado de letras de calificación."@es ;
+    rdfs:comment "Global energy efficiency rating letter on the A-G scale, according to the rating-letter controlled vocabulary."@en .
 
 edintcee:primaryEnergyTotal a owl:DatatypeProperty ;
     rdfs:label "energía primaria total (kWh/m²·año)"@es ;
@@ -984,25 +982,43 @@ edintcee:measurementPeriodEnd a owl:DatatypeProperty ;
     rdfs:domain edintcee:EnergyRating ;
     rdfs:range xsd:date .
 
-edintcee:dataBasis a owl:DatatypeProperty ;
+edintcee:dataBasis a owl:ObjectProperty , owl:FunctionalProperty ;
     rdfs:label "base de datos"@es ;
     rdfs:label "data basis"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Indica si los indicadores se basan en datos medidos o calculados: 'measured', 'calculated', 'mixed'."@es ;
-    rdfs:comment "Indicates whether indicators are based on measured or calculated data: 'measured', 'calculated', 'mixed'."@en .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-db:DataBasisTypes
+            ]
+        )
+    ] ;
+    rdfs:comment "Indica si los indicadores se basan en datos medidos, calculados o mixtos, según el vocabulario controlado de tipos de base de datos (Art. 6.7)."@es ;
+    rdfs:comment "Indicates whether indicators are based on measured, calculated or mixed data, according to the data-basis controlled vocabulary (Art. 6.7)."@en .
 
 # =============================================================================
 # DATATYPE PROPERTIES — ImprovementRecommendation
 # =============================================================================
 
-edintcee:recommendationType a owl:DatatypeProperty ;
+edintcee:recommendationType a owl:ObjectProperty ;
     rdfs:label "tipo de recomendación"@es ;
     rdfs:label "recommendation type"@en ;
     rdfs:domain edintcee:ImprovementRecommendation ;
-    rdfs:range edintcee:RecommendationTypeValue ;
-    rdfs:comment "Ámbito de la intervención: envelope, installation, automation, combined (Art. 8.2.f)."@es ;
-    rdfs:comment "Scope of the intervention: envelope, installation, automation, combined (Art. 8.2.f)."@en .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-rt:RecommendationTypes
+            ]
+        )
+    ] ;
+    rdfs:comment "Ámbito de la intervención: envelope, installation, automation, combined, según el vocabulario controlado de tipos de recomendación (Art. 8.2.f)."@es ;
+    rdfs:comment "Scope of the intervention: envelope, installation, automation, combined, according to the recommendation-type controlled vocabulary (Art. 8.2.f)."@en .
 
 edintcee:recommendationDescription a owl:DatatypeProperty ;
     rdfs:label "descripción de la recomendación"@es ;
@@ -1042,13 +1058,22 @@ edintcee:priority a owl:DatatypeProperty ;
     rdfs:comment "Orden de la recomendación en la secuencia temporal de aplicación (Art. 8.2.f.4º)."@es ;
     rdfs:comment "Order of the recommendation in the temporal sequence of application (Art. 8.2.f.4º)."@en .
 
-edintcee:improvedRatingLetter a owl:DatatypeProperty ;
+edintcee:improvedRatingLetter a owl:ObjectProperty ;
     rdfs:label "calificación estimada tras mejora"@es ;
     rdfs:label "improved rating letter"@en ;
     rdfs:domain edintcee:ImprovementRecommendation ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Letra de calificación energética estimada tras la implementación de la recomendación."@es ;
-    rdfs:comment "Estimated energy rating letter after implementation of the recommendation."@en .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-rl:RatingLetters
+            ]
+        )
+    ] ;
+    rdfs:comment "Letra de calificación energética estimada tras la implementación de la recomendación, según el vocabulario controlado de letras de calificación."@es ;
+    rdfs:comment "Estimated energy rating letter after implementation of the recommendation, according to the rating-letter controlled vocabulary."@en .
 
 edintcee:comfortHealthBenefit a owl:DatatypeProperty ;
     rdfs:label "beneficio en confort/salud"@es ;
@@ -1136,21 +1161,39 @@ edintcee:technicianPhone a owl:DatatypeProperty ;
     rdfs:domain edintcee:CompetentTechnician ;
     rdfs:range xsd:string .
 
-edintcee:technicianAccessPath a owl:DatatypeProperty ;
+edintcee:technicianAccessPath a owl:ObjectProperty , owl:FunctionalProperty ;
     rdfs:label "vía de acceso"@es ;
     rdfs:label "access path"@en ;
     rdfs:domain edintcee:CompetentTechnician ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Vía de acceso a la actividad de técnico competente según Art. 4 bis: 'projectCertification', 'universityTitle_b', 'universityTitle_c', 'vocationalTraining', 'competenceStandard'."@en ;
-    rdfs:comment "Vía de acceso a la actividad de técnico competente según Art. 4 bis del RD 390/2021."@es .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-ap:AccessPaths
+            ]
+        )
+    ] ;
+    rdfs:comment "Vía de acceso a la actividad de técnico competente según el vocabulario controlado de vías de acceso (Art. 4 bis)."@es ;
+    rdfs:comment "Access path to the competent technician activity according to the access-path controlled vocabulary (Art. 4 bis)."@en .
 
-edintcee:technicianCourseModules a owl:DatatypeProperty ;
+edintcee:technicianCourseModules a owl:ObjectProperty , owl:FunctionalProperty ;
     rdfs:label "módulos del curso cursados"@es ;
     rdfs:label "course modules completed"@en ;
     rdfs:domain edintcee:CompetentTechnician ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Módulos del curso de conocimientos básicos, específicos y administrativos cursados: 'none', 'module1', 'module2', 'module1And2'."@en ;
-    rdfs:comment "Módulos del curso de conocimientos básicos, específicos y administrativos cursados."@es .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-cm:CourseModules
+            ]
+        )
+    ] ;
+    rdfs:comment "Módulos del curso de conocimientos básicos, específicos y administrativos cursados, según el vocabulario controlado de módulos del curso (Art. 4 bis)."@es ;
+    rdfs:comment "Modules of the basic, specific and administrative knowledge course completed, according to the course-module controlled vocabulary (Art. 4 bis)."@en .
 
 edintcee:technicianPublicAuthorization a owl:DatatypeProperty ;
     rdfs:label "autorización para hacer público"@es ;
@@ -1164,13 +1207,22 @@ edintcee:technicianPublicAuthorization a owl:DatatypeProperty ;
 # DATATYPE PROPERTIES — EnergyLabel
 # =============================================================================
 
-edintcee:labelRatingLetter a owl:DatatypeProperty ;
+edintcee:labelRatingLetter a owl:ObjectProperty ;
     rdfs:label "letra de la etiqueta"@es ;
     rdfs:label "label rating letter"@en ;
     rdfs:domain edintcee:EnergyLabel ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Letra de calificación mostrada en la etiqueta (Art. 15)."@es ;
-    rdfs:comment "Rating letter shown on the label (Art. 15)."@en .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-rl:RatingLetters
+            ]
+        )
+    ] ;
+    rdfs:comment "Letra de calificación mostrada en la etiqueta, según el vocabulario controlado de letras de calificación (Art. 15)."@es ;
+    rdfs:comment "Rating letter shown on the label, according to the rating-letter controlled vocabulary (Art. 15)."@en .
 
 
 
@@ -1190,13 +1242,22 @@ edintcee:procedureVersion a owl:DatatypeProperty ;
     rdfs:domain edintcee:CalculationProcedure ;
     rdfs:range xsd:string .
 
-edintcee:procedureType a owl:DatatypeProperty ;
+edintcee:procedureType a owl:ObjectProperty ;
     rdfs:label "tipo de procedimiento"@es ;
     rdfs:label "procedure type"@en ;
     rdfs:domain edintcee:CalculationProcedure ;
-    rdfs:range edintcee:ProcedureTypeValue ;
-    rdfs:comment "Valores: 'general' o 'simplified'."@es ;
-    rdfs:comment "Values: 'general' or 'simplified'."@en .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-pt:ProcedureTypes
+            ]
+        )
+    ] ;
+    rdfs:comment "Tipo de procedimiento reconocido: general o simplified, según el vocabulario controlado de tipos de procedimiento."@es ;
+    rdfs:comment "Recognised procedure type: general or simplified, according to the procedure-type controlled vocabulary."@en .
 
 # =============================================================================
 # DATATYPE PROPERTIES — UserRecommendations
@@ -1218,13 +1279,22 @@ edintcee:userRecommendationsDeliveryDate a owl:DatatypeProperty ;
     rdfs:comment "Fecha en la que se entregaron las recomendaciones de uso."@es ;
     rdfs:comment "Date on which the user recommendations were delivered."@en .
 
-edintcee:userRecommendationsRecipient a owl:DatatypeProperty ;
+edintcee:userRecommendationsRecipient a owl:ObjectProperty ;
     rdfs:label "destinatario de recomendaciones"@es ;
     rdfs:label "recommendations recipient"@en ;
     rdfs:domain edintcee:UserRecommendations ;
-    rdfs:range xsd:string ;
-    rdfs:comment "Destinatario de las recomendaciones: propietario, arrendatario o ambos."@es ;
-    rdfs:comment "Recipient of the recommendations: owner, tenant, or both."@en .
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            skos:Concept
+            [ a owl:Restriction ;
+              owl:onProperty skos:inScheme ;
+              owl:hasValue edintceekos-rcp:RecipientTypes
+            ]
+        )
+    ] ;
+    rdfs:comment "Destinatario de las recomendaciones: propietario, arrendatario o ambos, según el vocabulario controlado de tipos de destinatario."@es ;
+    rdfs:comment "Recipient of the recommendations: owner, tenant, or both, according to the recipient-type controlled vocabulary."@en .
 
 # =============================================================================
 # END OF ONTOLOGY
