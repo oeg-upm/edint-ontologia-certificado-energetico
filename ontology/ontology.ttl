@@ -23,6 +23,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
 @prefix catastro: <http://vocab.linkeddata.es/datosabiertos/def/catastro/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 
 # =============================================================================
 # ONTOLOGY METADATA
@@ -186,6 +187,13 @@ catastro:CadastralProperty a owl:Class ;
     rdfs:comment "Unidad catastral que identifica un inmueble (parcela, construcción o unidad funcional) en el catastro. Permite acceder a la referencia catastral, dirección, año de construcción, superficie y geometría."@es ;
     rdfs:comment "Cadastral unit that identifies a property (parcel, construction or functional unit) in the cadastre. Allows access to the cadastral reference, address, construction year, surface area and geometry."@en ;
     rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/catastro/> .
+
+qudt:QuantityValue a owl:Class ;
+    rdfs:label "Valor de cantidad"@es ;
+    rdfs:label "Quantity value"@en ;
+    rdfs:comment "Valor numérico con unidad de medida explícita (qudt:numericValue + qudt:hasUnit). Permite representar magnitudes físicas como energía (kWh/m²·año), emisiones (kgCO2/m²·año), potencia (kW), superficie (m²), porcentaje, etc."@es ;
+    rdfs:comment "Numeric value with explicit unit of measure (qudt:numericValue + qudt:hasUnit). Allows representing physical quantities such as energy (kWh/m²·year), emissions (kgCO2/m²·year), power (kW), area (m²), percentage, etc."@en ;
+    rdfs:isDefinedBy <http://qudt.org/schema/qudt/> .
 
 # --- Datatype enumerations ---
 
@@ -676,37 +684,37 @@ edintcee:envelopeDescription a owl:DatatypeProperty ;
     rdfs:comment "Descripción de la envolvente térmica del edificio (Art. 8.2.d)."@es ;
     rdfs:comment "Description of the thermal envelope of the building (Art. 8.2.d)."@en .
 
-edintcee:envelopeArea a owl:DatatypeProperty ;
-    rdfs:label "superficie de envolvente (m²)"@es ;
-    rdfs:label "envelope area (m²)"@en ;
+edintcee:envelopeArea a owl:ObjectProperty ;
+    rdfs:label "superficie de envolvente"@es ;
+    rdfs:label "envelope area"@en ;
     rdfs:domain edintcee:EnergyCertificate ;
-    rdfs:range xsd:decimal ;
-    rdfs:comment "Superficie de la envolvente térmica en contacto con el exterior."@es ;
-    rdfs:comment "Surface area of the thermal envelope in contact with the exterior."@en .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Superficie de la envolvente térmica en contacto con el exterior. Se expresa como qudt:QuantityValue (qudt:numericValue + qudt:hasUnit), típicamente en m²."@es ;
+    rdfs:comment "Surface area of the thermal envelope in contact with the exterior. Expressed as qudt:QuantityValue (qudt:numericValue + qudt:hasUnit), typically in m²."@en .
 
-edintcee:globalHeatTransferCoeff a owl:DatatypeProperty ;
-    rdfs:label "coeficiente global de transmitancia (W/m²·K)"@es ;
-    rdfs:label "global heat transfer coefficient (W/m²·K)"@en ;
+edintcee:globalHeatTransferCoeff a owl:ObjectProperty ;
+    rdfs:label "coeficiente global de transmitancia"@es ;
+    rdfs:label "global heat transfer coefficient"@en ;
     rdfs:domain edintcee:EnergyCertificate ;
-    rdfs:range xsd:decimal ;
-    rdfs:comment "Coeficiente global de transmitancia térmica U de la envolvente."@es ;
-    rdfs:comment "Global thermal transmittance coefficient U of the envelope."@en .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Coeficiente global de transmitancia térmica U de la envolvente. Se expresa como qudt:QuantityValue, típicamente en W/m²·K."@es ;
+    rdfs:comment "Global thermal transmittance coefficient U of the envelope. Expressed as qudt:QuantityValue, typically in W/m²·K."@en .
 
-edintcee:thermalBridgeLosses a owl:DatatypeProperty ;
-    rdfs:label "pérdidas por puentes térmicos lineales (W/K)"@es ;
-    rdfs:label "linear thermal bridge losses (W/K)"@en ;
+edintcee:thermalBridgeLosses a owl:ObjectProperty ;
+    rdfs:label "pérdidas por puentes térmicos lineales"@es ;
+    rdfs:label "linear thermal bridge losses"@en ;
     rdfs:domain edintcee:EnergyCertificate ;
-    rdfs:range xsd:decimal ;
-    rdfs:comment "Pérdidas por puentes térmicos lineales."@es ;
-    rdfs:comment "Linear thermal bridge losses."@en .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Pérdidas por puentes térmicos lineales. Se expresa como qudt:QuantityValue, típicamente en W/K."@es ;
+    rdfs:comment "Linear thermal bridge losses. Expressed as qudt:QuantityValue, typically in W/K."@en .
 
-edintcee:windowAreaRatio a owl:DatatypeProperty ;
-    rdfs:label "ratio huecos/fachada (%)"@es ;
-    rdfs:label "window-to-wall ratio (%)"@en ;
+edintcee:windowAreaRatio a owl:ObjectProperty ;
+    rdfs:label "ratio huecos/fachada"@es ;
+    rdfs:label "window-to-wall ratio"@en ;
     rdfs:domain edintcee:EnergyCertificate ;
-    rdfs:range xsd:decimal ;
-    rdfs:comment "Porcentaje de huecos/acristalamiento sobre fachada."@es ;
-    rdfs:comment "Percentage of glazing/openings relative to facade area."@en .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Porcentaje de huecos/acristalamiento sobre fachada. Se expresa como qudt:QuantityValue, típicamente en porcentaje."@es ;
+    rdfs:comment "Percentage of glazing/openings relative to facade area. Expressed as qudt:QuantityValue, typically in percent."@en .
 
 edintcee:architecturalProtectionType a owl:DatatypeProperty ;
     rdfs:label "tipo de protección arquitectónica"@es ;
@@ -770,11 +778,13 @@ edintcee:heatingSystemType a owl:DatatypeProperty ;
     rdfs:domain edintcee:EnergyCertificate ;
     rdfs:range xsd:string .
 
-edintcee:heatingEfficiency a owl:DatatypeProperty ;
+edintcee:heatingEfficiency a owl:ObjectProperty ;
     rdfs:label "rendimiento estacional calefacción"@es ;
     rdfs:label "seasonal heating efficiency"@en ;
     rdfs:domain edintcee:EnergyCertificate ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Rendimiento estacional del sistema de calefacción. Se expresa como qudt:QuantityValue."@es ;
+    rdfs:comment "Seasonal efficiency of the heating system. Expressed as qudt:QuantityValue."@en .
 
 edintcee:hasCoolingSystem a owl:DatatypeProperty ;
     rdfs:label "dispone de refrigeración"@es ;
@@ -788,11 +798,13 @@ edintcee:coolingSystemType a owl:DatatypeProperty ;
     rdfs:domain edintcee:EnergyCertificate ;
     rdfs:range xsd:string .
 
-edintcee:coolingEfficiency a owl:DatatypeProperty ;
+edintcee:coolingEfficiency a owl:ObjectProperty ;
     rdfs:label "rendimiento estacional refrigeración"@es ;
     rdfs:label "seasonal cooling efficiency"@en ;
     rdfs:domain edintcee:EnergyCertificate ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Rendimiento estacional del sistema de refrigeración. Se expresa como qudt:QuantityValue."@es ;
+    rdfs:comment "Seasonal efficiency of the cooling system. Expressed as qudt:QuantityValue."@en .
 
 edintcee:hasDHWSystem a owl:DatatypeProperty ;
     rdfs:label "dispone de ACS"@es ;
@@ -818,11 +830,13 @@ edintcee:renewableType a owl:DatatypeProperty ;
     rdfs:domain edintcee:EnergyCertificate ;
     rdfs:range xsd:string .
 
-edintcee:renewableCapacity a owl:DatatypeProperty ;
-    rdfs:label "potencia renovable instalada (kW)"@es ;
-    rdfs:label "renewable installed capacity (kW)"@en ;
+edintcee:renewableCapacity a owl:ObjectProperty ;
+    rdfs:label "potencia renovable instalada"@es ;
+    rdfs:label "renewable installed capacity"@en ;
     rdfs:domain edintcee:EnergyCertificate ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Potencia renovable instalada. Se expresa como qudt:QuantityValue, típicamente en kW."@es ;
+    rdfs:comment "Renewable installed capacity. Expressed as qudt:QuantityValue, typically in kW."@en .
 
 edintcee:hasAutomationSystem a owl:DatatypeProperty ;
     rdfs:label "dispone de automatización"@es ;
@@ -850,13 +864,13 @@ edintcee:lightingSystemType a owl:DatatypeProperty ;
     rdfs:comment "Tipo de sistema de iluminación (LED, fluorescente, halógena, etc.)."@es ;
     rdfs:comment "Lighting system type (LED, fluorescent, halogen, etc.)."@en .
 
-edintcee:lightingEfficiency a owl:DatatypeProperty ;
+edintcee:lightingEfficiency a owl:ObjectProperty ;
     rdfs:label "eficiencia del sistema de iluminación"@es ;
     rdfs:label "lighting system efficiency"@en ;
     rdfs:domain edintcee:EnergyCertificate ;
-    rdfs:range xsd:decimal ;
-    rdfs:comment "Eficiencia del sistema de iluminación (lm/W o similar)."@es ;
-    rdfs:comment "Lighting system efficiency (lm/W or similar)."@en .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Eficiencia del sistema de iluminación. Se expresa como qudt:QuantityValue, típicamente en lm/W."@es ;
+    rdfs:comment "Lighting system efficiency. Expressed as qudt:QuantityValue, typically in lm/W."@en .
 
 # =============================================================================
 # DATATYPE PROPERTIES — EnergyRating
@@ -879,97 +893,127 @@ edintcee:ratingLetter a owl:ObjectProperty , owl:FunctionalProperty ;
     rdfs:comment "Letra de la calificación global de eficiencia energética en la escala A-G, según el vocabulario controlado de letras de calificación."@es ;
     rdfs:comment "Global energy efficiency rating letter on the A-G scale, according to the rating-letter controlled vocabulary."@en .
 
-edintcee:primaryEnergyTotal a owl:DatatypeProperty ;
-    rdfs:label "energía primaria total (kWh/m²·año)"@es ;
-    rdfs:label "total primary energy (kWh/m²·year)"@en ;
+edintcee:primaryEnergyTotal a owl:ObjectProperty ;
+    rdfs:label "energía primaria total"@es ;
+    rdfs:label "total primary energy"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Energía primaria total. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Total primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:primaryEnergyNonRenewable a owl:DatatypeProperty ;
-    rdfs:label "energía primaria no renovable (kWh/m²·año)"@es ;
-    rdfs:label "non-renewable primary energy (kWh/m²·year)"@en ;
+edintcee:primaryEnergyNonRenewable a owl:ObjectProperty ;
+    rdfs:label "energía primaria no renovable"@es ;
+    rdfs:label "non-renewable primary energy"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Energía primaria no renovable. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Non-renewable primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:primaryEnergyRenewable a owl:DatatypeProperty ;
-    rdfs:label "energía primaria renovable (kWh/m²·año)"@es ;
-    rdfs:label "renewable primary energy (kWh/m²·year)"@en ;
+edintcee:primaryEnergyRenewable a owl:ObjectProperty ;
+    rdfs:label "energía primaria renovable"@es ;
+    rdfs:label "renewable primary energy"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Energía primaria renovable. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Renewable primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:co2Emissions a owl:DatatypeProperty ;
-    rdfs:label "emisiones de CO2 (kgCO2/m²·año)"@es ;
-    rdfs:label "CO2 emissions (kgCO2/m²·year)"@en ;
+edintcee:co2Emissions a owl:ObjectProperty ;
+    rdfs:label "emisiones de CO2"@es ;
+    rdfs:label "CO2 emissions"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Emisiones de CO2. Se expresa como qudt:QuantityValue, típicamente en kgCO2/m²·año."@es ;
+    rdfs:comment "CO2 emissions. Expressed as qudt:QuantityValue, typically in kgCO2/m²·year."@en .
 
-edintcee:heatingDemand a owl:DatatypeProperty ;
-    rdfs:label "demanda de calefacción (kWh/m²·año)"@es ;
-    rdfs:label "heating demand (kWh/m²·year)"@en ;
+edintcee:heatingDemand a owl:ObjectProperty ;
+    rdfs:label "demanda de calefacción"@es ;
+    rdfs:label "heating demand"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Demanda de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Heating demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:coolingDemand a owl:DatatypeProperty ;
-    rdfs:label "demanda de refrigeración (kWh/m²·año)"@es ;
-    rdfs:label "cooling demand (kWh/m²·year)"@en ;
+edintcee:coolingDemand a owl:ObjectProperty ;
+    rdfs:label "demanda de refrigeración"@es ;
+    rdfs:label "cooling demand"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Demanda de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Cooling demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:dhwDemand a owl:DatatypeProperty ;
-    rdfs:label "demanda de ACS (kWh/m²·año)"@es ;
-    rdfs:label "DHW demand (kWh/m²·year)"@en ;
+edintcee:dhwDemand a owl:ObjectProperty ;
+    rdfs:label "demanda de ACS"@es ;
+    rdfs:label "DHW demand"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Demanda de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Domestic hot water demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:heatingConsumption a owl:DatatypeProperty ;
-    rdfs:label "consumo de calefacción (kWh/m²·año)"@es ;
-    rdfs:label "heating consumption (kWh/m²·year)"@en ;
+edintcee:heatingConsumption a owl:ObjectProperty ;
+    rdfs:label "consumo de calefacción"@es ;
+    rdfs:label "heating consumption"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Consumo de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Heating consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:coolingConsumption a owl:DatatypeProperty ;
-    rdfs:label "consumo de refrigeración (kWh/m²·año)"@es ;
-    rdfs:label "cooling consumption (kWh/m²·year)"@en ;
+edintcee:coolingConsumption a owl:ObjectProperty ;
+    rdfs:label "consumo de refrigeración"@es ;
+    rdfs:label "cooling consumption"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Consumo de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Cooling consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:dhwConsumption a owl:DatatypeProperty ;
-    rdfs:label "consumo de ACS (kWh/m²·año)"@es ;
-    rdfs:label "DHW consumption (kWh/m²·year)"@en ;
+edintcee:dhwConsumption a owl:ObjectProperty ;
+    rdfs:label "consumo de ACS"@es ;
+    rdfs:label "DHW consumption"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Consumo de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Domestic hot water consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:lightingConsumption a owl:DatatypeProperty ;
-    rdfs:label "consumo de iluminación (kWh/m²·año)"@es ;
-    rdfs:label "lighting consumption (kWh/m²·year)"@en ;
+edintcee:lightingConsumption a owl:ObjectProperty ;
+    rdfs:label "consumo de iluminación"@es ;
+    rdfs:label "lighting consumption"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Consumo de iluminación. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Lighting consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
 # --- Measured Consumption (Art. 6.7) ---
 
-edintcee:measuredHeatingConsumption a owl:DatatypeProperty ;
-    rdfs:label "consumo medido de calefacción (kWh/m²·año)"@es ;
-    rdfs:label "measured heating consumption (kWh/m²·year)"@en ;
+edintcee:measuredHeatingConsumption a owl:ObjectProperty ;
+    rdfs:label "consumo medido de calefacción"@es ;
+    rdfs:label "measured heating consumption"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Consumo medido de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Measured heating consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:measuredCoolingConsumption a owl:DatatypeProperty ;
-    rdfs:label "consumo medido de refrigeración (kWh/m²·año)"@es ;
-    rdfs:label "measured cooling consumption (kWh/m²·year)"@en ;
+edintcee:measuredCoolingConsumption a owl:ObjectProperty ;
+    rdfs:label "consumo medido de refrigeración"@es ;
+    rdfs:label "measured cooling consumption"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Consumo medido de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Measured cooling consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:measuredDHWConsumption a owl:DatatypeProperty ;
-    rdfs:label "consumo medido de ACS (kWh/m²·año)"@es ;
-    rdfs:label "measured DHW consumption (kWh/m²·year)"@en ;
+edintcee:measuredDHWConsumption a owl:ObjectProperty ;
+    rdfs:label "consumo medido de ACS"@es ;
+    rdfs:label "measured DHW consumption"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Consumo medido de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Measured domestic hot water consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
-edintcee:measuredTotalConsumption a owl:DatatypeProperty ;
-    rdfs:label "consumo total medido (kWh/m²·año)"@es ;
-    rdfs:label "total measured consumption (kWh/m²·year)"@en ;
+edintcee:measuredTotalConsumption a owl:ObjectProperty ;
+    rdfs:label "consumo total medido"@es ;
+    rdfs:label "total measured consumption"@en ;
     rdfs:domain edintcee:EnergyRating ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Consumo total medido. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es ;
+    rdfs:comment "Total measured consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
 
 edintcee:measurementPeriodStart a owl:DatatypeProperty ;
     rdfs:label "fecha inicio periodo de medición"@es ;
@@ -1027,29 +1071,37 @@ edintcee:recommendationDescription a owl:DatatypeProperty ;
     rdfs:domain edintcee:ImprovementRecommendation ;
     rdfs:range xsd:string .
 
-edintcee:estimatedSavingPct a owl:DatatypeProperty ;
-    rdfs:label "ahorro estimado (%)"@es ;
-    rdfs:label "estimated saving (%)"@en ;
+edintcee:estimatedSavingPct a owl:ObjectProperty ;
+    rdfs:label "ahorro estimado"@es ;
+    rdfs:label "estimated saving"@en ;
     rdfs:domain edintcee:ImprovementRecommendation ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Ahorro estimado porcentual. Se expresa como qudt:QuantityValue, típicamente en porcentaje."@es ;
+    rdfs:comment "Estimated percentage saving. Expressed as qudt:QuantityValue, typically in percent."@en .
 
-edintcee:estimatedSavingKwh a owl:DatatypeProperty ;
-    rdfs:label "ahorro estimado (kWh/año)"@es ;
-    rdfs:label "estimated saving (kWh/year)"@en ;
+edintcee:estimatedSavingKwh a owl:ObjectProperty ;
+    rdfs:label "ahorro estimado en energía"@es ;
+    rdfs:label "estimated saving in energy"@en ;
     rdfs:domain edintcee:ImprovementRecommendation ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Ahorro estimado en energía. Se expresa como qudt:QuantityValue, típicamente en kWh/año."@es ;
+    rdfs:comment "Estimated energy saving. Expressed as qudt:QuantityValue, typically in kWh/year."@en .
 
-edintcee:paybackPeriod a owl:DatatypeProperty ;
-    rdfs:label "plazo de recuperación (años)"@es ;
-    rdfs:label "payback period (years)"@en ;
+edintcee:paybackPeriod a owl:ObjectProperty ;
+    rdfs:label "plazo de recuperación"@es ;
+    rdfs:label "payback period"@en ;
     rdfs:domain edintcee:ImprovementRecommendation ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Plazo de recuperación de la inversión. Se expresa como qudt:QuantityValue, típicamente en años."@es ;
+    rdfs:comment "Payback period of the investment. Expressed as qudt:QuantityValue, typically in years."@en .
 
-edintcee:estimatedCost a owl:DatatypeProperty ;
-    rdfs:label "coste estimado (€)"@es ;
-    rdfs:label "estimated cost (€)"@en ;
+edintcee:estimatedCost a owl:ObjectProperty ;
+    rdfs:label "coste estimado"@es ;
+    rdfs:label "estimated cost"@en ;
     rdfs:domain edintcee:ImprovementRecommendation ;
-    rdfs:range xsd:decimal .
+    rdfs:range qudt:QuantityValue ;
+    rdfs:comment "Coste estimado de la intervención. Se expresa como qudt:QuantityValue, típicamente en euros."@es ;
+    rdfs:comment "Estimated cost of the intervention. Expressed as qudt:QuantityValue, typically in euros."@en .
 
 edintcee:priority a owl:DatatypeProperty ;
     rdfs:label "prioridad"@es ;
