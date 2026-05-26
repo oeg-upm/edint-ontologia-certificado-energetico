@@ -1,13 +1,13 @@
-# CQ-REC-02: ¿Cuál es el plazo de recuperación y coste estimado de las recomendaciones?
-
 PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
 
-SELECT ?cert ?recDesc ?payback ?cost
+SELECT ?cert ?rec ?desc ?payback ?cost
 WHERE {
     ?cert a edintcee:EnergyCertificate ;
           edintcee:hasRecommendation ?rec .
-    ?rec edintcee:recommendationDescription ?recDesc ;
-         edintcee:paybackPeriod ?payback ;
-         edintcee:estimatedCost ?cost .
+    ?rec edintcee:recommendationDescription ?desc ;
+         edintcee:paybackPeriod ?ppQV ;
+         edintcee:estimatedCost ?ecQV .
+    ?ppQV qudt:numericValue ?payback .
+    ?ecQV qudt:numericValue ?cost .
 }
-ORDER BY ?payback

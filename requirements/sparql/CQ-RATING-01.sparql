@@ -1,13 +1,16 @@
-# CQ-RATING-01: ¿Cuál es la distribución de certificados por letra de calificación (A-G) en un municipio?
-
 PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX esdir: <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#>
+PREFIX schema: <http://schema.org/>
 
-SELECT ?municipality ?letter (COUNT(?cert) AS ?count)
+SELECT ?municipality ?ratingLetter (COUNT(?cert) AS ?numCertificates)
 WHERE {
     ?cert a edintcee:EnergyCertificate ;
-          edintcee:observedMunicipality ?municipality ;
+          edintcee:hasObservedAddress ?addr ;
           edintcee:hasRating ?rating .
-    ?rating edintcee:ratingLetter ?letter .
+    ?addr a esdir:DireccionPostal ;
+          schema:addressLocality ?municipality .
+    ?rating edintcee:ratingLetter ?letterConcept .
+    ?letterConcept rdfs:label ?ratingLetter .
 }
-GROUP BY ?municipality ?letter
-ORDER BY ?municipality ?letter
+GROUP BY ?municipality ?ratingLetter
+ORDER BY ?municipality ?ratingLetter

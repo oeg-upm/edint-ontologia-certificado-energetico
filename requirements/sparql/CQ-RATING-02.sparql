@@ -1,11 +1,13 @@
-# CQ-RATING-02: ¿Cuál es el consumo de energía primaria no renovable y las emisiones CO2 de un certificado?
-
 PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
 
-SELECT ?cert ?epNREnew ?co2
+SELECT ?cert ?epNRE ?co2
 WHERE {
     ?cert a edintcee:EnergyCertificate ;
           edintcee:hasRating ?rating .
-    ?rating edintcee:primaryEnergyNonRenewable ?epNREnew ;
-           edintcee:co2Emissions ?co2 .
+    ?rating edintcee:primaryEnergyNonRenewable ?epNREqv ;
+            edintcee:co2Emissions ?co2qv .
+    ?epNREqv qudt:numericValue ?epNRE .
+    ?co2qv qudt:numericValue ?co2 .
 }
+ORDER BY DESC(?epNRE)

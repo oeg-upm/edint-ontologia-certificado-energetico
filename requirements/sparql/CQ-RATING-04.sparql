@@ -1,13 +1,16 @@
-# CQ-RATING-04: ¿Cuáles son los consumos por servicio (calefacción, refrigeración, ACS, iluminación)?
-
 PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
 
 SELECT ?cert ?heatingCons ?coolingCons ?dhwCons ?lightCons
 WHERE {
     ?cert a edintcee:EnergyCertificate ;
           edintcee:hasRating ?rating .
-    ?rating edintcee:heatingConsumption ?heatingCons ;
-           edintcee:coolingConsumption ?coolingCons ;
-           edintcee:dhwConsumption ?dhwCons ;
-           edintcee:lightingConsumption ?lightCons .
+    ?rating edintcee:heatingConsumption ?hqv ;
+            edintcee:coolingConsumption ?cqv ;
+            edintcee:dhwConsumption ?dqv ;
+            edintcee:lightingConsumption ?lqv .
+    ?hqv qudt:numericValue ?heatingCons .
+    ?cqv qudt:numericValue ?coolingCons .
+    ?dqv qudt:numericValue ?dhwCons .
+    ?lqv qudt:numericValue ?lightCons .
 }

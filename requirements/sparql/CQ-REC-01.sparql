@@ -1,12 +1,13 @@
-# CQ-REC-01: ¿Qué recomendaciones de mejora tiene un certificado y cuál es el ahorro estimado?
-
 PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
 
-SELECT ?cert ?recDesc ?savingPct ?savingKwh
+SELECT ?cert ?rec ?desc ?savingPct ?savingKwh
 WHERE {
     ?cert a edintcee:EnergyCertificate ;
           edintcee:hasRecommendation ?rec .
-    ?rec edintcee:recommendationDescription ?recDesc ;
-         edintcee:estimatedSavingPct ?savingPct ;
-         edintcee:estimatedSavingKwh ?savingKwh .
+    ?rec edintcee:recommendationDescription ?desc ;
+         edintcee:estimatedSavingPct ?spctQV ;
+         edintcee:estimatedSavingKwh ?skwhQV .
+    ?spctQV qudt:numericValue ?savingPct .
+    ?skwhQV qudt:numericValue ?savingKwh .
 }

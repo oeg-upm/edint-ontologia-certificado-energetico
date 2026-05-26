@@ -1,11 +1,12 @@
-# CQ-CERT-05: ¿Cuántos certificados se han emitido por comunidad autónoma?
-
 PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
+PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
 
-SELECT ?ccaa (COUNT(?cert) AS ?count)
+SELECT ?ccaa (COUNT(?cert) AS ?numCertificates)
 WHERE {
     ?cert a edintcee:EnergyCertificate ;
-          edintcee:registrationCCAA ?ccaa .
+          edintcee:registrationAutonomousCommunity ?ccaaUri .
+    ?ccaaUri a esadm:Autonomia ;
+             rdfs:label ?ccaa .
 }
 GROUP BY ?ccaa
-ORDER BY DESC(?count)
+ORDER BY DESC(?numCertificates)
