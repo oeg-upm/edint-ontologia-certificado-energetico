@@ -4,6 +4,7 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/> .
 @prefix edintceekos-rsv: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/rating-scale-version/> .
 @prefix edintcee-shapes: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/shapes/> .
@@ -189,14 +190,16 @@ edintcee-shapes:RatingDowngradeJustificationShape a sh:NodeShape ;
         sh:message "If the completed work certificate rating is worse than the project one, a justification is required (Art. 9.5 RD 390/2021)."@en ;
         sh:select """
             PREFIX edintcee: <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/>
-            PREFIX edintceekos-ct: <http://vocab.linkeddata.es/datosabiertos/kos/edintcee/certificate-type/>
+            PREFIX qudt: <http://qudt.org/schema/qudt/>
             SELECT $this ?pred
             WHERE {
                 $this edintcee:predecessorCertificate ?pred .
                 $this edintcee:hasRating ?thisRating .
-                ?thisRating edintcee:primaryEnergyNonRenewable ?thisPE .
+                ?thisRating edintcee:primaryEnergyNonRenewable ?thisQV .
+                ?thisQV qudt:numericValue ?thisPE .
                 ?pred edintcee:hasRating ?predRating .
-                ?predRating edintcee:primaryEnergyNonRenewable ?predPE .
+                ?predRating edintcee:primaryEnergyNonRenewable ?predQV .
+                ?predQV qudt:numericValue ?predPE .
                 FILTER (?thisPE > ?predPE)
                 FILTER NOT EXISTS { $this edintcee:noImprovementJustification ?just }
             }
@@ -270,18 +273,18 @@ edintcee-shapes:EnergyRatingShape a sh:NodeShape ;
         sh:path edintcee:primaryEnergyNonRenewable ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:decimal ;
-        sh:message "La calificación debe tener un valor de energía primaria no renovable."@es ;
-        sh:message "The rating must have a non-renewable primary energy value."@en ;
+        sh:class qudt:QuantityValue ;
+        sh:message "La calificación debe tener un valor de energía primaria no renovable (qudt:QuantityValue)."@es ;
+        sh:message "The rating must have a non-renewable primary energy value (qudt:QuantityValue)."@en ;
     ] ;
 
     sh:property [
         sh:path edintcee:co2Emissions ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:decimal ;
-        sh:message "La calificación debe tener un valor de emisiones de CO2."@es ;
-        sh:message "The rating must have a CO2 emissions value."@en ;
+        sh:class qudt:QuantityValue ;
+        sh:message "La calificación debe tener un valor de emisiones de CO2 (qudt:QuantityValue)."@es ;
+        sh:message "The rating must have a CO2 emissions value (qudt:QuantityValue)."@en ;
     ] .
 
 # ---------------------------------------------------------------------------
