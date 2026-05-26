@@ -77,9 +77,6 @@
 # http://www.w3.org/2001/XMLSchema#date
 <http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 # 
-# http://www.w3.org/2001/XMLSchema#gYear
-<http://www.w3.org/2001/XMLSchema#gYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-# 
 # 
 # 
 # #################################################################
@@ -112,6 +109,42 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateType> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of energy performance certificate according to the certificate-type controlled vocabulary: project, completed work or existing building (Art. 2.b-g, Art. 9-10, Art. 15.2 RD 390/2021)."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateType> <http://www.w3.org/2000/01/rdf-schema#label> "certificate type"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateType> <http://www.w3.org/2000/01/rdf-schema#label> "tipo de certificado"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#comment> "CO2 emissions. Expressed as qudt:QuantityValue, typically in kgCO2/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#comment> "Emisiones de CO2. Se expresa como qudt:QuantityValue, típicamente en kgCO2/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#label> "CO2 emissions"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#label> "emisiones de CO2"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumo de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Cooling consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo de refrigeración"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "cooling consumption"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#comment> "Cooling demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#comment> "Demanda de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#label> "cooling demand"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#label> "demanda de refrigeración"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "Rendimiento estacional del sistema de refrigeración. Se expresa como qudt:QuantityValue."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "Seasonal efficiency of the cooling system. Expressed as qudt:QuantityValue."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "rendimiento estacional refrigeración"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "seasonal cooling efficiency"@en .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEnergySource
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEnergySource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -156,6 +189,24 @@ _:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dataBasis> <http://www.w3.org/2000/01/rdf-schema#label> "base de datos"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dataBasis> <http://www.w3.org/2000/01/rdf-schema#label> "data basis"@en .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumo de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Domestic hot water consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "DHW consumption"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo de ACS"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#comment> "Demanda de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#comment> "Domestic hot water demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#label> "DHW demand"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#label> "demanda de ACS"@es .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -176,6 +227,51 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource> <http://www.w3.org/2000/01/rdf-schema#label> "DHW energy source"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource> <http://www.w3.org/2000/01/rdf-schema#label> "fuente energética de ACS"@es .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#comment> "Superficie de la envolvente térmica en contacto con el exterior. Se expresa como qudt:QuantityValue (qudt:numericValue + qudt:hasUnit), típicamente en m²."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#comment> "Surface area of the thermal envelope in contact with the exterior. Expressed as qudt:QuantityValue (qudt:numericValue + qudt:hasUnit), typically in m²."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#label> "envelope area"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#label> "superficie de envolvente"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#comment> "Coste estimado de la intervención. Se expresa como qudt:QuantityValue, típicamente en euros."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#comment> "Estimated cost of the intervention. Expressed as qudt:QuantityValue, typically in euros."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#label> "coste estimado"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#label> "estimated cost"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#comment> "Ahorro estimado en energía. Se expresa como qudt:QuantityValue, típicamente en kWh/año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#comment> "Estimated energy saving. Expressed as qudt:QuantityValue, typically in kWh/year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#label> "ahorro estimado en energía"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#label> "estimated saving in energy"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#comment> "Ahorro estimado porcentual. Se expresa como qudt:QuantityValue, típicamente en porcentaje."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#comment> "Estimated percentage saving. Expressed as qudt:QuantityValue, typically in percent."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#label> "ahorro estimado"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#label> "estimated saving"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#comment> "Coeficiente global de transmitancia térmica U de la envolvente. Se expresa como qudt:QuantityValue, típicamente en W/m²·K."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#comment> "Global thermal transmittance coefficient U of the envelope. Expressed as qudt:QuantityValue, typically in W/m²·K."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#label> "coeficiente global de transmitancia"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#label> "global heat transfer coefficient"@en .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel> <http://www.w3.org/2002/07/owl#inverseOf> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelFor> .
@@ -185,6 +281,15 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel> <http://www.w3.org/2000/01/rdf-schema#comment> "Etiqueta de eficiencia energética asociada al certificado registrado."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel> <http://www.w3.org/2000/01/rdf-schema#label> "has label"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel> <http://www.w3.org/2000/01/rdf-schema#label> "tiene etiqueta"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Dirección postal del inmueble certificado. Se reutiliza esdir:DireccionPostal, que especializa schema:PostalAddress, vcard:Address y locn:Address, y permite representar vía, municipio, provincia y código postal con propiedades estándar (Art. 8.2.a)."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Postal address of the certified property. Reuses esdir:DireccionPostal, which specialises schema:PostalAddress, vcard:Address and locn:Address, and allows representing street, municipality, province and postal code with standard properties (Art. 8.2.a)."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress> <http://www.w3.org/2000/01/rdf-schema#label> "dirección del inmueble"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress> <http://www.w3.org/2000/01/rdf-schema#label> "observed address"@en .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRating
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -206,6 +311,15 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRecommendation> <http://www.w3.org/2000/01/rdf-schema#label> "has recommendation"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRecommendation> <http://www.w3.org/2000/01/rdf-schema#label> "tiene recomendación"@es .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Dirección postal del técnico competente. Se reutiliza esdir:DireccionPostal, que especializa schema:PostalAddress, vcard:Address y locn:Address, y permite representar vía, municipio, provincia y código postal con propiedades estándar (Anexo IV)."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Postal address of the competent technician. Reuses esdir:DireccionPostal, which specialises schema:PostalAddress, vcard:Address and locn:Address, and allows representing street, municipality, province and postal code with standard properties (Annex IV)."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress> <http://www.w3.org/2000/01/rdf-schema#label> "dirección del técnico"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress> <http://www.w3.org/2000/01/rdf-schema#label> "technician address"@en .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -214,6 +328,33 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations> <http://www.w3.org/2000/01/rdf-schema#comment> "User recommendations document delivered to the building user/tenant (Art. 8.1.f)."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations> <http://www.w3.org/2000/01/rdf-schema#label> "has user recommendations"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations> <http://www.w3.org/2000/01/rdf-schema#label> "tiene recomendaciones de uso"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumo de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Heating consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo de calefacción"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "heating consumption"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#comment> "Demanda de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#comment> "Heating demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#label> "demanda de calefacción"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#label> "heating demand"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "Rendimiento estacional del sistema de calefacción. Se expresa como qudt:QuantityValue."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "Seasonal efficiency of the heating system. Expressed as qudt:QuantityValue."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "rendimiento estacional calefacción"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "seasonal heating efficiency"@en .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEnergySource
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEnergySource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -304,6 +445,60 @@ _:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelRatingLetter> <http://www.w3.org/2000/01/rdf-schema#label> "label rating letter"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelRatingLetter> <http://www.w3.org/2000/01/rdf-schema#label> "letra de la etiqueta"@es .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumo de iluminación. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Lighting consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo de iluminación"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "lighting consumption"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "Eficiencia del sistema de iluminación. Se expresa como qudt:QuantityValue, típicamente en lm/W."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "Lighting system efficiency. Expressed as qudt:QuantityValue, typically in lm/W."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "eficiencia del sistema de iluminación"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "lighting system efficiency"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumo medido de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Measured cooling consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo medido de refrigeración"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "measured cooling consumption"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumo medido de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Measured domestic hot water consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo medido de ACS"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "measured DHW consumption"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumo medido de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Measured heating consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo medido de calefacción"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "measured heating consumption"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumo total medido. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#comment> "Total measured consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo total medido"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "total measured consumption"@en .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedBuildingUse
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedBuildingUse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedBuildingUse> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -346,6 +541,15 @@ _:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedClimaticZone> <http://www.w3.org/2000/01/rdf-schema#label> "observed climatic zone"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedClimaticZone> <http://www.w3.org/2000/01/rdf-schema#label> "zona climática observada"@es .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "Payback period of the investment. Expressed as qudt:QuantityValue, typically in years."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "Plazo de recuperación de la inversión. Se expresa como qudt:QuantityValue, típicamente en años."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "payback period"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "plazo de recuperación"@es .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate> <http://www.w3.org/2002/07/owl#inverseOf> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/successorCertificate> .
@@ -355,6 +559,33 @@ _:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate> <http://www.w3.org/2000/01/rdf-schema#comment> "Previous certificate that this certificate renews or replaces."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate> <http://www.w3.org/2000/01/rdf-schema#label> "certificado anterior"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate> <http://www.w3.org/2000/01/rdf-schema#label> "predecessor certificate"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#comment> "Energía primaria no renovable. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#comment> "Non-renewable primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#label> "energía primaria no renovable"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#label> "non-renewable primary energy"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#comment> "Energía primaria renovable. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#comment> "Renewable primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#label> "energía primaria renovable"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#label> "renewable primary energy"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#comment> "Energía primaria total. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#comment> "Total primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#label> "energía primaria total"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#label> "total primary energy"@en .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureType
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -468,6 +699,33 @@ _:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationType> <http://www.w3.org/2000/01/rdf-schema#label> "recommendation type"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationType> <http://www.w3.org/2000/01/rdf-schema#label> "tipo de recomendación"@es .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Cadastral entity the certificate refers to. Through catastro:CadastralProperty, the cadastral reference (catastro:referenceCatastral), address (catastro:hasAddress), construction year and other property data can be accessed (Art. 8.2.a)."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "Entidad catastral a la que se refiere el certificado. A través de catastro:CadastralProperty se puede acceder a la referencia catastral (catastro:referenceCatastral), la dirección (catastro:hasAddress), el año de construcción y otros datos del inmueble (Art. 8.2.a)."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#label> "entidad catastral referida"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity> <http://www.w3.org/2000/01/rdf-schema#label> "refers to cadastral entity"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#comment> "Autonomous community where the certificate is registered, represented as esadm:Autonomia from the territory vocabulary (Art. 6.6)."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#comment> "Comunidad autónoma donde se registra el certificado, representada como esadm:Autonomia del vocabulario de territorio (Art. 6.6)."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#label> "CCAA de registro"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#label> "registration autonomous community"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#comment> "Potencia renovable instalada. Se expresa como qudt:QuantityValue, típicamente en kW."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#comment> "Renewable installed capacity. Expressed as qudt:QuantityValue, typically in kW."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#label> "potencia renovable instalada"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#label> "renewable installed capacity"@en .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableEnergySource
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableEnergySource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableEnergySource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -541,6 +799,24 @@ _:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianCourseModules> <http://www.w3.org/2000/01/rdf-schema#label> "course modules completed"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianCourseModules> <http://www.w3.org/2000/01/rdf-schema#label> "módulos del curso cursados"@es .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#comment> "Autonomous community where the technician is registered to certify, represented as esadm:Autonomia from the territory vocabulary."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#comment> "Comunidad autónoma donde el técnico está registrado para certificar, representada como esadm:Autonomia del vocabulario de territorio."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#label> "CCAA de registro del técnico"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity> <http://www.w3.org/2000/01/rdf-schema#label> "technician registration autonomous community"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#comment> "Linear thermal bridge losses. Expressed as qudt:QuantityValue, typically in W/K."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#comment> "Pérdidas por puentes térmicos lineales. Se expresa como qudt:QuantityValue, típicamente en W/K."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#label> "linear thermal bridge losses"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#label> "pérdidas por puentes térmicos lineales"@es .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsRecipient
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsRecipient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsRecipient> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/UserRecommendations> .
@@ -591,6 +867,15 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ventilationEnergySource> <http://www.w3.org/2000/01/rdf-schema#comment> "Fuente de energía del sistema de ventilación según el vocabulario controlado de fuentes de energía."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ventilationEnergySource> <http://www.w3.org/2000/01/rdf-schema#label> "fuente energética de ventilación"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ventilationEnergySource> <http://www.w3.org/2000/01/rdf-schema#label> "ventilation energy source"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/schema/qudt/QuantityValue> .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#comment> "Percentage of glazing/openings relative to facade area. Expressed as qudt:QuantityValue, typically in percent."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#comment> "Porcentaje de huecos/acristalamiento sobre fachada. Se expresa como qudt:QuantityValue, típicamente en porcentaje."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#label> "ratio huecos/fachada"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#label> "window-to-wall ratio"@en .
 # 
 # http://www.w3.org/2004/02/skos/core#inScheme
 # 
@@ -657,13 +942,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateNumber> <http://www.w3.org/2000/01/rdf-schema#label> "certificate number"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateNumber> <http://www.w3.org/2000/01/rdf-schema#label> "número de certificado"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#label> "CO2 emissions (kgCO2/m²·year)"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> <http://www.w3.org/2000/01/rdf-schema#label> "emisiones de CO2 (kgCO2/m²·año)"@es .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortConditions
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortConditions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortConditions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -691,27 +969,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/consumptionDataAvailableToOwner> <http://www.w3.org/2000/01/rdf-schema#label> "consumption data available to owner"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/consumptionDataAvailableToOwner> <http://www.w3.org/2000/01/rdf-schema#label> "datos de consumo disponibles para el propietario"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo de refrigeración (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "cooling consumption (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#label> "cooling demand (kWh/m²·year)"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand> <http://www.w3.org/2000/01/rdf-schema#label> "demanda de refrigeración (kWh/m²·año)"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "rendimiento estacional refrigeración"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "seasonal cooling efficiency"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingSystemType
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingSystemType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingSystemType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -728,35 +985,12 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/costEffectivenessReference> <http://www.w3.org/2000/01/rdf-schema#label> "cost-effectiveness analysis reference"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/costEffectivenessReference> <http://www.w3.org/2000/01/rdf-schema#label> "referencia a análisis coste-eficacia"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "DHW consumption (kWh/m²·year)"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo de ACS (kWh/m²·año)"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#label> "DHW demand (kWh/m²·year)"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand> <http://www.w3.org/2000/01/rdf-schema#label> "demanda de ACS (kWh/m²·año)"@es .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType> <http://www.w3.org/2000/01/rdf-schema#label> "DHW system type"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType> <http://www.w3.org/2000/01/rdf-schema#label> "tipo de sistema ACS"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#comment> "Superficie de la envolvente térmica en contacto con el exterior."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#comment> "Surface area of the thermal envelope in contact with the exterior."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#label> "envelope area (m²)"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea> <http://www.w3.org/2000/01/rdf-schema#label> "superficie de envolvente (m²)"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -767,27 +1001,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription> <http://www.w3.org/2000/01/rdf-schema#label> "descripción de envolvente"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription> <http://www.w3.org/2000/01/rdf-schema#label> "envelope description"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#label> "coste estimado (€)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost> <http://www.w3.org/2000/01/rdf-schema#label> "estimated cost (€)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#label> "ahorro estimado (kWh/año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh> <http://www.w3.org/2000/01/rdf-schema#label> "estimated saving (kWh/year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#label> "ahorro estimado (%)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct> <http://www.w3.org/2000/01/rdf-schema#label> "estimated saving (%)"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -796,15 +1009,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation> <http://www.w3.org/2000/01/rdf-schema#comment> "Information about financial incentives, grants or financing possibilities for recommended improvements."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation> <http://www.w3.org/2000/01/rdf-schema#label> "financing information"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation> <http://www.w3.org/2000/01/rdf-schema#label> "información de financiación"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#comment> "Coeficiente global de transmitancia térmica U de la envolvente."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#comment> "Global thermal transmittance coefficient U of the envelope."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#label> "coeficiente global de transmitancia (W/m²·K)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff> <http://www.w3.org/2000/01/rdf-schema#label> "global heat transfer coefficient (W/m²·K)"@en .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasAutomationSystem
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasAutomationSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -855,27 +1059,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRenewableGeneration> <http://www.w3.org/2000/01/rdf-schema#label> "dispone de generación renovable"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRenewableGeneration> <http://www.w3.org/2000/01/rdf-schema#label> "has renewable generation"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo de calefacción (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "heating consumption (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#label> "demanda de calefacción (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand> <http://www.w3.org/2000/01/rdf-schema#label> "heating demand (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "rendimiento estacional calefacción"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "seasonal heating efficiency"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingSystemType
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingSystemType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingSystemType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -892,22 +1075,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issueDate> <http://www.w3.org/2000/01/rdf-schema#comment> "Fecha en la que el técnico competente suscribe el certificado."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issueDate> <http://www.w3.org/2000/01/rdf-schema#label> "fecha de emisión"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issueDate> <http://www.w3.org/2000/01/rdf-schema#label> "issue date"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo de iluminación (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "lighting consumption (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "Eficiencia del sistema de iluminación (lm/W o similar)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#comment> "Lighting system efficiency (lm/W or similar)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "eficiencia del sistema de iluminación"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "lighting system efficiency"@en .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingSystemType
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingSystemType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -926,34 +1093,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/linkedToBuildingBook> <http://www.w3.org/2000/01/rdf-schema#comment> "Whether the certificate is included in the Building Book (Art. 6.8)."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/linkedToBuildingBook> <http://www.w3.org/2000/01/rdf-schema#label> "linked to Building Book"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/linkedToBuildingBook> <http://www.w3.org/2000/01/rdf-schema#label> "vinculado al Libro del Edificio"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo medido de refrigeración (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "measured cooling consumption (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo medido de ACS (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "measured DHW consumption (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo medido de calefacción (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "measured heating consumption (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "consumo total medido (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption> <http://www.w3.org/2000/01/rdf-schema#label> "total measured consumption (kWh/m²·year)"@en .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodEnd
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -987,33 +1126,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/normalOperatingConditions> <http://www.w3.org/2000/01/rdf-schema#label> "condiciones normales de funcionamiento"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/normalOperatingConditions> <http://www.w3.org/2000/01/rdf-schema#label> "normal operating conditions"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Dirección completa del inmueble (Art. 8.2.a)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Full address of the property (Art. 8.2.a)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress> <http://www.w3.org/2000/01/rdf-schema#label> "dirección observada"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress> <http://www.w3.org/2000/01/rdf-schema#label> "observed address"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef> <http://www.w3.org/2000/01/rdf-schema#comment> "Cadastral reference of the property as stated in the certificate (Art. 8.2.a)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef> <http://www.w3.org/2000/01/rdf-schema#comment> "Referencia catastral del inmueble consignada en el certificado (Art. 8.2.a)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef> <http://www.w3.org/2000/01/rdf-schema#label> "observed cadastral reference"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef> <http://www.w3.org/2000/01/rdf-schema#label> "referencia catastral observada"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#gYear> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear> <http://www.w3.org/2000/01/rdf-schema#comment> "Año de construcción declarado del edificio."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear> <http://www.w3.org/2000/01/rdf-schema#comment> "Declared construction year of the building."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear> <http://www.w3.org/2000/01/rdf-schema#label> "año de construcción observado"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear> <http://www.w3.org/2000/01/rdf-schema#label> "observed construction year"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedHeritageProtection
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedHeritageProtection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedHeritageProtection> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -1032,15 +1144,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedIsBuildingPart> <http://www.w3.org/2000/01/rdf-schema#label> "es parte de edificio"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedIsBuildingPart> <http://www.w3.org/2000/01/rdf-schema#label> "is building part"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality> <http://www.w3.org/2000/01/rdf-schema#comment> "Municipality where the building is located."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality> <http://www.w3.org/2000/01/rdf-schema#comment> "Municipio donde se ubica el edificio."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality> <http://www.w3.org/2000/01/rdf-schema#label> "municipio observado"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality> <http://www.w3.org/2000/01/rdf-schema#label> "observed municipality"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -1049,52 +1152,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "Description of the certified part of the building (dwelling, premises, etc.)."@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription> <http://www.w3.org/2000/01/rdf-schema#label> "descripción de la parte"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription> <http://www.w3.org/2000/01/rdf-schema#label> "part description"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince> <http://www.w3.org/2000/01/rdf-schema#comment> "Province where the building is located."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince> <http://www.w3.org/2000/01/rdf-schema#comment> "Provincia donde se ubica el edificio."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince> <http://www.w3.org/2000/01/rdf-schema#label> "observed province"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince> <http://www.w3.org/2000/01/rdf-schema#label> "provincia observada"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface> <http://www.w3.org/2000/01/rdf-schema#comment> "Superficie útil considerada para la certificación (Art. 2.t)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface> <http://www.w3.org/2000/01/rdf-schema#comment> "Useful surface area considered for certification (Art. 2.t)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface> <http://www.w3.org/2000/01/rdf-schema#label> "observed useful surface (m²)"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface> <http://www.w3.org/2000/01/rdf-schema#label> "superficie útil observada (m²)"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "payback period (years)"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "plazo de recuperación (años)"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#label> "energía primaria no renovable (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> <http://www.w3.org/2000/01/rdf-schema#label> "non-renewable primary energy (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#label> "energía primaria renovable (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable> <http://www.w3.org/2000/01/rdf-schema#label> "renewable primary energy (kWh/m²·year)"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#label> "energía primaria total (kWh/m²·año)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal> <http://www.w3.org/2000/01/rdf-schema#label> "total primary energy (kWh/m²·year)"@en .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/priority
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/priority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -1135,15 +1192,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationDescription> <http://www.w3.org/2000/01/rdf-schema#label> "descripción de la recomendación"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationDescription> <http://www.w3.org/2000/01/rdf-schema#label> "recommendation description"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA> <http://www.w3.org/2000/01/rdf-schema#comment> "Autonomous community where the certificate is registered (Art. 6.6)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA> <http://www.w3.org/2000/01/rdf-schema#comment> "Comunidad autónoma donde se registra el certificado (Art. 6.6)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA> <http://www.w3.org/2000/01/rdf-schema#label> "CCAA de registro"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA> <http://www.w3.org/2000/01/rdf-schema#label> "registration autonomous community"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationDate
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -1162,13 +1210,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registryURL> <http://www.w3.org/2000/01/rdf-schema#label> "URL del registro"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registryURL> <http://www.w3.org/2000/01/rdf-schema#label> "registry URL"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#label> "potencia renovable instalada (kW)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity> <http://www.w3.org/2000/01/rdf-schema#label> "renewable installed capacity (kW)"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableType
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -1185,37 +1226,12 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/representativeBuildingReference> <http://www.w3.org/2000/01/rdf-schema#label> "referencia del edificio representativo"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/representativeBuildingReference> <http://www.w3.org/2000/01/rdf-schema#label> "representative building reference"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Dirección fiscal del técnico competente (Anexo IV)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Fiscal address of the competent technician (Annex IV)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress> <http://www.w3.org/2000/01/rdf-schema#label> "domicilio fiscal"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress> <http://www.w3.org/2000/01/rdf-schema#label> "fiscal address"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile> <http://www.w3.org/2000/01/rdf-schema#comment> "Dirección completa del técnico (Anexo IV)."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile> <http://www.w3.org/2000/01/rdf-schema#comment> "Full address of the technician (Annex IV)."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile> <http://www.w3.org/2000/01/rdf-schema#label> "domicilio del técnico"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile> <http://www.w3.org/2000/01/rdf-schema#label> "technician domicile"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail> <http://www.w3.org/2000/01/rdf-schema#label> "correo electrónico"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail> <http://www.w3.org/2000/01/rdf-schema#label> "email"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality> <http://www.w3.org/2000/01/rdf-schema#label> "municipality"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality> <http://www.w3.org/2000/01/rdf-schema#label> "municipio"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianNIF
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianNIF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -1240,20 +1256,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPhone> <http://www.w3.org/2000/01/rdf-schema#label> "phone"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPhone> <http://www.w3.org/2000/01/rdf-schema#label> "teléfono"@es .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode> <http://www.w3.org/2000/01/rdf-schema#label> "código postal"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode> <http://www.w3.org/2000/01/rdf-schema#label> "postal code"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince> <http://www.w3.org/2000/01/rdf-schema#label> "province"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince> <http://www.w3.org/2000/01/rdf-schema#label> "provincia"@es .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
@@ -1271,22 +1273,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianQualification> <http://www.w3.org/2000/01/rdf-schema#comment> "Titulación académica que habilita al técnico (Art. 4 bis)."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianQualification> <http://www.w3.org/2000/01/rdf-schema#label> "technician qualification"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianQualification> <http://www.w3.org/2000/01/rdf-schema#label> "titulación del técnico"@es .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA> <http://www.w3.org/2000/01/rdf-schema#label> "CCAA de registro del técnico"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA> <http://www.w3.org/2000/01/rdf-schema#label> "technician registration autonomous community"@en .
-# 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#comment> "Linear thermal bridge losses."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#comment> "Pérdidas por puentes térmicos lineales."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#label> "linear thermal bridge losses (W/K)"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses> <http://www.w3.org/2000/01/rdf-schema#label> "pérdidas por puentes térmicos lineales (W/K)"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsDelivered
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsDelivered> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -1343,15 +1329,6 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDescription> <http://www.w3.org/2000/01/rdf-schema#label> "descripción de la visita"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDescription> <http://www.w3.org/2000/01/rdf-schema#label> "visit description"@en .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#comment> "Percentage of glazing/openings relative to facade area."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#comment> "Porcentaje de huecos/acristalamiento sobre fachada."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#label> "ratio huecos/fachada (%)"@es .
-<http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio> <http://www.w3.org/2000/01/rdf-schema#label> "window-to-wall ratio (%)"@en .
-# 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/xmlReportReference
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/xmlReportReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/xmlReportReference> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate> .
@@ -1369,6 +1346,38 @@ _:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # #
 # #################################################################
 # 
+# 
+# http://qudt.org/schema/qudt/QuantityValue
+<http://qudt.org/schema/qudt/QuantityValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://qudt.org/schema/qudt/QuantityValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Numeric value with explicit unit of measure (qudt:numericValue + qudt:hasUnit). Allows representing physical quantities such as energy (kWh/m²·year), emissions (kgCO2/m²·year), power (kW), area (m²), percentage, etc."@en .
+<http://qudt.org/schema/qudt/QuantityValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Valor numérico con unidad de medida explícita (qudt:numericValue + qudt:hasUnit). Permite representar magnitudes físicas como energía (kWh/m²·año), emisiones (kgCO2/m²·año), potencia (kW), superficie (m²), porcentaje, etc."@es .
+<http://qudt.org/schema/qudt/QuantityValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://qudt.org/schema/qudt/> .
+<http://qudt.org/schema/qudt/QuantityValue> <http://www.w3.org/2000/01/rdf-schema#label> "Quantity value"@en .
+<http://qudt.org/schema/qudt/QuantityValue> <http://www.w3.org/2000/01/rdf-schema#label> "Valor de cantidad"@es .
+# 
+# http://schema.org/PostalAddress
+<http://schema.org/PostalAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/PostalAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Dirección postal según schema.org."@es .
+<http://schema.org/PostalAddress> <http://www.w3.org/2000/01/rdf-schema#comment> "Postal address according to schema.org."@en .
+<http://schema.org/PostalAddress> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org/> .
+<http://schema.org/PostalAddress> <http://www.w3.org/2000/01/rdf-schema#label> "Dirección postal (schema)"@es .
+<http://schema.org/PostalAddress> <http://www.w3.org/2000/01/rdf-schema#label> "Postal address (schema)"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Cadastral unit that identifies a property (parcel, construction or functional unit) in the cadastre. Allows access to the cadastral reference, address, construction year, surface area and geometry."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Unidad catastral que identifica un inmueble (parcela, construcción o unidad funcional) en el catastro. Permite acceder a la referencia catastral, dirección, año de construcción, superficie y geometría."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/catastro/> .
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Cadastral property"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Inmueble catastral"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia> <http://www.w3.org/2000/01/rdf-schema#comment> "Autonomous Community or Autonomous City in the Spanish territory."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia> <http://www.w3.org/2000/01/rdf-schema#comment> "Comunidad Autónoma o Ciudad Autónoma del territorio español."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio> .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia> <http://www.w3.org/2000/01/rdf-schema#label> "Autonomous community"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia> <http://www.w3.org/2000/01/rdf-schema#label> "Autonomía"@es .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CalculationProcedure
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CalculationProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1434,22 +1443,22 @@ _:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid80 .
-_:genid80 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2004/02/skos/core#Concept> .
-_:genid80 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid80 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingLetter> .
+_:genid80 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid80 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> .
 _:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid81 .
-_:genid81 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2004/02/skos/core#Concept> .
-_:genid81 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid81 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingScaleVersion> .
+_:genid81 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid81 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> .
 _:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid82 .
-_:genid82 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid82 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions> .
+_:genid82 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:genid82 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid82 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingLetter> .
 _:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid83 .
-_:genid83 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid83 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable> .
+_:genid83 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:genid83 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid83 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingScaleVersion> .
 _:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> <http://www.w3.org/2000/01/rdf-schema#comment> "Expresión de la eficiencia energética de un edificio mediante indicadores numéricos de consumo y emisiones, resumida en una letra de la escala A-G (Art. 2.a)."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating> <http://www.w3.org/2000/01/rdf-schema#comment> "Expression of the energy efficiency of a building through numerical consumption and emission indicators, summarised as a letter on the A-G scale (Art. 2.a)."@en .
@@ -1469,6 +1478,14 @@ _:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/UserRecommendations> <http://www.w3.org/2000/01/rdf-schema#comment> "Documento con recomendaciones para el usuario/arrendatario del edificio sobre cómo utilizar el edificio y sus sistemas para lograr la máxima eficiencia energética (Art. 8.1.f)."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/UserRecommendations> <http://www.w3.org/2000/01/rdf-schema#label> "Recomendaciones de uso para el usuario"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/UserRecommendations> <http://www.w3.org/2000/01/rdf-schema#label> "User recommendations"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/2000/01/rdf-schema#comment> "Dirección postal en España. Especialización de schema:PostalAddress, vcard:Address y locn:Address. Permite representar una dirección con propiedades como schema:streetAddress, schema:addressLocality, schema:addressRegion y schema:postalCode."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/2000/01/rdf-schema#comment> "Postal address in Spain. Specialisation of schema:PostalAddress, vcard:Address and locn:Address. Allows representing an address with properties like schema:streetAddress, schema:addressLocality, schema:addressRegion and schema:postalCode."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/2000/01/rdf-schema#label> "Dirección postal"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/2000/01/rdf-schema#label> "Postal address"@en .
 # 
 # http://www.w3.org/2004/02/skos/core#Concept
 # 

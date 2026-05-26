@@ -3,14 +3,42 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Clases</h3>
  <ul class="hlist">
+  <li><a href="#http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia" title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia">Autonomía</a></li>
   <li><a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a></li>
   <li><a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a></li>
+  <li><a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal" title="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal">Dirección postal</a></li>
+  <li><a href="#http://schema.org/PostalAddress" title="http://schema.org/PostalAddress">Dirección postal (schema)</a></li>
   <li><a href="#EnergyLabel" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyLabel">Etiqueta de eficiencia energética</a></li>
+  <li><a href="#http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty" title="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty">Inmueble catastral</a></li>
   <li><a href="#CalculationProcedure" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CalculationProcedure">Procedimiento de cálculo</a></li>
   <li><a href="#UserRecommendations" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/UserRecommendations">Recomendaciones de uso para el usuario</a></li>
   <li><a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a></li>
   <li><a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a></li>
+  <li><a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a></li>
  </ul>
+ <div class="entity" id="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia">
+  <h3>Autonomía<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia</p>
+  <div class="comment">
+   <span class="markdown">Comunidad Autónoma o Ciudad Autónoma del territorio español.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio">http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#registrationAutonomousCommunity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity">CCAA de registro</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#technicianRegistrationAutonomousCommunity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity">CCAA de registro del técnico</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
  <div class="entity" id="EnergyRating">
   <h3>Calificación energética<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating</p>
@@ -26,7 +54,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en dominio de
    </dt>
    <dd>
-    <a href="#dataBasis" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dataBasis">base de datos</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#ratingOf" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingOf">calificación de</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#dhwConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption">consumo de ACS (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#heatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption">consumo de calefacción (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#lightingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption">consumo de iluminación (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#coolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption">consumo de refrigeración (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#measuredDHWConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption">consumo medido de ACS (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#measuredHeatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption">consumo medido de calefacción (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#measuredCoolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption">consumo medido de refrigeración (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#measuredTotalConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption">consumo total medido (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#dhwDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand">demanda de ACS (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#heatingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand">demanda de calefacción (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#coolingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand">demanda de refrigeración (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#co2Emissions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions">emisiones de CO2 (kgCO2/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#primaryEnergyNonRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable">energía primaria no renovable (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#primaryEnergyRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable">energía primaria renovable (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#primaryEnergyTotal" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal">energía primaria total (kWh/m²·año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#measurementPeriodEnd" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodEnd">fecha fin periodo de medición</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#measurementPeriodStart" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodStart">fecha inicio periodo de medición</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#ratingLetter" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingLetter">letra de calificación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#ratingScaleVersion" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingScaleVersion">versión de la escala de calificación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#dataBasis" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dataBasis">base de datos</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#ratingOf" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingOf">calificación de</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#dhwConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption">consumo de ACS</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#heatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption">consumo de calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#lightingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption">consumo de iluminación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#coolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption">consumo de refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measuredDHWConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption">consumo medido de ACS</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measuredHeatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption">consumo medido de calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measuredCoolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption">consumo medido de refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measuredTotalConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption">consumo total medido</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#dhwDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand">demanda de ACS</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#heatingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand">demanda de calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#coolingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand">demanda de refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#co2Emissions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions">emisiones de CO2</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#primaryEnergyNonRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable">energía primaria no renovable</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#primaryEnergyRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable">energía primaria renovable</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#primaryEnergyTotal" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal">energía primaria total</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measurementPeriodEnd" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodEnd">fecha fin periodo de medición</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#measurementPeriodStart" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodStart">fecha inicio periodo de medición</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#ratingLetter" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingLetter">letra de calificación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#ratingScaleVersion" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingScaleVersion">versión de la escala de calificación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     en rango de
@@ -51,13 +79,51 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en dominio de
    </dt>
    <dd>
-    <a href="#registrationCCAA" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA">CCAA de registro</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#registryURL" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registryURL">URL del registro</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedConstructionYear" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear">año de construcción observado</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#predecessorCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate">certificado anterior</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#successorCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/successorCertificate">certificado sucesor</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#globalHeatTransferCoeff" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff">coeficiente global de transmitancia (W/m²·K)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#comfortConditions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortConditions">condiciones de confort</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#normalOperatingConditions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/normalOperatingConditions">condiciones normales de funcionamiento</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#aggregatedDataAvailableForResearch" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/aggregatedDataAvailableForResearch">datos agregados disponibles para investigación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#consumptionDataAvailableToOwner" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/consumptionDataAvailableToOwner">datos de consumo disponibles para el propietario</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#envelopeDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription">descripción de envolvente</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedPartDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription">descripción de la parte</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#visitDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDescription">descripción de la visita</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress">dirección observada</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasDHWSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasDHWSystem">dispone de ACS</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasAutomationSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasAutomationSystem">dispone de automatización</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasHeatingSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasHeatingSystem">dispone de calefacción</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasRenewableGeneration" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRenewableGeneration">dispone de generación renovable</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasHeatRecovery" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasHeatRecovery">dispone de recuperador de calor</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasCoolingSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasCoolingSystem">dispone de refrigeración</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasMechanicalVentilation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasMechanicalVentilation">dispone de ventilación mecánica</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#lightingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency">eficiencia del sistema de iluminación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#issuedBy" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedBy">emitido por</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#observedIsBuildingPart" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedIsBuildingPart">es parte de edificio</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#issueDate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issueDate">fecha de emisión</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#registrationDate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationDate">fecha de registro</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#visitDate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDate">fecha de visita</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#renewableEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableEnergySource">fuente de energía renovable</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#dhwEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource">fuente energética de ACS</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#heatingEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEnergySource">fuente energética de calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#coolingEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEnergySource">fuente energética de refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#ventilationEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ventilationEnergySource">fuente energética de ventilación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#certificateHash" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateHash">hash del certificado</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#financingInformation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation">información de financiación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#noImprovementJustification" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/noImprovementJustification">justificación de inexistencia de potencial de mejora</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedMunicipality" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality">municipio observado</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#applicableRegulation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/applicableRegulation">normativa aplicable</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#certificateNumber" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateNumber">número de certificado</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#renewableCapacity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity">potencia renovable instalada (kW)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedHeritageProtection" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedHeritageProtection">protección patrimonial observada</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedProvince" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince">provincia observada</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#thermalBridgeLosses" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses">pérdidas por puentes térmicos lineales (W/K)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#windowAreaRatio" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio">ratio huecos/fachada (%)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#qrCodeReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/qrCodeReference">referencia QR</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#costEffectivenessReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/costEffectivenessReference">referencia a análisis coste-eficacia</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#calculationDocumentsReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/calculationDocumentsReference">referencia a documentos de cálculo</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#xmlReportReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/xmlReportReference">referencia al informe XML</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedCadastralRef" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef">referencia catastral observada</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#representativeBuildingReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/representativeBuildingReference">referencia del edificio representativo</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#heatingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency">rendimiento estacional calefacción</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#coolingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency">rendimiento estacional refrigeración</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#envelopeArea" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea">superficie de envolvente (m²)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedUsefulSurface" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface">superficie útil observada (m²)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRating">tiene calificación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasLabel" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel">tiene etiqueta</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasUserRecommendations" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations">tiene recomendaciones de uso</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRecommendation">tiene recomendación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#certificateType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateType">tipo de certificado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#architecturalProtectionType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/architecturalProtectionType">tipo de protección arquitectónica</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#renewableType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableType">tipo de renovable</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#dhwSystemType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType">tipo de sistema ACS</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#heatingSystemType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingSystemType">tipo de sistema de calefacción</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#lightingSystemType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingSystemType">tipo de sistema de iluminación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#coolingSystemType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingSystemType">tipo de sistema de refrigeración</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#usesSameProcedureVersion" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/usesSameProcedureVersion">usa misma versión del procedimiento</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#usesProcedure" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/usesProcedure">usa procedimiento</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#observedBuildingUse" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedBuildingUse">uso del edificio observado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#linkedToBuildingBook" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/linkedToBuildingBook">vinculado al Libro del Edificio</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#validUntil" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/validUntil">válido hasta</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedClimaticZone" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedClimaticZone">zona climática observada</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#registrationAutonomousCommunity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity">CCAA de registro</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#registryURL" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registryURL">URL del registro</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#predecessorCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate">certificado anterior</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#successorCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/successorCertificate">certificado sucesor</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#globalHeatTransferCoeff" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff">coeficiente global de transmitancia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#comfortConditions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortConditions">condiciones de confort</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#normalOperatingConditions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/normalOperatingConditions">condiciones normales de funcionamiento</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#aggregatedDataAvailableForResearch" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/aggregatedDataAvailableForResearch">datos agregados disponibles para investigación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#consumptionDataAvailableToOwner" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/consumptionDataAvailableToOwner">datos de consumo disponibles para el propietario</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#envelopeDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription">descripción de envolvente</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedPartDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription">descripción de la parte</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#visitDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDescription">descripción de la visita</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasObservedAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress">dirección del inmueble</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasDHWSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasDHWSystem">dispone de ACS</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasAutomationSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasAutomationSystem">dispone de automatización</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasHeatingSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasHeatingSystem">dispone de calefacción</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasRenewableGeneration" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRenewableGeneration">dispone de generación renovable</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasHeatRecovery" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasHeatRecovery">dispone de recuperador de calor</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasCoolingSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasCoolingSystem">dispone de refrigeración</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasMechanicalVentilation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasMechanicalVentilation">dispone de ventilación mecánica</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#lightingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency">eficiencia del sistema de iluminación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#issuedBy" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedBy">emitido por</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#refersToCadastralEntity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity">entidad catastral referida</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#observedIsBuildingPart" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedIsBuildingPart">es parte de edificio</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#issueDate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issueDate">fecha de emisión</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#registrationDate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationDate">fecha de registro</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#visitDate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDate">fecha de visita</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#renewableEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableEnergySource">fuente de energía renovable</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#dhwEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource">fuente energética de ACS</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#heatingEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEnergySource">fuente energética de calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#coolingEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEnergySource">fuente energética de refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#ventilationEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ventilationEnergySource">fuente energética de ventilación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#certificateHash" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateHash">hash del certificado</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#financingInformation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation">información de financiación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#noImprovementJustification" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/noImprovementJustification">justificación de inexistencia de potencial de mejora</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#applicableRegulation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/applicableRegulation">normativa aplicable</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#certificateNumber" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateNumber">número de certificado</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#renewableCapacity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity">potencia renovable instalada</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#observedHeritageProtection" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedHeritageProtection">protección patrimonial observada</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#thermalBridgeLosses" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses">pérdidas por puentes térmicos lineales</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#windowAreaRatio" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio">ratio huecos/fachada</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#qrCodeReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/qrCodeReference">referencia QR</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#costEffectivenessReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/costEffectivenessReference">referencia a análisis coste-eficacia</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#calculationDocumentsReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/calculationDocumentsReference">referencia a documentos de cálculo</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#xmlReportReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/xmlReportReference">referencia al informe XML</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#representativeBuildingReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/representativeBuildingReference">referencia del edificio representativo</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#heatingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency">rendimiento estacional calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#coolingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency">rendimiento estacional refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#envelopeArea" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea">superficie de envolvente</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRating">tiene calificación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasLabel" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel">tiene etiqueta</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasUserRecommendations" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations">tiene recomendaciones de uso</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRecommendation">tiene recomendación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#certificateType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateType">tipo de certificado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#architecturalProtectionType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/architecturalProtectionType">tipo de protección arquitectónica</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#renewableType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableType">tipo de renovable</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#dhwSystemType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwSystemType">tipo de sistema ACS</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#heatingSystemType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingSystemType">tipo de sistema de calefacción</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#lightingSystemType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingSystemType">tipo de sistema de iluminación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#coolingSystemType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingSystemType">tipo de sistema de refrigeración</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#usesSameProcedureVersion" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/usesSameProcedureVersion">usa misma versión del procedimiento</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#usesProcedure" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/usesProcedure">usa procedimiento</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#observedBuildingUse" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedBuildingUse">uso del edificio observado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#linkedToBuildingBook" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/linkedToBuildingBook">vinculado al Libro del Edificio</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#validUntil" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/validUntil">válido hasta</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#observedClimaticZone" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedClimaticZone">zona climática observada</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     en rango de
    </dt>
    <dd>
     <a href="#ratingOf" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingOf">calificación de</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#predecessorCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate">certificado anterior</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#issuedCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedCertificate">certificado emitido</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#successorCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/successorCertificate">certificado sucesor</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#labelFor" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelFor">etiqueta para</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#procedureUsedBy" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureUsedBy">procedimiento usado por</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#recommendationFor" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationFor">recomendación para</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal">
+  <h3>Dirección postal<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal</p>
+  <div class="comment">
+   <span class="markdown">Dirección postal en España. Especialización de schema:PostalAddress, vcard:Address y locn:Address. Permite representar una dirección con propiedades como schema:streetAddress, schema:addressLocality, schema:addressRegion y schema:postalCode.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal">http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#hasObservedAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress">dirección del inmueble</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#hasTechnicianAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress">dirección del técnico</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://schema.org/PostalAddress">
+  <h3>Dirección postal (schema)<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://schema.org/PostalAddress</p>
+  <div class="comment">
+   <span class="markdown">Dirección postal según schema.org.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://schema.org/">http://schema.org/</a>
    </dd>
   </dl>
  </div>
@@ -79,6 +145,29 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dt>
    <dd>
     <a href="#hasLabel" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel">tiene etiqueta</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty">
+  <h3>Inmueble catastral<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty</p>
+  <div class="comment">
+   <span class="markdown">Unidad catastral que identifica un inmueble (parcela, construcción o unidad funcional) en el catastro. Permite acceder a la referencia catastral, dirección, año de construcción, superficie y geometría.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://vocab.linkeddata.es/datosabiertos/def/catastro/">http://vocab.linkeddata.es/datosabiertos/def/catastro/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#refersToCadastralEntity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity">entidad catastral referida</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
   </dl>
  </div>
@@ -135,7 +224,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en dominio de
    </dt>
    <dd>
-    <a href="#estimatedSavingPct" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct">ahorro estimado (%)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#estimatedSavingKwh" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh">ahorro estimado (kWh/año)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#comfortHealthBenefit" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortHealthBenefit">beneficio en confort/salud</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#improvedRatingLetter" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/improvedRatingLetter">calificación estimada tras mejora</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#estimatedCost" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost">coste estimado (€)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#recommendationDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationDescription">descripción de la recomendación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#paybackPeriod" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod">plazo de recuperación (años)</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#priority" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/priority">prioridad</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#recommendationFor" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationFor">recomendación para</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#recommendationType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationType">tipo de recomendación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#estimatedSavingPct" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct">ahorro estimado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#estimatedSavingKwh" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh">ahorro estimado en energía</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#comfortHealthBenefit" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortHealthBenefit">beneficio en confort/salud</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#improvedRatingLetter" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/improvedRatingLetter">calificación estimada tras mejora</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#estimatedCost" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost">coste estimado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#recommendationDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationDescription">descripción de la recomendación</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#paybackPeriod" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod">plazo de recuperación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#priority" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/priority">prioridad</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#recommendationFor" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationFor">recomendación para</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#recommendationType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationType">tipo de recomendación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     en rango de
@@ -156,7 +245,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en dominio de
    </dt>
    <dd>
-    <a href="#technicianRegistrationCCAA" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA">CCAA de registro del técnico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianNIF" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianNIF">NIF/NIE del técnico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianPublicAuthorization" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization">autorización para hacer público</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#issuedCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedCertificate">certificado emitido</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#technicianEmail" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail">correo electrónico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianPostalCode" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode">código postal</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianDomicile" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile">domicilio del técnico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress">domicilio fiscal</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianMunicipality" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality">municipio</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianCourseModules" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianCourseModules">módulos del curso cursados</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#technicianName" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianName">nombre del técnico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianProvince" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince">provincia</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianPhone" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPhone">teléfono</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianQualification" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianQualification">titulación del técnico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianAccessPath" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAccessPath">vía de acceso</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#technicianRegistrationAutonomousCommunity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity">CCAA de registro del técnico</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#technicianNIF" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianNIF">NIF/NIE del técnico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianPublicAuthorization" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization">autorización para hacer público</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#issuedCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedCertificate">certificado emitido</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#technicianEmail" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail">correo electrónico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasTechnicianAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress">dirección del técnico</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#technicianCourseModules" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianCourseModules">módulos del curso cursados</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#technicianName" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianName">nombre del técnico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianPhone" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPhone">teléfono</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianQualification" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianQualification">titulación del técnico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#technicianAccessPath" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAccessPath">vía de acceso</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     en rango de
@@ -166,17 +255,65 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dd>
   </dl>
  </div>
+ <div class="entity" id="http://qudt.org/schema/qudt/QuantityValue">
+  <h3>Valor de cantidad<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://qudt.org/schema/qudt/QuantityValue</p>
+  <div class="comment">
+   <span class="markdown">Valor numérico con unidad de medida explícita (qudt:numericValue + qudt:hasUnit). Permite representar magnitudes físicas como energía (kWh/m²·año), emisiones (kgCO2/m²·año), potencia (kW), superficie (m²), porcentaje, etc.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Definida por
+   </dt>
+   <dd>
+    <a href="http://qudt.org/schema/qudt/">http://qudt.org/schema/qudt/</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#estimatedSavingPct" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct">ahorro estimado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#estimatedSavingKwh" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh">ahorro estimado en energía</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#globalHeatTransferCoeff" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff">coeficiente global de transmitancia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#dhwConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption">consumo de ACS</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#heatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption">consumo de calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#lightingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption">consumo de iluminación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#coolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption">consumo de refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measuredDHWConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption">consumo medido de ACS</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measuredHeatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption">consumo medido de calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measuredCoolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption">consumo medido de refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measuredTotalConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption">consumo total medido</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#estimatedCost" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost">coste estimado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#dhwDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand">demanda de ACS</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#heatingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand">demanda de calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#coolingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand">demanda de refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#lightingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency">eficiencia del sistema de iluminación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#co2Emissions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions">emisiones de CO2</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#primaryEnergyNonRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable">energía primaria no renovable</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#primaryEnergyRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable">energía primaria renovable</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#primaryEnergyTotal" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal">energía primaria total</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#paybackPeriod" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod">plazo de recuperación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#renewableCapacity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity">potencia renovable instalada</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#thermalBridgeLosses" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses">pérdidas por puentes térmicos lineales</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#windowAreaRatio" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio">ratio huecos/fachada</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#heatingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency">rendimiento estacional calefacción</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#coolingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency">rendimiento estacional refrigeración</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#envelopeArea" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea">superficie de envolvente</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h2>Propiedades entre objetos</h2>
  <ul class="hlist">
+  <li><a href="#estimatedSavingPct" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct">ahorro estimado</a></li>
+  <li><a href="#estimatedSavingKwh" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh">ahorro estimado en energía</a></li>
   <li><a href="#dataBasis" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dataBasis">base de datos</a></li>
   <li><a href="#ratingOf" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingOf">calificación de</a></li>
   <li><a href="#improvedRatingLetter" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/improvedRatingLetter">calificación estimada tras mejora</a></li>
+  <li><a href="#registrationAutonomousCommunity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity">CCAA de registro</a></li>
+  <li><a href="#technicianRegistrationAutonomousCommunity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity">CCAA de registro del técnico</a></li>
   <li><a href="#predecessorCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate">certificado anterior</a></li>
   <li><a href="#issuedCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedCertificate">certificado emitido</a></li>
   <li><a href="#successorCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/successorCertificate">certificado sucesor</a></li>
+  <li><a href="#globalHeatTransferCoeff" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff">coeficiente global de transmitancia</a></li>
+  <li><a href="#dhwConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption">consumo de ACS</a></li>
+  <li><a href="#heatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption">consumo de calefacción</a></li>
+  <li><a href="#lightingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption">consumo de iluminación</a></li>
+  <li><a href="#coolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption">consumo de refrigeración</a></li>
+  <li><a href="#measuredDHWConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption">consumo medido de ACS</a></li>
+  <li><a href="#measuredHeatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption">consumo medido de calefacción</a></li>
+  <li><a href="#measuredCoolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption">consumo medido de refrigeración</a></li>
+  <li><a href="#measuredTotalConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption">consumo total medido</a></li>
+  <li><a href="#estimatedCost" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost">coste estimado</a></li>
+  <li><a href="#dhwDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand">demanda de ACS</a></li>
+  <li><a href="#heatingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand">demanda de calefacción</a></li>
+  <li><a href="#coolingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand">demanda de refrigeración</a></li>
   <li><a href="#userRecommendationsRecipient" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsRecipient">destinatario de recomendaciones</a></li>
+  <li><a href="#hasObservedAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress">dirección del inmueble</a></li>
+  <li><a href="#hasTechnicianAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress">dirección del técnico</a></li>
+  <li><a href="#lightingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency">eficiencia del sistema de iluminación</a></li>
+  <li><a href="#co2Emissions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions">emisiones de CO2</a></li>
   <li><a href="#issuedBy" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedBy">emitido por</a></li>
+  <li><a href="#primaryEnergyNonRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable">energía primaria no renovable</a></li>
+  <li><a href="#primaryEnergyRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable">energía primaria renovable</a></li>
+  <li><a href="#primaryEnergyTotal" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal">energía primaria total</a></li>
+  <li><a href="#refersToCadastralEntity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity">entidad catastral referida</a></li>
   <li><a href="#labelFor" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelFor">etiqueta para</a></li>
   <li><a href="#renewableEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableEnergySource">fuente de energía renovable</a></li>
   <li><a href="#dhwEnergySource" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource">fuente energética de ACS</a></li>
@@ -186,8 +323,15 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <li><a href="#ratingLetter" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ratingLetter">letra de calificación</a></li>
   <li><a href="#labelRatingLetter" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/labelRatingLetter">letra de la etiqueta</a></li>
   <li><a href="#technicianCourseModules" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianCourseModules">módulos del curso cursados</a></li>
+  <li><a href="#paybackPeriod" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod">plazo de recuperación</a></li>
+  <li><a href="#renewableCapacity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity">potencia renovable instalada</a></li>
   <li><a href="#procedureUsedBy" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureUsedBy">procedimiento usado por</a></li>
+  <li><a href="#thermalBridgeLosses" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses">pérdidas por puentes térmicos lineales</a></li>
+  <li><a href="#windowAreaRatio" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio">ratio huecos/fachada</a></li>
   <li><a href="#recommendationFor" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationFor">recomendación para</a></li>
+  <li><a href="#heatingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency">rendimiento estacional calefacción</a></li>
+  <li><a href="#coolingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency">rendimiento estacional refrigeración</a></li>
+  <li><a href="#envelopeArea" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea">superficie de envolvente</a></li>
   <li><a href="#hasRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRating">tiene calificación</a></li>
   <li><a href="#hasLabel" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasLabel">tiene etiqueta</a></li>
   <li><a href="#hasUserRecommendations" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations">tiene recomendaciones de uso</a></li>
@@ -201,6 +345,52 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <li><a href="#technicianAccessPath" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAccessPath">vía de acceso</a></li>
   <li><a href="#observedClimaticZone" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedClimaticZone">zona climática observada</a></li>
  </ul>
+ <div class="entity" id="estimatedSavingPct">
+  <h3>ahorro estimado<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct</p>
+  <div class="comment">
+   <span class="markdown">Ahorro estimado porcentual. Se expresa como qudt:QuantityValue, típicamente en porcentaje.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="estimatedSavingKwh">
+  <h3>ahorro estimado en energía<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh</p>
+  <div class="comment">
+   <span class="markdown">Ahorro estimado en energía. Se expresa como qudt:QuantityValue, típicamente en kWh/año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="dataBasis">
   <h3>base de datos<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dataBasis</p>
@@ -273,6 +463,52 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="clase">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank" title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="logic">value</span> <a href="http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingLetter" target="_blank" title="http://vocab.linkeddata.es/datosabiertos/kos/edint/RatingLetter">Rating Letter</a> <sup class="type-ni" title="Individuo">ni</sup>)
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="registrationAutonomousCommunity">
+  <h3>CCAA de registro<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity</p>
+  <div class="comment">
+   <span class="markdown">Comunidad autónoma donde se registra el certificado, representada como esadm:Autonomia del vocabulario de territorio (Art. 6.6).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia" title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia">Autonomía</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="technicianRegistrationAutonomousCommunity">
+  <h3>CCAA de registro del técnico<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity</p>
+  <div class="comment">
+   <span class="markdown">Comunidad autónoma donde el técnico está registrado para certificar, representada como esadm:Autonomia del vocabulario de territorio.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia" title="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia">Autonomía</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
@@ -364,6 +600,305 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dl>
   </div>
  </div>
+ <div class="entity" id="globalHeatTransferCoeff">
+  <h3>coeficiente global de transmitancia<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff</p>
+  <div class="comment">
+   <span class="markdown">Coeficiente global de transmitancia térmica U de la envolvente. Se expresa como qudt:QuantityValue, típicamente en W/m²·K.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="dhwConsumption">
+  <h3>consumo de ACS<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption</p>
+  <div class="comment">
+   <span class="markdown">Consumo de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="heatingConsumption">
+  <h3>consumo de calefacción<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption</p>
+  <div class="comment">
+   <span class="markdown">Consumo de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="lightingConsumption">
+  <h3>consumo de iluminación<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption</p>
+  <div class="comment">
+   <span class="markdown">Consumo de iluminación. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="coolingConsumption">
+  <h3>consumo de refrigeración<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption</p>
+  <div class="comment">
+   <span class="markdown">Consumo de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="measuredDHWConsumption">
+  <h3>consumo medido de ACS<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption</p>
+  <div class="comment">
+   <span class="markdown">Consumo medido de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="measuredHeatingConsumption">
+  <h3>consumo medido de calefacción<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption</p>
+  <div class="comment">
+   <span class="markdown">Consumo medido de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="measuredCoolingConsumption">
+  <h3>consumo medido de refrigeración<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption</p>
+  <div class="comment">
+   <span class="markdown">Consumo medido de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="measuredTotalConsumption">
+  <h3>consumo total medido<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption</p>
+  <div class="comment">
+   <span class="markdown">Consumo total medido. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="estimatedCost">
+  <h3>coste estimado<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost</p>
+  <div class="comment">
+   <span class="markdown">Coste estimado de la intervención. Se expresa como qudt:QuantityValue, típicamente en euros.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="dhwDemand">
+  <h3>demanda de ACS<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand</p>
+  <div class="comment">
+   <span class="markdown">Demanda de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="heatingDemand">
+  <h3>demanda de calefacción<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand</p>
+  <div class="comment">
+   <span class="markdown">Demanda de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="coolingDemand">
+  <h3>demanda de refrigeración<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand</p>
+  <div class="comment">
+   <span class="markdown">Demanda de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="userRecommendationsRecipient">
   <h3>destinatario de recomendaciones<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsRecipient</p>
@@ -383,6 +918,98 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="clase">c</sup> <span class="logic">and</span> (<a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank" title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="logic">value</span> <a href="http://vocab.linkeddata.es/datosabiertos/kos/edint/RecipientType" target="_blank" title="http://vocab.linkeddata.es/datosabiertos/kos/edint/RecipientType">Recipient Type</a> <sup class="type-ni" title="Individuo">ni</sup>)
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasObservedAddress">
+  <h3>dirección del inmueble<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress</p>
+  <div class="comment">
+   <span class="markdown">Dirección postal del inmueble certificado. Se reutiliza esdir:DireccionPostal, que especializa schema:PostalAddress, vcard:Address y locn:Address, y permite representar vía, municipio, provincia y código postal con propiedades estándar (Art. 8.2.a).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal" title="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal">Dirección postal</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTechnicianAddress">
+  <h3>dirección del técnico<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress</p>
+  <div class="comment">
+   <span class="markdown">Dirección postal del técnico competente. Se reutiliza esdir:DireccionPostal, que especializa schema:PostalAddress, vcard:Address y locn:Address, y permite representar vía, municipio, provincia y código postal con propiedades estándar (Anexo IV).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal" title="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal">Dirección postal</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="lightingEfficiency">
+  <h3>eficiencia del sistema de iluminación<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency</p>
+  <div class="comment">
+   <span class="markdown">Eficiencia del sistema de iluminación. Se expresa como qudt:QuantityValue, típicamente en lm/W.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="co2Emissions">
+  <h3>emisiones de CO2<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions</p>
+  <div class="comment">
+   <span class="markdown">Emisiones de CO2. Se expresa como qudt:QuantityValue, típicamente en kgCO2/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
@@ -412,6 +1039,98 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="#issuedCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issuedCertificate">certificado emitido</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="primaryEnergyNonRenewable">
+  <h3>energía primaria no renovable<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable</p>
+  <div class="comment">
+   <span class="markdown">Energía primaria no renovable. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="primaryEnergyRenewable">
+  <h3>energía primaria renovable<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable</p>
+  <div class="comment">
+   <span class="markdown">Energía primaria renovable. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="primaryEnergyTotal">
+  <h3>energía primaria total<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal</p>
+  <div class="comment">
+   <span class="markdown">Energía primaria total. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="refersToCadastralEntity">
+  <h3>entidad catastral referida<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity</p>
+  <div class="comment">
+   <span class="markdown">Entidad catastral a la que se refiere el certificado. A través de catastro:CadastralProperty se puede acceder a la referencia catastral (catastro:referenceCatastral), la dirección (catastro:hasAddress), el año de construcción y otros datos del inmueble (Art. 8.2.a).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty" title="http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty">Inmueble catastral</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
@@ -631,6 +1350,52 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dl>
   </div>
  </div>
+ <div class="entity" id="paybackPeriod">
+  <h3>plazo de recuperación<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod</p>
+  <div class="comment">
+   <span class="markdown">Plazo de recuperación de la inversión. Se expresa como qudt:QuantityValue, típicamente en años.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="renewableCapacity">
+  <h3>potencia renovable instalada<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity</p>
+  <div class="comment">
+   <span class="markdown">Potencia renovable instalada. Se expresa como qudt:QuantityValue, típicamente en kW.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="procedureUsedBy">
   <h3>procedimiento usado por<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureUsedBy</p>
@@ -660,6 +1425,52 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dl>
   </div>
  </div>
+ <div class="entity" id="thermalBridgeLosses">
+  <h3>pérdidas por puentes térmicos lineales<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses</p>
+  <div class="comment">
+   <span class="markdown">Pérdidas por puentes térmicos lineales. Se expresa como qudt:QuantityValue, típicamente en W/K.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="windowAreaRatio">
+  <h3>ratio huecos/fachada<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio</p>
+  <div class="comment">
+   <span class="markdown">Porcentaje de huecos/acristalamiento sobre fachada. Se expresa como qudt:QuantityValue, típicamente en porcentaje.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
  <div class="entity" id="recommendationFor">
   <h3>recomendación para<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationFor</p>
@@ -685,6 +1496,75 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="#hasRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRecommendation">tiene recomendación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="heatingEfficiency">
+  <h3>rendimiento estacional calefacción<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency</p>
+  <div class="comment">
+   <span class="markdown">Rendimiento estacional del sistema de calefacción. Se expresa como qudt:QuantityValue.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="coolingEfficiency">
+  <h3>rendimiento estacional refrigeración<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency</p>
+  <div class="comment">
+   <span class="markdown">Rendimiento estacional del sistema de refrigeración. Se expresa como qudt:QuantityValue.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="envelopeArea">
+  <h3>superficie de envolvente<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea</p>
+  <div class="comment">
+   <span class="markdown">Superficie de la envolvente térmica en contacto con el exterior. Se expresa como qudt:QuantityValue (qudt:numericValue + qudt:hasUnit), típicamente en m².</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#http://qudt.org/schema/qudt/QuantityValue" title="http://qudt.org/schema/qudt/QuantityValue">Valor de cantidad</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
@@ -995,37 +1875,17 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
  <h3 id="dataproperties-headline" class="list">Propiedades de datos</h3>
  <ul class="hlist">
-  <li><a href="#estimatedSavingPct" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct">ahorro estimado (%)</a></li>
-  <li><a href="#estimatedSavingKwh" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh">ahorro estimado (kWh/año)</a></li>
   <li><a href="#technicianPublicAuthorization" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization">autorización para hacer público</a></li>
-  <li><a href="#observedConstructionYear" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear">año de construcción observado</a></li>
   <li><a href="#comfortHealthBenefit" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortHealthBenefit">beneficio en confort/salud</a></li>
-  <li><a href="#registrationCCAA" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA">CCAA de registro</a></li>
-  <li><a href="#technicianRegistrationCCAA" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA">CCAA de registro del técnico</a></li>
-  <li><a href="#globalHeatTransferCoeff" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff">coeficiente global de transmitancia (W/m²·K)</a></li>
   <li><a href="#comfortConditions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortConditions">condiciones de confort</a></li>
   <li><a href="#normalOperatingConditions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/normalOperatingConditions">condiciones normales de funcionamiento</a></li>
-  <li><a href="#dhwConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption">consumo de ACS (kWh/m²·año)</a></li>
-  <li><a href="#heatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption">consumo de calefacción (kWh/m²·año)</a></li>
-  <li><a href="#lightingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption">consumo de iluminación (kWh/m²·año)</a></li>
-  <li><a href="#coolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption">consumo de refrigeración (kWh/m²·año)</a></li>
-  <li><a href="#measuredDHWConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption">consumo medido de ACS (kWh/m²·año)</a></li>
-  <li><a href="#measuredHeatingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption">consumo medido de calefacción (kWh/m²·año)</a></li>
-  <li><a href="#measuredCoolingConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption">consumo medido de refrigeración (kWh/m²·año)</a></li>
-  <li><a href="#measuredTotalConsumption" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption">consumo total medido (kWh/m²·año)</a></li>
   <li><a href="#technicianEmail" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail">correo electrónico</a></li>
-  <li><a href="#estimatedCost" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost">coste estimado (€)</a></li>
-  <li><a href="#technicianPostalCode" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode">código postal</a></li>
   <li><a href="#aggregatedDataAvailableForResearch" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/aggregatedDataAvailableForResearch">datos agregados disponibles para investigación</a></li>
   <li><a href="#consumptionDataAvailableToOwner" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/consumptionDataAvailableToOwner">datos de consumo disponibles para el propietario</a></li>
-  <li><a href="#dhwDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand">demanda de ACS (kWh/m²·año)</a></li>
-  <li><a href="#heatingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand">demanda de calefacción (kWh/m²·año)</a></li>
-  <li><a href="#coolingDemand" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand">demanda de refrigeración (kWh/m²·año)</a></li>
   <li><a href="#envelopeDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription">descripción de envolvente</a></li>
   <li><a href="#observedPartDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription">descripción de la parte</a></li>
   <li><a href="#recommendationDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/recommendationDescription">descripción de la recomendación</a></li>
   <li><a href="#visitDescription" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDescription">descripción de la visita</a></li>
-  <li><a href="#observedAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress">dirección observada</a></li>
   <li><a href="#hasDHWSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasDHWSystem">dispone de ACS</a></li>
   <li><a href="#hasAutomationSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasAutomationSystem">dispone de automatización</a></li>
   <li><a href="#hasHeatingSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasHeatingSystem">dispone de calefacción</a></li>
@@ -1033,13 +1893,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <li><a href="#hasHeatRecovery" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasHeatRecovery">dispone de recuperador de calor</a></li>
   <li><a href="#hasCoolingSystem" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasCoolingSystem">dispone de refrigeración</a></li>
   <li><a href="#hasMechanicalVentilation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasMechanicalVentilation">dispone de ventilación mecánica</a></li>
-  <li><a href="#technicianDomicile" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile">domicilio del técnico</a></li>
-  <li><a href="#technicianAddress" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress">domicilio fiscal</a></li>
-  <li><a href="#lightingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency">eficiencia del sistema de iluminación</a></li>
-  <li><a href="#co2Emissions" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions">emisiones de CO2 (kgCO2/m²·año)</a></li>
-  <li><a href="#primaryEnergyNonRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable">energía primaria no renovable (kWh/m²·año)</a></li>
-  <li><a href="#primaryEnergyRenewable" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable">energía primaria renovable (kWh/m²·año)</a></li>
-  <li><a href="#primaryEnergyTotal" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal">energía primaria total (kWh/m²·año)</a></li>
   <li><a href="#observedIsBuildingPart" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedIsBuildingPart">es parte de edificio</a></li>
   <li><a href="#issueDate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/issueDate">fecha de emisión</a></li>
   <li><a href="#userRecommendationsDeliveryDate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsDeliveryDate">fecha de entrega de recomendaciones</a></li>
@@ -1050,32 +1903,19 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <li><a href="#certificateHash" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateHash">hash del certificado</a></li>
   <li><a href="#financingInformation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation">información de financiación</a></li>
   <li><a href="#noImprovementJustification" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/noImprovementJustification">justificación de inexistencia de potencial de mejora</a></li>
-  <li><a href="#technicianMunicipality" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality">municipio</a></li>
-  <li><a href="#observedMunicipality" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality">municipio observado</a></li>
   <li><a href="#technicianNIF" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianNIF">NIF/NIE del técnico</a></li>
   <li><a href="#procedureName" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/procedureName">nombre del procedimiento</a></li>
   <li><a href="#technicianName" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianName">nombre del técnico</a></li>
   <li><a href="#applicableRegulation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/applicableRegulation">normativa aplicable</a></li>
   <li><a href="#certificateNumber" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/certificateNumber">número de certificado</a></li>
-  <li><a href="#paybackPeriod" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod">plazo de recuperación (años)</a></li>
-  <li><a href="#renewableCapacity" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity">potencia renovable instalada (kW)</a></li>
   <li><a href="#priority" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/priority">prioridad</a></li>
   <li><a href="#observedHeritageProtection" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedHeritageProtection">protección patrimonial observada</a></li>
-  <li><a href="#technicianProvince" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince">provincia</a></li>
-  <li><a href="#observedProvince" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince">provincia observada</a></li>
-  <li><a href="#thermalBridgeLosses" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses">pérdidas por puentes térmicos lineales (W/K)</a></li>
-  <li><a href="#windowAreaRatio" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio">ratio huecos/fachada (%)</a></li>
   <li><a href="#userRecommendationsDelivered" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsDelivered">recomendaciones entregadas</a></li>
   <li><a href="#costEffectivenessReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/costEffectivenessReference">referencia a análisis coste-eficacia</a></li>
   <li><a href="#calculationDocumentsReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/calculationDocumentsReference">referencia a documentos de cálculo</a></li>
   <li><a href="#xmlReportReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/xmlReportReference">referencia al informe XML</a></li>
-  <li><a href="#observedCadastralRef" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef">referencia catastral observada</a></li>
   <li><a href="#representativeBuildingReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/representativeBuildingReference">referencia del edificio representativo</a></li>
   <li><a href="#qrCodeReference" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/qrCodeReference">referencia QR</a></li>
-  <li><a href="#heatingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency">rendimiento estacional calefacción</a></li>
-  <li><a href="#coolingEfficiency" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency">rendimiento estacional refrigeración</a></li>
-  <li><a href="#envelopeArea" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea">superficie de envolvente (m²)</a></li>
-  <li><a href="#observedUsefulSurface" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface">superficie útil observada (m²)</a></li>
   <li><a href="#technicianPhone" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPhone">teléfono</a></li>
   <li><a href="#architecturalProtectionType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/architecturalProtectionType">tipo de protección arquitectónica</a></li>
   <li><a href="#renewableType" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableType">tipo de renovable</a></li>
@@ -1090,46 +1930,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <li><a href="#linkedToBuildingBook" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/linkedToBuildingBook">vinculado al Libro del Edificio</a></li>
   <li><a href="#validUntil" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/validUntil">válido hasta</a></li>
  </ul>
- <div class="entity" id="estimatedSavingPct">
-  <h3>ahorro estimado (%)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="estimatedSavingKwh">
-  <h3>ahorro estimado (kWh/año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="technicianPublicAuthorization">
   <h3>autorización para hacer público<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization</p>
@@ -1153,29 +1953,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dl>
   </div>
  </div>
- <div class="entity" id="observedConstructionYear">
-  <h3>año de construcción observado<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear</p>
-  <div class="comment">
-   <span class="markdown">Año de construcción declarado del edificio.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#gYear" target="_blank" title="http://www.w3.org/2001/XMLSchema#gYear">g Year</a>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="comfortHealthBenefit">
   <h3>beneficio en confort/salud<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortHealthBenefit</p>
@@ -1195,72 +1972,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="registrationCCAA">
-  <h3>CCAA de registro<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA</p>
-  <div class="comment">
-   <span class="markdown">Comunidad autónoma donde se registra el certificado (Art. 6.6).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="technicianRegistrationCCAA">
-  <h3>CCAA de registro del técnico<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="globalHeatTransferCoeff">
-  <h3>coeficiente global de transmitancia (W/m²·K)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff</p>
-  <div class="comment">
-   <span class="markdown">Coeficiente global de transmitancia térmica U de la envolvente.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
     </dd>
    </dl>
   </div>
@@ -1311,209 +2022,9 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dl>
   </div>
  </div>
- <div class="entity" id="dhwConsumption">
-  <h3>consumo de ACS (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="heatingConsumption">
-  <h3>consumo de calefacción (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="lightingConsumption">
-  <h3>consumo de iluminación (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="coolingConsumption">
-  <h3>consumo de refrigeración (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="measuredDHWConsumption">
-  <h3>consumo medido de ACS (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="measuredHeatingConsumption">
-  <h3>consumo medido de calefacción (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="measuredCoolingConsumption">
-  <h3>consumo medido de refrigeración (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="measuredTotalConsumption">
-  <h3>consumo total medido (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="technicianEmail">
   <h3>correo electrónico<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="estimatedCost">
-  <h3>coste estimado (€)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="technicianPostalCode">
-  <h3>código postal<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode</p>
   <div class="description">
    <dl>
     <dt>
@@ -1573,66 +2084,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="dhwDemand">
-  <h3>demanda de ACS (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="heatingDemand">
-  <h3>demanda de calefacción (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="coolingDemand">
-  <h3>demanda de refrigeración (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
     </dd>
    </dl>
   </div>
@@ -1708,29 +2159,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/visitDescription</p>
   <div class="comment">
    <span class="markdown">Descripción de la visita in situ realizada (Art. 8.2.g).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="observedAddress">
-  <h3>dirección observada<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress</p>
-  <div class="comment">
-   <span class="markdown">Dirección completa del inmueble (Art. 8.2.a).</span>
   </div>
   <div class="description">
    <dl>
@@ -1885,155 +2313,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="technicianDomicile">
-  <h3>domicilio del técnico<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile</p>
-  <div class="comment">
-   <span class="markdown">Dirección completa del técnico (Anexo IV).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="technicianAddress">
-  <h3>domicilio fiscal<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress</p>
-  <div class="comment">
-   <span class="markdown">Dirección fiscal del técnico competente (Anexo IV).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="lightingEfficiency">
-  <h3>eficiencia del sistema de iluminación<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency</p>
-  <div class="comment">
-   <span class="markdown">Eficiencia del sistema de iluminación (lm/W o similar).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="co2Emissions">
-  <h3>emisiones de CO2 (kgCO2/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="primaryEnergyNonRenewable">
-  <h3>energía primaria no renovable (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="primaryEnergyRenewable">
-  <h3>energía primaria renovable (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="primaryEnergyTotal">
-  <h3>energía primaria total (kWh/m²·año)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyRating" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating">Calificación energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
     </dd>
    </dl>
   </div>
@@ -2263,49 +2542,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dl>
   </div>
  </div>
- <div class="entity" id="technicianMunicipality">
-  <h3>municipio<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="observedMunicipality">
-  <h3>municipio observado<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality</p>
-  <div class="comment">
-   <span class="markdown">Municipio donde se ubica el edificio.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="technicianNIF">
   <h3>NIF/NIE del técnico<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianNIF</p>
@@ -2415,46 +2651,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dl>
   </div>
  </div>
- <div class="entity" id="paybackPeriod">
-  <h3>plazo de recuperación (años)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#ImprovementRecommendation" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation">Recomendación de mejora</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="renewableCapacity">
-  <h3>potencia renovable instalada (kW)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="priority">
   <h3>prioridad<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/priority</p>
@@ -2497,95 +2693,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="technicianProvince">
-  <h3>provincia<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#CompetentTechnician" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician">Técnico competente</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="observedProvince">
-  <h3>provincia observada<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince</p>
-  <div class="comment">
-   <span class="markdown">Provincia donde se ubica el edificio.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="thermalBridgeLosses">
-  <h3>pérdidas por puentes térmicos lineales (W/K)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses</p>
-  <div class="comment">
-   <span class="markdown">Pérdidas por puentes térmicos lineales.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="windowAreaRatio">
-  <h3>ratio huecos/fachada (%)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio</p>
-  <div class="comment">
-   <span class="markdown">Porcentaje de huecos/acristalamiento sobre fachada.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
     </dd>
    </dl>
   </div>
@@ -2682,29 +2789,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dl>
   </div>
  </div>
- <div class="entity" id="observedCadastralRef">
-  <h3>referencia catastral observada<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef</p>
-  <div class="comment">
-   <span class="markdown">Referencia catastral del inmueble consignada en el certificado (Art. 8.2.a).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
  <div class="entity" id="representativeBuildingReference">
   <h3>referencia del edificio representativo<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
   <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/representativeBuildingReference</p>
@@ -2747,92 +2831,6 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     </dt>
     <dd>
      <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="heatingEfficiency">
-  <h3>rendimiento estacional calefacción<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="coolingEfficiency">
-  <h3>rendimiento estacional refrigeración<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency</p>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="envelopeArea">
-  <h3>superficie de envolvente (m²)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea</p>
-  <div class="comment">
-   <span class="markdown">Superficie de la envolvente térmica en contacto con el exterior.</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
-    </dd>
-   </dl>
-  </div>
- </div>
- <div class="entity" id="observedUsefulSurface">
-  <h3>superficie útil observada (m²)<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface</p>
-  <div class="comment">
-   <span class="markdown">Superficie útil considerada para la certificación (Art. 2.t).</span>
-  </div>
-  <div class="description">
-   <dl>
-    <dt>
-     dominio
-    </dt>
-    <dd>
-     <a href="#EnergyCertificate" title="http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate">Certificado de eficiencia energética</a> <sup class="type-c" title="clase">c</sup>
-    </dd>
-    <dt>
-     rango
-    </dt>
-    <dd>
-     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
     </dd>
    </dl>
   </div>

@@ -418,6 +418,26 @@
 }, {
   "@id" : "_:genid80",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions"
+  } ]
+}, {
+  "@id" : "_:genid81",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable"
+  } ]
+}, {
+  "@id" : "_:genid82",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ],
@@ -429,7 +449,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid81",
+  "@id" : "_:genid83",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
@@ -440,26 +460,6 @@
   "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
-  } ]
-}, {
-  "@id" : "_:genid82",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions"
-  } ]
-}, {
-  "@id" : "_:genid83",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable"
   } ]
 }, {
   "@id" : "_:genid9",
@@ -504,6 +504,86 @@
 }, {
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://qudt.org/schema/qudt/QuantityValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Numeric value with explicit unit of measure (qudt:numericValue + qudt:hasUnit). Allows representing physical quantities such as energy (kWh/m²·year), emissions (kgCO2/m²·year), power (kW), area (m²), percentage, etc."
+  }, {
+    "@language" : "es",
+    "@value" : "Valor numérico con unidad de medida explícita (qudt:numericValue + qudt:hasUnit). Permite representar magnitudes físicas como energía (kWh/m²·año), emisiones (kgCO2/m²·año), potencia (kW), superficie (m²), porcentaje, etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://qudt.org/schema/qudt/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Quantity value"
+  }, {
+    "@language" : "es",
+    "@value" : "Valor de cantidad"
+  } ]
+}, {
+  "@id" : "http://schema.org/PostalAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Dirección postal según schema.org."
+  }, {
+    "@language" : "en",
+    "@value" : "Postal address according to schema.org."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://schema.org/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Dirección postal (schema)"
+  }, {
+    "@language" : "en",
+    "@value" : "Postal address (schema)"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Cadastral unit that identifies a property (parcel, construction or functional unit) in the cadastre. Allows access to the cadastral reference, address, construction year, surface area and geometry."
+  }, {
+    "@language" : "es",
+    "@value" : "Unidad catastral que identifica un inmueble (parcela, construcción o unidad funcional) en el catastro. Permite acceder a la referencia catastral, dirección, año de construcción, superficie y geometría."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Cadastral property"
+  }, {
+    "@language" : "es",
+    "@value" : "Inmueble catastral"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Autonomous Community or Autonomous City in the Spanish territory."
+  }, {
+    "@language" : "es",
+    "@value" : "Comunidad Autónoma o Ciudad Autónoma del territorio español."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Autonomous community"
+  }, {
+    "@language" : "es",
+    "@value" : "Autonomía"
+  } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
@@ -887,19 +967,26 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/co2Emissions",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "CO2 emissions. Expressed as qudt:QuantityValue, typically in kgCO2/m²·year."
+  }, {
+    "@language" : "es",
+    "@value" : "Emisiones de CO2. Se expresa como qudt:QuantityValue, típicamente en kgCO2/m²·año."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "CO2 emissions (kgCO2/m²·year)"
+    "@value" : "CO2 emissions"
   }, {
     "@language" : "es",
-    "@value" : "emisiones de CO2 (kgCO2/m²·año)"
+    "@value" : "emisiones de CO2"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/comfortConditions",
@@ -972,39 +1059,60 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingConsumption",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Consumo de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Cooling consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "consumo de refrigeración (kWh/m²·año)"
+    "@value" : "consumo de refrigeración"
   }, {
     "@language" : "en",
-    "@value" : "cooling consumption (kWh/m²·year)"
+    "@value" : "cooling consumption"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingDemand",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Cooling demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  }, {
+    "@language" : "es",
+    "@value" : "Demanda de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "cooling demand (kWh/m²·year)"
+    "@value" : "cooling demand"
   }, {
     "@language" : "es",
-    "@value" : "demanda de refrigeración (kWh/m²·año)"
+    "@value" : "demanda de refrigeración"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEfficiency",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Rendimiento estacional del sistema de refrigeración. Se expresa como qudt:QuantityValue."
+  }, {
+    "@language" : "en",
+    "@value" : "Seasonal efficiency of the cooling system. Expressed as qudt:QuantityValue."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
   } ],
@@ -1016,7 +1124,7 @@
     "@value" : "seasonal cooling efficiency"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/coolingEnergySource",
@@ -1105,35 +1213,49 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwConsumption",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Consumo de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Domestic hot water consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "DHW consumption (kWh/m²·year)"
+    "@value" : "DHW consumption"
   }, {
     "@language" : "es",
-    "@value" : "consumo de ACS (kWh/m²·año)"
+    "@value" : "consumo de ACS"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwDemand",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Demanda de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Domestic hot water demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "DHW demand (kWh/m²·year)"
+    "@value" : "DHW demand"
   }, {
     "@language" : "es",
-    "@value" : "demanda de ACS (kWh/m²·año)"
+    "@value" : "demanda de ACS"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/dhwEnergySource",
@@ -1176,26 +1298,26 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeArea",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
-    "@value" : "Superficie de la envolvente térmica en contacto con el exterior."
+    "@value" : "Superficie de la envolvente térmica en contacto con el exterior. Se expresa como qudt:QuantityValue (qudt:numericValue + qudt:hasUnit), típicamente en m²."
   }, {
     "@language" : "en",
-    "@value" : "Surface area of the thermal envelope in contact with the exterior."
+    "@value" : "Surface area of the thermal envelope in contact with the exterior. Expressed as qudt:QuantityValue (qudt:numericValue + qudt:hasUnit), typically in m²."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "envelope area (m²)"
+    "@value" : "envelope area"
   }, {
     "@language" : "es",
-    "@value" : "superficie de envolvente (m²)"
+    "@value" : "superficie de envolvente"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/envelopeDescription",
@@ -1222,51 +1344,72 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedCost",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Coste estimado de la intervención. Se expresa como qudt:QuantityValue, típicamente en euros."
+  }, {
+    "@language" : "en",
+    "@value" : "Estimated cost of the intervention. Expressed as qudt:QuantityValue, typically in euros."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "coste estimado (€)"
+    "@value" : "coste estimado"
   }, {
     "@language" : "en",
-    "@value" : "estimated cost (€)"
+    "@value" : "estimated cost"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingKwh",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Ahorro estimado en energía. Se expresa como qudt:QuantityValue, típicamente en kWh/año."
+  }, {
+    "@language" : "en",
+    "@value" : "Estimated energy saving. Expressed as qudt:QuantityValue, typically in kWh/year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "ahorro estimado (kWh/año)"
+    "@value" : "ahorro estimado en energía"
   }, {
     "@language" : "en",
-    "@value" : "estimated saving (kWh/year)"
+    "@value" : "estimated saving in energy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/estimatedSavingPct",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Ahorro estimado porcentual. Se expresa como qudt:QuantityValue, típicamente en porcentaje."
+  }, {
+    "@language" : "en",
+    "@value" : "Estimated percentage saving. Expressed as qudt:QuantityValue, typically in percent."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "ahorro estimado (%)"
+    "@value" : "ahorro estimado"
   }, {
     "@language" : "en",
-    "@value" : "estimated saving (%)"
+    "@value" : "estimated saving"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/financingInformation",
@@ -1293,26 +1436,26 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/globalHeatTransferCoeff",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
-    "@value" : "Coeficiente global de transmitancia térmica U de la envolvente."
+    "@value" : "Coeficiente global de transmitancia térmica U de la envolvente. Se expresa como qudt:QuantityValue, típicamente en W/m²·K."
   }, {
     "@language" : "en",
-    "@value" : "Global thermal transmittance coefficient U of the envelope."
+    "@value" : "Global thermal transmittance coefficient U of the envelope. Expressed as qudt:QuantityValue, typically in W/m²·K."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "coeficiente global de transmitancia (W/m²·K)"
+    "@value" : "coeficiente global de transmitancia"
   }, {
     "@language" : "en",
-    "@value" : "global heat transfer coefficient (W/m²·K)"
+    "@value" : "global heat transfer coefficient"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasAutomationSystem",
@@ -1437,6 +1580,29 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
   } ]
 }, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasObservedAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Dirección postal del inmueble certificado. Se reutiliza esdir:DireccionPostal, que especializa schema:PostalAddress, vcard:Address y locn:Address, y permite representar vía, municipio, provincia y código postal con propiedades estándar (Art. 8.2.a)."
+  }, {
+    "@language" : "en",
+    "@value" : "Postal address of the certified property. Reuses esdir:DireccionPostal, which specialises schema:PostalAddress, vcard:Address and locn:Address, and allows representing street, municipality, province and postal code with standard properties (Art. 8.2.a)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "dirección del inmueble"
+  }, {
+    "@language" : "en",
+    "@value" : "observed address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
+  } ]
+}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasRating",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1505,6 +1671,29 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
   } ]
 }, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasTechnicianAddress",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Dirección postal del técnico competente. Se reutiliza esdir:DireccionPostal, que especializa schema:PostalAddress, vcard:Address y locn:Address, y permite representar vía, municipio, provincia y código postal con propiedades estándar (Anexo IV)."
+  }, {
+    "@language" : "en",
+    "@value" : "Postal address of the competent technician. Reuses esdir:DireccionPostal, which specialises schema:PostalAddress, vcard:Address and locn:Address, and allows representing street, municipality, province and postal code with standard properties (Annex IV)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "dirección del técnico"
+  }, {
+    "@language" : "en",
+    "@value" : "technician address"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal"
+  } ]
+}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/hasUserRecommendations",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1529,39 +1718,60 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingConsumption",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Consumo de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Heating consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "consumo de calefacción (kWh/m²·año)"
+    "@value" : "consumo de calefacción"
   }, {
     "@language" : "en",
-    "@value" : "heating consumption (kWh/m²·year)"
+    "@value" : "heating consumption"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingDemand",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Demanda de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Heating demand. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "demanda de calefacción (kWh/m²·año)"
+    "@value" : "demanda de calefacción"
   }, {
     "@language" : "en",
-    "@value" : "heating demand (kWh/m²·year)"
+    "@value" : "heating demand"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEfficiency",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Rendimiento estacional del sistema de calefacción. Se expresa como qudt:QuantityValue."
+  }, {
+    "@language" : "en",
+    "@value" : "Seasonal efficiency of the heating system. Expressed as qudt:QuantityValue."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
   } ],
@@ -1573,7 +1783,7 @@
     "@value" : "seasonal heating efficiency"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/heatingEnergySource",
@@ -1757,29 +1967,36 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingConsumption",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Consumo de iluminación. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Lighting consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "consumo de iluminación (kWh/m²·año)"
+    "@value" : "consumo de iluminación"
   }, {
     "@language" : "en",
-    "@value" : "lighting consumption (kWh/m²·year)"
+    "@value" : "lighting consumption"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingEfficiency",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
-    "@value" : "Eficiencia del sistema de iluminación (lm/W o similar)."
+    "@value" : "Eficiencia del sistema de iluminación. Se expresa como qudt:QuantityValue, típicamente en lm/W."
   }, {
     "@language" : "en",
-    "@value" : "Lighting system efficiency (lm/W or similar)."
+    "@value" : "Lighting system efficiency. Expressed as qudt:QuantityValue, typically in lm/W."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
@@ -1792,7 +2009,7 @@
     "@value" : "lighting system efficiency"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/lightingSystemType",
@@ -1842,67 +2059,95 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredCoolingConsumption",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Consumo medido de refrigeración. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Measured cooling consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "consumo medido de refrigeración (kWh/m²·año)"
+    "@value" : "consumo medido de refrigeración"
   }, {
     "@language" : "en",
-    "@value" : "measured cooling consumption (kWh/m²·year)"
+    "@value" : "measured cooling consumption"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredDHWConsumption",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Consumo medido de agua caliente sanitaria. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Measured domestic hot water consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "consumo medido de ACS (kWh/m²·año)"
+    "@value" : "consumo medido de ACS"
   }, {
     "@language" : "en",
-    "@value" : "measured DHW consumption (kWh/m²·year)"
+    "@value" : "measured DHW consumption"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredHeatingConsumption",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Consumo medido de calefacción. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Measured heating consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "consumo medido de calefacción (kWh/m²·año)"
+    "@value" : "consumo medido de calefacción"
   }, {
     "@language" : "en",
-    "@value" : "measured heating consumption (kWh/m²·year)"
+    "@value" : "measured heating consumption"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measuredTotalConsumption",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Consumo total medido. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Total measured consumption. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "consumo total medido (kWh/m²·año)"
+    "@value" : "consumo total medido"
   }, {
     "@language" : "en",
-    "@value" : "total measured consumption (kWh/m²·year)"
+    "@value" : "total measured consumption"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/measurementPeriodEnd",
@@ -1983,29 +2228,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedAddress",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Dirección completa del inmueble (Art. 8.2.a)."
-  }, {
-    "@language" : "en",
-    "@value" : "Full address of the property (Art. 8.2.a)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "dirección observada"
-  }, {
-    "@language" : "en",
-    "@value" : "observed address"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedBuildingUse",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2029,29 +2251,6 @@
     "@id" : "_:genid29"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedCadastralRef",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Cadastral reference of the property as stated in the certificate (Art. 8.2.a)."
-  }, {
-    "@language" : "es",
-    "@value" : "Referencia catastral del inmueble consignada en el certificado (Art. 8.2.a)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "observed cadastral reference"
-  }, {
-    "@language" : "es",
-    "@value" : "referencia catastral observada"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedClimaticZone",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2073,29 +2272,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "_:genid33"
-  } ]
-}, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedConstructionYear",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Año de construcción declarado del edificio."
-  }, {
-    "@language" : "en",
-    "@value" : "Declared construction year of the building."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "año de construcción observado"
-  }, {
-    "@language" : "en",
-    "@value" : "observed construction year"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#gYear"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedHeritageProtection",
@@ -2144,29 +2320,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#boolean"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedMunicipality",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Municipality where the building is located."
-  }, {
-    "@language" : "es",
-    "@value" : "Municipio donde se ubica el edificio."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "municipio observado"
-  }, {
-    "@language" : "en",
-    "@value" : "observed municipality"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedPartDescription",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2190,66 +2343,27 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedProvince",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Province where the building is located."
-  }, {
-    "@language" : "es",
-    "@value" : "Provincia donde se ubica el edificio."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "observed province"
-  }, {
-    "@language" : "es",
-    "@value" : "provincia observada"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/observedUsefulSurface",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Superficie útil considerada para la certificación (Art. 2.t)."
-  }, {
-    "@language" : "en",
-    "@value" : "Useful surface area considered for certification (Art. 2.t)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "observed useful surface (m²)"
-  }, {
-    "@language" : "es",
-    "@value" : "superficie útil observada (m²)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
-  } ]
-}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/paybackPeriod",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Payback period of the investment. Expressed as qudt:QuantityValue, typically in years."
+  }, {
+    "@language" : "es",
+    "@value" : "Plazo de recuperación de la inversión. Se expresa como qudt:QuantityValue, típicamente en años."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/ImprovementRecommendation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "payback period (years)"
+    "@value" : "payback period"
   }, {
     "@language" : "es",
-    "@value" : "plazo de recuperación (años)"
+    "@value" : "plazo de recuperación"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/predecessorCertificate",
@@ -2279,51 +2393,72 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyNonRenewable",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Energía primaria no renovable. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Non-renewable primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "energía primaria no renovable (kWh/m²·año)"
+    "@value" : "energía primaria no renovable"
   }, {
     "@language" : "en",
-    "@value" : "non-renewable primary energy (kWh/m²·year)"
+    "@value" : "non-renewable primary energy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyRenewable",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Energía primaria renovable. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Renewable primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "energía primaria renovable (kWh/m²·año)"
+    "@value" : "energía primaria renovable"
   }, {
     "@language" : "en",
-    "@value" : "renewable primary energy (kWh/m²·year)"
+    "@value" : "renewable primary energy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/primaryEnergyTotal",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Energía primaria total. Se expresa como qudt:QuantityValue, típicamente en kWh/m²·año."
+  }, {
+    "@language" : "en",
+    "@value" : "Total primary energy. Expressed as qudt:QuantityValue, typically in kWh/m²·year."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyRating"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "energía primaria total (kWh/m²·año)"
+    "@value" : "energía primaria total"
   }, {
     "@language" : "en",
-    "@value" : "total primary energy (kWh/m²·year)"
+    "@value" : "total primary energy"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/priority",
@@ -2581,14 +2716,37 @@
     "@id" : "_:genid49"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationCCAA",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/refersToCadastralEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Autonomous community where the certificate is registered (Art. 6.6)."
+    "@value" : "Cadastral entity the certificate refers to. Through catastro:CadastralProperty, the cadastral reference (catastro:referenceCatastral), address (catastro:hasAddress), construction year and other property data can be accessed (Art. 8.2.a)."
   }, {
     "@language" : "es",
-    "@value" : "Comunidad autónoma donde se registra el certificado (Art. 6.6)."
+    "@value" : "Entidad catastral a la que se refiere el certificado. A través de catastro:CadastralProperty se puede acceder a la referencia catastral (catastro:referenceCatastral), la dirección (catastro:hasAddress), el año de construcción y otros datos del inmueble (Art. 8.2.a)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "entidad catastral referida"
+  }, {
+    "@language" : "en",
+    "@value" : "refers to cadastral entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/catastro/CadastralProperty"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationAutonomousCommunity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Autonomous community where the certificate is registered, represented as esadm:Autonomia from the territory vocabulary (Art. 6.6)."
+  }, {
+    "@language" : "es",
+    "@value" : "Comunidad autónoma donde se registra el certificado, representada como esadm:Autonomia del vocabulario de territorio (Art. 6.6)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
@@ -2601,7 +2759,7 @@
     "@value" : "registration autonomous community"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/registrationDate",
@@ -2651,19 +2809,26 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableCapacity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Potencia renovable instalada. Se expresa como qudt:QuantityValue, típicamente en kW."
+  }, {
+    "@language" : "en",
+    "@value" : "Renewable installed capacity. Expressed as qudt:QuantityValue, typically in kW."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "potencia renovable instalada (kW)"
+    "@value" : "potencia renovable instalada"
   }, {
     "@language" : "en",
-    "@value" : "renewable installed capacity (kW)"
+    "@value" : "renewable installed capacity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/renewableEnergySource",
@@ -2774,29 +2939,6 @@
     "@id" : "_:genid57"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianAddress",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Dirección fiscal del técnico competente (Anexo IV)."
-  }, {
-    "@language" : "en",
-    "@value" : "Fiscal address of the competent technician (Annex IV)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "domicilio fiscal"
-  }, {
-    "@language" : "en",
-    "@value" : "fiscal address"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianCourseModules",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2820,29 +2962,6 @@
     "@id" : "_:genid61"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianDomicile",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Dirección completa del técnico (Anexo IV)."
-  }, {
-    "@language" : "en",
-    "@value" : "Full address of the technician (Annex IV)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "domicilio del técnico"
-  }, {
-    "@language" : "en",
-    "@value" : "technician domicile"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianEmail",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -2854,22 +2973,6 @@
   }, {
     "@language" : "en",
     "@value" : "email"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianMunicipality",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "municipality"
-  }, {
-    "@language" : "es",
-    "@value" : "municipio"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
@@ -2930,38 +3033,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPostalCode",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "código postal"
-  }, {
-    "@language" : "en",
-    "@value" : "postal code"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianProvince",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "province"
-  }, {
-    "@language" : "es",
-    "@value" : "provincia"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianPublicAuthorization",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -3008,8 +3079,15 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationCCAA",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/technicianRegistrationAutonomousCommunity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Autonomous community where the technician is registered to certify, represented as esadm:Autonomia from the territory vocabulary."
+  }, {
+    "@language" : "es",
+    "@value" : "Comunidad autónoma donde el técnico está registrado para certificar, representada como esadm:Autonomia del vocabulario de territorio."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/CompetentTechnician"
   } ],
@@ -3021,30 +3099,30 @@
     "@value" : "technician registration autonomous community"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/thermalBridgeLosses",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Linear thermal bridge losses."
+    "@value" : "Linear thermal bridge losses. Expressed as qudt:QuantityValue, typically in W/K."
   }, {
     "@language" : "es",
-    "@value" : "Pérdidas por puentes térmicos lineales."
+    "@value" : "Pérdidas por puentes térmicos lineales. Se expresa como qudt:QuantityValue, típicamente en W/K."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "linear thermal bridge losses (W/K)"
+    "@value" : "linear thermal bridge losses"
   }, {
     "@language" : "es",
-    "@value" : "pérdidas por puentes térmicos lineales (W/K)"
+    "@value" : "pérdidas por puentes térmicos lineales"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/userRecommendationsDelivered",
@@ -3258,26 +3336,26 @@
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/windowAreaRatio",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Percentage of glazing/openings relative to facade area."
+    "@value" : "Percentage of glazing/openings relative to facade area. Expressed as qudt:QuantityValue, typically in percent."
   }, {
     "@language" : "es",
-    "@value" : "Porcentaje de huecos/acristalamiento sobre fachada."
+    "@value" : "Porcentaje de huecos/acristalamiento sobre fachada. Se expresa como qudt:QuantityValue, típicamente en porcentaje."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/EnergyCertificate"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
-    "@value" : "ratio huecos/fachada (%)"
+    "@value" : "ratio huecos/fachada"
   }, {
     "@language" : "en",
-    "@value" : "window-to-wall ratio (%)"
+    "@value" : "window-to-wall ratio"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "@id" : "http://qudt.org/schema/qudt/QuantityValue"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sectorpublico/cee/xmlReportReference",
@@ -3301,6 +3379,26 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#anyURI"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Dirección postal en España. Especialización de schema:PostalAddress, vcard:Address y locn:Address. Permite representar una dirección con propiedades como schema:streetAddress, schema:addressLocality, schema:addressRegion y schema:postalCode."
+  }, {
+    "@language" : "en",
+    "@value" : "Postal address in Spain. Specialisation of schema:PostalAddress, vcard:Address and locn:Address. Allows representing an address with properties like schema:streetAddress, schema:addressLocality, schema:addressRegion and schema:postalCode."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Dirección postal"
+  }, {
+    "@language" : "en",
+    "@value" : "Postal address"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/AccessPath",
@@ -3340,9 +3438,6 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#gYear",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
   "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
